@@ -2,7 +2,7 @@ import React from 'react';
 
 const HomeSection = () => {
   return (
-    <section className="flex flex-col items-center justify-center min-h-screen text-gray-800 px-4 py-16">
+    <section className="flex flex-col items-center justify-center min-h-screen h-screen w-full text-gray-800 px-4">
       <div className="max-w-4xl mx-auto text-center">
         <p className="text-sm md:text-base text-gray-600 mb-2">hello i am...</p>
         <h1 className="text-5xl md:text-7xl font-bold tracking-wider mb-6">DION</h1>
