@@ -43,7 +43,7 @@ export const Email: React.FC<Readonly<EmailProps>> = ({
               </Text>
               
               <Text className="text-[14px] leading-[22px] text-gray-600 mb-[24px]">
-                You've received a new message through your website's contact form.
+                You&apos;ve received a new message through your website&apos;s contact form.
               </Text>
 
               {/* Contact Details */}

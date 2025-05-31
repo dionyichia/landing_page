@@ -1,4 +1,4 @@
-import { Heading1, Heading2, Paragraph, SmallText } from '../components/typography';
+import { Heading2, Paragraph } from '../components/typography';
 import ContactForm from '@/components/contact_stuff/contact_form';
 
 import form_img from "@/assets/about_img.jpg"
@@ -23,7 +23,7 @@ const Contact = () => {
           <div className="order-2 lg:order-1">
             <div className="mb-8">
               <Paragraph className="text-lg text-stone-700 leading-relaxed">
-                Let's connect and discuss how we can work together. I'd love to hear from you.
+                Let&apos;s connect and discuss how we can work together. I&apos;d love to hear from you.
               </Paragraph>
             </div>
             <ContactForm/>

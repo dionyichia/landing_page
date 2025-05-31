@@ -1,4 +1,4 @@
-import { Heading1, Heading2, Heading3, Paragraph, SmallText  } from "@/components/typography";
+import { Heading2, Paragraph } from "@/components/typography";
 
 const Projects = () => {
 

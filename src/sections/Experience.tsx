@@ -1,7 +1,7 @@
 "use client"
 
 import GridSlider from "@/components/experince_grid_slider";
-import { Heading2, Heading3, Text } from "@/components/typography";
+import { Heading2 } from "@/components/typography";
 
 import dso_logo from "@/assets/dso_national_laboratories_logo.jpeg";
 import lta_logo from "@/assets/lta_logo.jpeg";

@@ -2,7 +2,6 @@
 
 import { useState } from "react";
 import { Sun, FileText } from "lucide-react";
-import { cn } from "@/lib/utils";
 import { Link } from "react-scroll";
 
 const NavBar = () => {

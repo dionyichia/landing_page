@@ -19,12 +19,12 @@ const About = () => {
             As a passionate software developer with over 8 years of experience, I specialize in building 
             modern web applications using React, Next.js, and TypeScript. My approach combines technical 
             expertise with creative problem-solving to deliver exceptional user experiences. Throughout 
-            my career, I've collaborated with cross-functional teams to bring innovative solutions to 
+            my career, I&apos;ve collaborated with cross-functional teams to bring innovative solutions to 
             complex challenges. 
           </Paragraph>
           <Paragraph>
-            When I'm not coding, you can find me exploring new technologies, 
-            contributing to open-source projects, or mentoring aspiring developers. I'm driven by the 
+            When I&apos;m not coding, you can find me exploring new technologies, 
+            contributing to open-source projects, or mentoring aspiring developers. I&apos;m driven by the 
             belief that thoughtful design and clean code can make a meaningful impact on how people 
             interact with technology.
           </Paragraph>

@@ -2,7 +2,7 @@ import { NextRequest, NextResponse } from "next/server"
 
 import { render } from "@react-email/components"
 
-import { transporter, smtpEmail, smtpPassword } from "@/utils/nodemailer"
+import { transporter, smtpEmail } from "@/utils/nodemailer"
 
 import { Email } from "@/components/contact_stuff/email";
 

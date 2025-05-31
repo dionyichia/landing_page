@@ -1,5 +1,5 @@
 import { ExperienceData } from "@/sections/Experience";
-import { Heading3, Heading4, Paragraph, Text } from "./typography";
+import { Heading4, Paragraph, Text } from "./typography";
 import Image from "next/image";
 
 interface ExperienceGridProps {

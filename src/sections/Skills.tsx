@@ -1,5 +1,5 @@
 
-import { Heading2, Heading3, Paragraph, Text } from "@/components/typography";
+import { Heading2, Heading3, Text } from "@/components/typography";
 
 const Skills = () => {
   const skillCategories = [

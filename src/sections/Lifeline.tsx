@@ -107,7 +107,7 @@ const Lifeline = () => {
   ];
 
   const [visibleItems, setVisibleItems] = useState(new Set());
-  const containerRef = useRef(null);
+  const containerRef = useRef<HTMLDivElement | null>(null);
   const { scrollYProgress } = useScroll({
     target: containerRef,
     offset: ["start center", "end center"]
@@ -118,7 +118,7 @@ const Lifeline = () => {
 
   // Intersection Observer for individual items
   useEffect(() => {
-    const observers = [];
+    const observers: IntersectionObserver[] = [];
     const items = containerRef.current?.querySelectorAll('[data-timeline-item]');
     
     if (items) {
