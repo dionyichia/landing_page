@@ -7,7 +7,14 @@ import dso_logo from "@/assets/dso_national_laboratories_logo.jpeg";
 import lta_logo from "@/assets/lta_logo.jpeg";
 import cosmose_logo from "@/assets/cosmoseai_logo.jpeg";
 
+import nn_img from "@/assets/lta/nn_img.jpg"
+import cv_img from "@/assets/lta/cv_img.jpg"
+import nlp_img from "@/assets/lta/nlp_img.jpg"
+import rnn_img from "@/assets/lta/rnn_img.jpg"
+import rl_img from "@/assets/lta/rl_img.jpg"
+
 import { StaticImageData } from "next/image";
+
 
 export interface ExperienceData {
   title: string;
@@ -15,7 +22,7 @@ export interface ExperienceData {
   period: string;
   logo: StaticImageData;
   skills: string[];
-  img: string;
+  img: StaticImageData[];
   description: string[];
 }
 
@@ -27,7 +34,7 @@ const Experience = () => {
       period: "May 2025 - August 2025",
       logo: dso_logo,
       skills: ["Python", "C++", "HIP Programming", "Linux", "Embedded Systems"],
-      img: "path/to/img",
+      img: [nn_img, cv_img, nlp_img, rnn_img, rl_img],
       description: [
         "Benchmarked different clustering algorithms and optimized implementation for edge processing purposes"
       ]
@@ -37,8 +44,8 @@ const Experience = () => {
       org: "Land Transport Authority",
       period: "June 2024 - July 2024",
       logo: lta_logo,
-      skills: ["Retreieval Augmented Generation", "Milvus", "LangChain", "Computer Vision","Reinforcement Learning", "Generative AI"],
-      img: "path/to/img",
+      skills: ["Retreieval Augmented Generation", "Computer Vision","Reinforcement Learning", "Generative AI"],
+      img: [nn_img, cv_img, nlp_img, rnn_img, rl_img],
       description: [
         "Benchmarked different clustering algorithms and optimized implementation for edge processing purposes"
       ]
@@ -49,7 +56,7 @@ const Experience = () => {
       period: "February 2023 - April 2023",
       logo: cosmose_logo,
       skills: ["Javascript", "Google Appscript", "B2B Sales", "Lead Generation"],
-      img: "path/to/img",
+      img: [],
       description: [
         "Benchmarked different clustering algorithms and optimized implementation for edge processing purposes"
       ]
@@ -63,7 +70,7 @@ const Experience = () => {
       period: "May 2025 - August 2025",
       logo: dso_logo,
       skills: ["Computer Vision", "Python", "PyQT6", "Arduino", "Serial"],
-      img: "path/to/img",
+      img: [],
       description: [
         "Benchmarked different clustering algorithms and optimized implementation for edge processing purposes"
       ]
@@ -74,7 +81,7 @@ const Experience = () => {
       period: "May 2025 - August 2025",
       logo: dso_logo,
       skills: ["Node.js", "Vite", "MQTT", "Arduino Cloud", "Javascript", "Hardware - Software Integration"],
-      img: "path/to/img",
+      img: [],
       description: [
         "Benchmarked different clustering algorithms and optimized implementation for edge processing purposes"
       ]
@@ -84,10 +91,21 @@ const Experience = () => {
       org: "Corrective-Retreival Augmented Generation for Student Notes",
       period: "May 2025 - August 2025",
       logo: dso_logo,
-      skills: ["Langchain", "Marker (PDF Parsing)", "Ollama", "Milvus", "Flask", "Jinja2", "WebSockets", "Semantic Chunking", "Merged Rank Retrieval", "Object Oriented Programming", "Python"],
-      img: "path/to/img",
+      skills: ["Langchain", "Docker", "Marker (PDF Parsing)", "Ollama", "Milvus", "Flask", "Jinja2", "WebSockets", "Semantic Chunking", "Merged Rank Retrieval", "Object Oriented Programming", "Python"],
+      img: [],
       description: [
         "Benchmarked different clustering algorithms and optimized implementation for edge processing purposes"
+      ]
+    },
+    {
+      title: "MindScope",
+      org: "A mutimodal mental health classifier for early student mental disorder detection",
+      period: "May 2025",
+      logo: dso_logo,
+      skills: ["Next.js", "Tailwind CSS", "Typescript"],
+      img: [],
+      description: [
+        "Created personal landing page to collate past experiences, projects, and thoughts. Hope you enjoyed my page!"
       ]
     },
     {
@@ -96,7 +114,7 @@ const Experience = () => {
       period: "May 2025 - August 2025",
       logo: dso_logo,
       skills: ["React", "Typescript", "React Router", "Flask", "SQLite", "Python", "Object Oriented Programming"],
-      img: "path/to/img",
+      img: [],
       description: [
         "Benchmarked different clustering algorithms and optimized implementation for edge processing purposes"
       ]
@@ -107,7 +125,7 @@ const Experience = () => {
       period: "May 2025",
       logo: dso_logo,
       skills: ["Next.js", "Tailwind CSS", "Typescript"],
-      img: "path/to/img",
+      img: [],
       description: [
         "Created personal landing page to collate past experiences, projects, and thoughts. Hope you enjoyed my page!"
       ]
@@ -118,7 +136,7 @@ const Experience = () => {
       period: "May 2025 - August 2025",
       logo: dso_logo,
       skills: [],
-      img: "path/to/img",
+      img: [],
       description: [
         "Have you ever noticed how it is always so difficult to get swipes on dating platforms as a man? Well, as a 5'8 average looking male - I have :( BUT LOOK NO FURTHER, for the change is now!"
       ]
@@ -129,7 +147,7 @@ const Experience = () => {
       period: "May 2025 - August 2025",
       logo: dso_logo,
       skills: ["Java", "Object Oriented Programming", "SOLID Principles"],
-      img: "path/to/img",
+      img: [],
       description: [
         "Benchmarked different clustering algorithms and optimized implementation for edge processing purposes"
       ]

@@ -9,6 +9,12 @@ import { toFormikValidationSchema } from "zod-formik-adapter";
 import { ToastContainer, toast } from "react-toastify";
 import Confetti from "react-confetti";
 
+import GithubLogo from "@/assets/github.svg"
+import LinkedInLogo from "@/assets/linkedin.svg"
+import EmailLogo from "@/assets/email.svg"
+import Image from "next/image";
+import Link from "next/link";
+
 type FormValues = {
     name: string,
     email: string,
@@ -172,14 +178,37 @@ const ContactForm = () => {
                     />
                     </div>
                 </div>
-                <div className="p-2 w-full">
+                <div className="p-2 w-full flex flex-row flex-nowrap justify-between">
                     <button
                     disabled={isLoading}
-                    className="flex mx-auto text-white bg-stone-500 border-0 py-2 px-8 focus:outline-none hover:bg-stone-600 rounded text-lg disabled:opacity-50 disabled:cursor-not-allowed"
+                    className="flex items-start text-white bg-stone-500 border-0 py-2 px-8 focus:outline-none hover:bg-stone-600 rounded text-lg disabled:opacity-50 disabled:cursor-not-allowed"
                     type="submit"
                     >
                     {isLoading ? "Sending..." : "Send Message"}
                     </button>
+                    <div className="flex items-center gap-2 pr-2">
+                        <Link 
+                            href="https://github.com/dionyichia" 
+                            target="_blank" 
+                            rel="noopener noreferrer"
+                            className="transition-opacity hover:opacity-70" >
+                            <Image src={GithubLogo} alt="Github Icon" className="w-8 h-8 filter grayscale hover:grayscale-0 transition-all duration-200" />
+                        </Link>
+                        <Link 
+                            href="https://www.linkedin.com/in/dionyichia/" 
+                            target="_blank" 
+                            rel="noopener noreferrer"
+                            className="transition-opacity hover:opacity-70" >
+                            <Image src={LinkedInLogo} alt="LinknedIn Icon" className="w-10 h-10 filter grayscale hover:grayscale-0 transition-all duration-200" />
+                        </Link>
+                        <Link 
+                            href="mailto:dionyichia@gmail.com?subject=Hello from your website&body=Hey Dion,%0D%0A%0D%0AI found your website and wanted to reach out..."
+                            target="_blank" 
+                            rel="noopener noreferrer"
+                            className="transition-opacity hover:opacity-70" >
+                            <Image src={EmailLogo} alt="Email Icon" className="w-8 h-8 filter grayscale hover:grayscale-0 transition-all duration-200" />
+                        </Link>
+                    </div>
                 </div>
                 </div>
             </div>
