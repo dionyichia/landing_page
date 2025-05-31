@@ -1,21 +1,55 @@
 import { Heading1, Heading2, Paragraph, SmallText } from '../components/typography';
+import ContactForm from '@/components/contact_stuff/contact_form';
+
+import form_img from "@/assets/about_img.jpg"
+import Image from 'next/image';
 
 const Contact = () => {
   return (
-    <section className="py-12" id="contact">
-      <div className="container mx-auto px-4">
-        <Heading1 className="text-center mb-8">About Me</Heading1>
-        
-        <Heading2 className="mb-4">My Background</Heading2>
-        <Paragraph className="mb-8">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor 
-          incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud 
-          exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-        </Paragraph>
-        
-        <SmallText className="italic text-gray-600">
-          Based in New York City since 2015
-        </SmallText>
+    <section className="py-8 md:py-16 w-full bg-white" id="contact">
+      <div className="max-w-7xl mx-auto">
+        {/* Header */}
+        <div className="mb-12 w-full">
+          <Heading2 className="mb-4 text-stone-800 text-left">
+            Contact
+          </Heading2>
+          <div className="h-1 w-full bg-gray-300 rounded"></div>
+        </div>
+
+        {/* Main Content */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-start px-4 sm:px-6 lg:px-8">
+          
+          {/* Left Column - Contact Form */}
+          <div className="order-2 lg:order-1">
+            <div className="mb-8">
+              <Paragraph className="text-lg text-stone-700 leading-relaxed">
+                Let's connect and discuss how we can work together. I'd love to hear from you.
+              </Paragraph>
+            </div>
+            <ContactForm/>
+          </div>
+
+          {/* Right Column - Image */}
+          <div className="order-1 lg:order-2">
+            <div className="relative">
+              {/* Image Container */}
+              <div className="relative w-full max-w-md mx-auto lg:max-w-none">
+                <div className="aspect-square relative overflow-hidden rounded-2xl shadow-2xl">
+                  <Image 
+                    src={form_img} 
+                    alt="Professional headshot" 
+                    fill
+                    className="object-cover transition-transform duration-300 hover:scale-105"
+                    sizes="(max-width: 768px) 80vw, (max-width: 1024px) 50vw, 40vw"
+                    priority
+                  />
+                </div>
+              </div>
+              
+            </div>
+          </div>
+
+        </div>
       </div>
     </section>
   );

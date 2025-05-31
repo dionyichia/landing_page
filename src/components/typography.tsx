@@ -12,21 +12,34 @@ export const Heading1 = ({ children, className = '' }: TextProps) => (
 );
 
 export const Heading2 = ({ children, className = '' }: TextProps) => (
-  <h2 className={`font-arapey text-3xl md:text-4xl ${className}`}>
+  <h2 className={`font-arapey text-2xl md:text-3xl lg:text-4xl ${className}`}>
     {children}
   </h2>
 );
 
 export const Heading3 = ({ children, className = '' }: TextProps) => (
-  <h3 className={`font-arapey text-2xl md:text-3xl ${className}`}>
+  <h3 className={`font-arapey text-sm md:text-base lg:text-xl ${className}`}>
     {children}
   </h3>
 );
 
-export const Paragraph = ({ children, className = '' }: TextProps) => (
-  <p className={`font-cormorant text-base md:text-lg ${className}`}>
+export const Heading4 = ({ children, className = '' }: TextProps) => (
+  <div className={`font-arapey text-sm md:text-lg lg:text-2xl ${className}`}>
     {children}
-  </p>
+  </div>
+);
+
+
+export const Paragraph = ({ children, className = '' }: TextProps) => (
+    <p className={`font-cormorant text-sm md:text-base lg:text-lg pb-2 md:pb-4${className}`}>
+        {children}
+    </p>
+);
+
+export const Text = ({ children, className = '' }: TextProps) => (
+    <div className={`font-cormorant text-xs md:text-sm lg:text-lg  ${className}`}>
+        {children}
+    </div>
 );
 
 export const SmallText = ({ children, className = '' }: TextProps) => (

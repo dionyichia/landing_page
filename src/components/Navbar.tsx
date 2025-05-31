@@ -11,14 +11,14 @@ const NavBar = () => {
   const toggleMenu = () => setMenuOpen((prev) => !prev);
 
   return (
-    <div className="relative min-w-full flex flex-row flex-nowrap justify-between items-center py-4 md:py-6 px-4 md:px-10 bg-stone-50 dark:bg-stone-900 border-b border-stone-200 dark:border-stone-800">
+    <div className="relative flex flex-row flex-nowrap justify-between items-center px-2 md:px-8 lg:px-12 py-4 md:py-6 mx-4 md:mx-8 lg:mx-12 bg-white dark:bg-stone-900 border-b border-stone-200 dark:border-stone-800">
       {/* Logo */}
       <div className="text-xl font-bold text-stone-800 dark:text-stone-200">
         Logo
       </div>
 
       {/* Navigation Links (Desktop) */}
-      <nav className="absolute text-xl left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 hidden md:flex items-center space-x-8 font-medium text-stone-600 dark:text-stone-300">
+      <nav className="absolute text-xl left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 hidden md:flex items-center space-x-4 lg:space-x-8 font-medium text-stone-600 dark:text-stone-300">
         {["about", "experience", "contact"].map((section) => (
           <button
             key={section}

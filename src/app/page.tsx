@@ -9,9 +9,9 @@ import Contact from "@/sections/Contact";
 
 export default function Home() {
   return (
-    <div className="relative">
+    <div className="relative w-9/12 mx-auto">
       {/* Fixed navbar at the top */}
-      <div className="fixed top-0 right-0 left-0 z-50 bg-stone-50">
+      <div className="fixed top-0 right-0 left-0 z-50 px-8 md:px-12 lg:px-16">
         <NavBar />
       </div>
 
@@ -19,10 +19,10 @@ export default function Home() {
       <HomeSection />
 
       {/* Container for the rest of the sections */}
-      <div className="px-8 py-16 flex flex-col gap-[64px] items-center sm:items-start sm:px-20">
+      <div className="py-16 flex flex-col gap-[64px] items-center sm:items-start mx-auto max-w-7xl px-2 md:px-6 lg:px-8">
         <About />
-        <Lifeline />
         <Skills />
+        <Lifeline />
         <Experience />
         <Contact />
 
