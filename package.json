@@ -6,7 +6,8 @@
     "dev": "next dev --turbopack",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "postbuild": "next-sitemap"
   },
   "dependencies": {
     "@next/font": "^14.2.15",
@@ -17,6 +18,7 @@
     "framer-motion": "^12.12.1",
     "lucide-react": "^0.507.0",
     "next": "15.3.1",
+    "next-sitemap": "^4.2.3",
     "nodemailer": "^7.0.3",
     "nodemailer-smtp-transport": "^2.7.4",
     "react": "^19.0.0",
