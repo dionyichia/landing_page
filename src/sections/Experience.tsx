@@ -13,6 +13,20 @@ import nlp_img from "@/assets/lta/nlp_img.jpg"
 import rnn_img from "@/assets/lta/rnn_img.jpg"
 import rl_img from "@/assets/lta/rl_img.jpg"
 
+import hf_compare from "@/assets/homefinder/compare.png"
+import hf_explore from "@/assets/homefinder/explore.png"
+import hf_exp_loc from "@/assets/homefinder/explore_location.png"
+import hf_logo from "@/assets/homefinder/hf-high-resolution-logo.png"
+
+import infl from "@/assets/inflatacare/Inflatacare.png"
+import infl_home from "@/assets/inflatacare/inflatacare_home.jpg"
+import infl_post from "@/assets/inflatacare/poster.png"
+
+import mindscope from "@/assets/MindScope.png"
+
+import rag_archi from "@/assets/rag_archi.png"
+import finder_img from "@/assets/finder.png"
+
 import { StaticImageData } from "next/image";
 
 
@@ -81,7 +95,7 @@ const Experience = () => {
       period: "May 2025 - August 2025",
       logo: dso_logo,
       skills: ["Node.js", "Vite", "MQTT", "Arduino Cloud", "Javascript", "Hardware - Software Integration"],
-      img: [],
+      img: [infl, infl_home, infl_post],
       description: [
         "Benchmarked different clustering algorithms and optimized implementation for edge processing purposes"
       ]
@@ -91,8 +105,8 @@ const Experience = () => {
       org: "Corrective-Retreival Augmented Generation for Student Notes",
       period: "May 2025 - August 2025",
       logo: dso_logo,
-      skills: ["Langchain", "Docker", "Marker (PDF Parsing)", "Ollama", "Milvus", "Flask", "Jinja2", "WebSockets", "Semantic Chunking", "Merged Rank Retrieval", "Object Oriented Programming", "Python"],
-      img: [],
+      skills: ["Langchain", "Docker", "Marker (PDF Parsing)", "Ollama", "Milvus", "Flask", "WebSockets", "Semantic Chunking", "Merged Rank Retrieval", "Python"],
+      img: [finder_img, rag_archi],
       description: [
         "Benchmarked different clustering algorithms and optimized implementation for edge processing purposes"
       ]
@@ -103,7 +117,7 @@ const Experience = () => {
       period: "May 2025",
       logo: dso_logo,
       skills: ["Next.js", "Tailwind CSS", "Typescript"],
-      img: [],
+      img: [mindscope],
       description: [
         "Created personal landing page to collate past experiences, projects, and thoughts. Hope you enjoyed my page!"
       ]
@@ -114,7 +128,7 @@ const Experience = () => {
       period: "May 2025 - August 2025",
       logo: dso_logo,
       skills: ["React", "Typescript", "React Router", "Flask", "SQLite", "Python", "Object Oriented Programming"],
-      img: [],
+      img: [hf_explore, hf_compare, hf_exp_loc, hf_logo],
       description: [
         "Benchmarked different clustering algorithms and optimized implementation for edge processing purposes"
       ]
