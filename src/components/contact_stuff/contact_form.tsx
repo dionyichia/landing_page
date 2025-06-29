@@ -121,7 +121,7 @@ const ContactForm = () => {
                         id="name"
                         name="name"
                         placeholder="Name"
-                        className="w-full bg-gray-100 bg-opacity-50 hover:bg-stone-200 rounded border border-gray-300 focus:border-stone-500 focus:bg-white focus:ring-2 focus:ring-stone-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
+                        className="w-full  text-sm md:text-base bg-gray-100 bg-opacity-50 hover:bg-stone-200 rounded border border-gray-300 focus:border-stone-500 focus:bg-white focus:ring-2 focus:ring-stone-200 outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
                     />
                     <ErrorMessage
                         name="name"
@@ -137,7 +137,7 @@ const ContactForm = () => {
                         id="email"
                         name="email"
                         placeholder="Email"
-                        className="w-full bg-gray-100 bg-opacity-50 hover:bg-stone-200 rounded border border-gray-300 focus:border-stone-500 focus:bg-white focus:ring-2 focus:ring-stone-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
+                        className="w-full text-sm md:text-base bg-gray-100 bg-opacity-50 hover:bg-stone-200 rounded border border-gray-300 focus:border-stone-500 focus:bg-white focus:ring-2 focus:ring-stone-200 outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
                     />
                     <ErrorMessage
                         name="email"
@@ -153,7 +153,7 @@ const ContactForm = () => {
                         id="subject"
                         name="subject"
                         placeholder="Subject"
-                        className="w-full bg-gray-100 bg-opacity-50 hover:bg-stone-200 rounded border border-gray-300 focus:border-stone-500 focus:bg-white focus:ring-2 focus:ring-stone-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
+                        className="w-full text-sm md:text-base bg-gray-100 bg-opacity-50 hover:bg-stone-200 rounded border border-gray-300 focus:border-stone-500 focus:bg-white focus:ring-2 focus:ring-stone-200 outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
                     />
                     <ErrorMessage
                         name="subject"
@@ -169,19 +169,19 @@ const ContactForm = () => {
                         name="message"
                         as="textarea"
                         placeholder="Drop me a message!"
-                        className="w-full bg-gray-100 bg-opacity-50 hover:bg-stone-200 rounded border border-gray-300 focus:border-stone-500 focus:bg-white focus:ring-2 focus:ring-stone-200 h-32 text-base outline-none text-gray-700 py-1 px-3 resize-none leading-6 transition-colors duration-200 ease-in-out"
+                        className="w-full text-sm md:text-base bg-gray-100 bg-opacity-50 hover:bg-stone-200 rounded border border-gray-300 focus:border-stone-500 focus:bg-white focus:ring-2 focus:ring-stone-200 h-32 outline-none text-gray-700 py-1 px-3 resize-none leading-6 transition-colors duration-200 ease-in-out"
                     />
                     <ErrorMessage
                         name="message"
                         component="div"
-                        className="text-red-500"
+                        className="text-red-500 text-sm md:text-base "
                     />
                     </div>
                 </div>
                 <div className="p-2 w-full flex flex-row flex-nowrap justify-between">
                     <button
                     disabled={isLoading}
-                    className="flex items-start text-white bg-stone-500 border-0 py-2 px-8 focus:outline-none hover:bg-stone-600 rounded text-lg disabled:opacity-50 disabled:cursor-not-allowed"
+                    className="flex text-sm md:text-base lg:text-xl items-start text-white bg-stone-500 border-0 py-2 px-2 md:px-8 focus:outline-none hover:bg-stone-600 rounded disabled:opacity-50 disabled:cursor-not-allowed"
                     type="submit"
                     >
                     {isLoading ? "Sending..." : "Send Message"}
@@ -192,21 +192,21 @@ const ContactForm = () => {
                             target="_blank" 
                             rel="noopener noreferrer"
                             className="transition-opacity hover:opacity-70" >
-                            <Image src={GithubLogo} alt="Github Icon" className="w-8 h-8 filter grayscale hover:grayscale-0 transition-all duration-200" />
+                            <Image src={GithubLogo} alt="Github Icon" className="w-6 h-6 md:w-8 md:h-8 filter grayscale hover:grayscale-0 transition-all duration-200" />
                         </Link>
                         <Link 
                             href="https://www.linkedin.com/in/dionyichia/" 
                             target="_blank" 
                             rel="noopener noreferrer"
                             className="transition-opacity hover:opacity-70" >
-                            <Image src={LinkedInLogo} alt="LinknedIn Icon" className="w-10 h-10 filter grayscale hover:grayscale-0 transition-all duration-200" />
+                            <Image src={LinkedInLogo} alt="LinknedIn Icon" className="w-8 h-8 md:w-10 md:h-10 filter grayscale hover:grayscale-0 transition-all duration-200" />
                         </Link>
                         <Link 
                             href="mailto:dionyichia@gmail.com?subject=Hello from your website&body=Hey Dion,%0D%0A%0D%0AI found your website and wanted to reach out..."
                             target="_blank" 
                             rel="noopener noreferrer"
                             className="transition-opacity hover:opacity-70" >
-                            <Image src={EmailLogo} alt="Email Icon" className="w-8 h-8 filter grayscale hover:grayscale-0 transition-all duration-200" />
+                            <Image src={EmailLogo} alt="Email Icon" className="w-6 h-6 md:w-8 md:h-8 filter grayscale hover:grayscale-0 transition-all duration-200" />
                         </Link>
                     </div>
                 </div>

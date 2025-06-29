@@ -5,7 +5,7 @@ const Skills = () => {
   const skillCategories = [
     {
       title: "Programming Languages",
-      skills: ["Python", "C", "JavaScript", "TypeScript", "Java", "HTML/CSS", "Verilog"]
+      skills: ["Python", "C", "C++", "JavaScript", "TypeScript", "Java", "HTML/CSS", "Verilog"]
     },
     {
       title: "Machine Learning & Data Science",
@@ -30,21 +30,24 @@ const Skills = () => {
   ];
 
   return (
-    <section className="py-8">
-      <Heading2 className="mb-6 text-stone-800">Technical Skills</Heading2>
+    <section className="pb-8">
+      <div className="md:mb-10 mb-6">
+        <Heading2 className="mb-4">Technical Skills</Heading2>
+        <div className="h-1 w-full rounded bg-primary"></div>
+      </div>
       
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
         {skillCategories.map((category, index) => (
           <div 
             key={index} 
-            className="bg-stone-50 rounded-lg md:rounded-xl p-4 md:p-5 shadow-sm hover:shadow-md transition-shadow duration-300"
+            className="bg-foreground rounded-lg md:rounded-xl p-4 md:p-5 shadow-sm hover:shadow-md transition-shadow duration-300"
           >
-            <Heading3 className="mb-2 md:mb-6 text-stone-700">{category.title}</Heading3>
-            <div className="flex flex-wrap gap-4">
+            <Heading3 className="mb-2 md:mb-4 text-stone-200">{category.title}</Heading3>
+            <div className="flex flex-wrap gap-3">
               {category.skills.map((skill, idx) => (
                 <Text 
                   key={idx} 
-                  className="inline-block bg-stone-100 px-2 py-1 md:px-4 md:py-3 rounded-md md:rounded-lg text-stone-700 text-lg font-medium hover:bg-stone-200 transition-colors duration-200"
+                  className="inline-block bg-primary px-2 py-1 md:px-3 md:py-2 rounded-md md:rounded-lg text-stone-700 text-lg font-semibold hover:bg-stone-200 transition-colors duration-200"
                 >
                   {skill}
                 </Text>

@@ -19,7 +19,7 @@ export default function Home() {
       <HomeSection />
 
       {/* Container for the rest of the sections */}
-      <div className="py-16 flex flex-col gap-[64px] items-center sm:items-start mx-auto max-w-7xl px-2 md:px-6 lg:px-8">
+      <div className="py-16 flex flex-col items-center sm:items-start mx-auto max-w-7xl px-2 md:px-6 lg:px-8">
         <About />
         <Skills />
         <Lifeline />

@@ -38,6 +38,9 @@ export interface ExperienceData {
   skills: string[];
   img: StaticImageData[];
   description: string[];
+  code: string,
+  site: string,
+  video: string,
 }
 
 const Experience = () => {
@@ -50,8 +53,11 @@ const Experience = () => {
       skills: ["Python", "C++", "HIP Programming", "Linux", "Embedded Systems"],
       img: [nn_img, cv_img, nlp_img, rnn_img, rl_img],
       description: [
-        "Benchmarked different clustering algorithms and optimized implementation for edge processing purposes"
-      ]
+        "Benchmarked different clustering algorithms and optimized implementation for gpu and vpu accelerated, edge processing purposes."
+      ],
+      code: "https://github.com/dionyichia/clustering",
+      site: "",
+      video: "https://www.youtube.com/watch?v=YT9dohAY-Kk",
     },
     {
       title: "Artificial Intelligence Engineer",
@@ -62,7 +68,10 @@ const Experience = () => {
       img: [nn_img, cv_img, nlp_img, rnn_img, rl_img],
       description: [
         "Benchmarked different clustering algorithms and optimized implementation for edge processing purposes"
-      ]
+      ],
+      code: "",
+      site: "",
+      video: "",
     },
     {
       title: "Business Development Intern",
@@ -73,7 +82,10 @@ const Experience = () => {
       img: [],
       description: [
         "Benchmarked different clustering algorithms and optimized implementation for edge processing purposes"
-      ]
+      ],
+      code: "",
+      site: "",
+      video: "",
     },
   ];
 
@@ -87,7 +99,10 @@ const Experience = () => {
       img: [],
       description: [
         "Benchmarked different clustering algorithms and optimized implementation for edge processing purposes"
-      ]
+      ],
+      code: "https://github.com/dionyichia/visual_field_test",
+      site: "",
+      video: "",
     },
     {
       title: "Inflatacare",
@@ -98,18 +113,24 @@ const Experience = () => {
       img: [infl, infl_home, infl_post],
       description: [
         "Benchmarked different clustering algorithms and optimized implementation for edge processing purposes"
-      ]
+      ],
+      code: "https://github.com/dionyichia/Inflatacare",
+      site: "",
+      video: "",
     },
     {
       title: "Finder",
       org: "Corrective-Retreival Augmented Generation for Student Notes",
       period: "May 2025 - August 2025",
       logo: dso_logo,
-      skills: ["Langchain", "Docker", "Marker (PDF Parsing)", "Ollama", "Milvus", "Flask", "WebSockets", "Semantic Chunking", "Merged Rank Retrieval", "Python"],
+      skills: ["Langchain", "Docker", "Marker (PDF Parsing)", "Ollama", "Milvus", "Flask", "WebSockets", "Semantic Chunking", "Merged Rank Retrieval"],
       img: [finder_img, rag_archi],
       description: [
         "Benchmarked different clustering algorithms and optimized implementation for edge processing purposes"
-      ]
+      ],
+      code: "https://github.com/dionyichia/finder",
+      site: "",
+      video: "https://www.youtube.com/watch?v=YT9dohAY-Kk",
     },
     {
       title: "MindScope",
@@ -120,7 +141,10 @@ const Experience = () => {
       img: [mindscope],
       description: [
         "Created personal landing page to collate past experiences, projects, and thoughts. Hope you enjoyed my page!"
-      ]
+      ],
+      code: "https://github.com/dionyichia/MindScope",
+      site: "",
+      video: "https://www.youtube.com/watch?v=GDiBVJ74Snk",
     },
     {
       title: "HomeFinder",
@@ -131,7 +155,10 @@ const Experience = () => {
       img: [hf_explore, hf_compare, hf_exp_loc, hf_logo],
       description: [
         "Benchmarked different clustering algorithms and optimized implementation for edge processing purposes"
-      ]
+      ],
+      code: "https://github.com/dionyichia/home-finder",
+      site: "",
+      video: "https://www.youtube.com/watch?v=L-36j67G9AU",
     },
     {
       title: "Landing Page",
@@ -142,7 +169,10 @@ const Experience = () => {
       img: [],
       description: [
         "Created personal landing page to collate past experiences, projects, and thoughts. Hope you enjoyed my page!"
-      ]
+      ],
+      code: "https://github.com/dionyichia/landing_page",
+      site: "https://www.dionyichia.com/",
+      video: "",
     },
     {
       title: "The Dating Platform",
@@ -153,7 +183,10 @@ const Experience = () => {
       img: [],
       description: [
         "Have you ever noticed how it is always so difficult to get swipes on dating platforms as a man? Well, as a 5'8 average looking male - I have :( BUT LOOK NO FURTHER, for the change is now!"
-      ]
+      ],
+      code: "",
+      site: "",
+      video: "",
     },
     {
       title: "Hospital Inventory Management System",
@@ -164,7 +197,10 @@ const Experience = () => {
       img: [],
       description: [
         "Benchmarked different clustering algorithms and optimized implementation for edge processing purposes"
-      ]
+      ],
+      code: "https://github.com/keechongwei/SC2002",
+      site: "",
+      video: "",
     },
   ];
 
@@ -173,19 +209,21 @@ const Experience = () => {
       {/* Heading with extended line */}
       <div className="mb-12">
         <Heading2 className="mb-4">Experience</Heading2>
-        <div className="h-1 w-full bg-gray-300 rounded"></div>
+        <div className="h-1 w-full bg-primary rounded"></div>
       </div>
 
-      {/* Work Experience Section */}
-      <div className="mb-16 flex flex-col flex-nowrap items-stretch px-0 md:px-8 lg:px-16">
-        <Heading2 className="mb-8 flex justify-center text-2xl">Work Experience</Heading2>
-        <GridSlider experiences={workExperience} />
-      </div>
+      <div className="flex flex-col gap-y-16">
+        {/* Work Experience Section */}
+        <div className="flex flex-col flex-nowrap items-stretch px-0 md:px-2 lg:px-4">
+          <Heading2 className="mb-2 flex justify-center text-2xl">Work Experience</Heading2>
+          <GridSlider experiences={workExperience} />
+        </div>
 
-      {/* Projects & Competitions Section */}
-      <div className="flex flex-col flex-nowrap items-stretch px-0 md:px-8 lg:px-16"> 
-        <Heading2 className="mb-8 text-2xl text-center">Projects & Competitions</Heading2>
-        <GridSlider experiences={projectsAndCompetitions} />
+        {/* Projects & Competitions Section */}
+        <div className="flex flex-col flex-nowrap items-stretch px-0 md:px-2 lg:px-4"> 
+          <Heading2 className="mb-2 text-2xl text-center">Projects & Competitions</Heading2>
+          <GridSlider experiences={projectsAndCompetitions} />
+        </div>
       </div>
     </div>
   );

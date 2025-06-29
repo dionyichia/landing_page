@@ -181,24 +181,24 @@ const Lifeline = () => {
     <section className="py-8 md:py-16 w-full">
         {/* Header */}
         <div className="mb-8 md:mb-16">
-          <Heading2 className="text-left text-stone-800 mb-4">
+          <Heading2 className="text-left mb-4">
             My Journey
           </Heading2>
-          <div className="w-full h-1 bg-gray-400 mx-auto rounded-full"></div>
+          <div className="w-full h-1 bg-primary mx-auto rounded-full"></div>
         </div>
 
         {/* Timeline Container */}
-        <div ref={containerRef} className="relative max-w-4xl mx-auto">
+        <div ref={containerRef} className="relative lg:w-19/20 mx-auto">
           {/* Timeline Line */}
-          <div className="absolute left-8 top-0 bottom-0 w-0.5 bg-stone-200 hidden md:block">
+          <div className="absolute left-8 top-6 bottom-0 w-0.5 bg-primary hidden md:block">
             <motion.div
-              className="w-full bg-gradient-to-b from-stone-600 to-stone-800 origin-top"
+              className="w-full bg-gradient-to-b from-primary-foreground to-font origin-top"
               style={{ height: lineHeight }}
             />
           </div>
 
           {/* Timeline Events */}
-          <div className="space-y-8 md:space-y-16">
+          <div className="space-y-6">
             {timelineEvents.map((event, index) => {
               const IconComponent = event.icon;
               const isVisible = visibleItems.has(index);
@@ -207,32 +207,32 @@ const Lifeline = () => {
                 <motion.div
                   key={index}
                   data-timeline-item
-                  className="relative flex items-start gap-4 md:gap-12"
+                  className="relative flex items-start gap-4 md:gap-6"
                   variants={itemVariants}
                   initial="hidden"
                   animate={isVisible ? "visible" : "hidden"}
                 >
                   {/* Timeline Point with Icon, Show only on  md size screens and above */}
                   <motion.div
-                    className="relative z-10 flex-shrink-0 hidden md:block"
+                    className="relative z-10 flex-shrink-0 pt-6 hidden md:block"
                     variants={iconVariants}
                     initial="hidden" 
                     animate={isVisible ? "visible" : "hidden"}
                   >
                     <div className="w-16 h-16 bg-white border-4 border-stone-600 rounded-full flex items-center justify-center shadow-lg">
-                      <IconComponent className="w-7 h-7 text-stone-700" />
+                      <IconComponent className="w-7 h-7 text-font" />
                     </div>
                   </motion.div>
 
                   {/* Content Card */}
                   <div className="flex-grow min-w-0">
-                    <div className="bg-white rounded-xl md:p-6 hover:shadow-md transition-all duration-300 hover:border-stone-200">
+                    <div className="rounded-xl md:p-6 hover:shadow-md transition-all duration-300 hover:border-stone-200">
                       {/* Title and Date */}
-                      <div className="flex flex-row no-wrap justify-between">
+                      <div className="flex flex-row no-wrap justify-between gap-2">
                          <Heading3 className="font-bold text-stone-800 md:mb-2">
                           {event.title}
                         </Heading3>
-                        <Text className="inline-block no-wrap">
+                        <Text className="inline-block no-wrap text-right">
                           {event.period}
                         </Text>
                       </div>

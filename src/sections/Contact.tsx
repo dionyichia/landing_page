@@ -6,14 +6,14 @@ import Image from 'next/image';
 
 const Contact = () => {
   return (
-    <section className="py-8 md:py-16 w-full bg-white" id="contact">
+    <section className="py-8 md:py-16 w-full bg-background" id="contact">
       <div className="max-w-7xl mx-auto">
         {/* Header */}
         <div className="mb-12 w-full">
           <Heading2 className="mb-4 text-stone-800 text-left">
             Contact
           </Heading2>
-          <div className="h-1 w-full bg-gray-300 rounded"></div>
+          <div className="h-1 w-full bg-primary rounded"></div>
         </div>
 
         {/* Main Content */}

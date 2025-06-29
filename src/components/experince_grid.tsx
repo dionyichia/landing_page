@@ -5,6 +5,11 @@ import { ExperienceData } from "@/sections/Experience";
 import { Heading4, Paragraph, Text } from "./typography";
 import Image from "next/image";
 
+import code from "@/assets/code.svg"
+import yt from "@/assets/youtube.svg"
+import web from "@/assets/web.svg"
+import Link from 'next/link';
+
 interface ExperienceGridProps {
   experience: ExperienceData;
 }
@@ -26,49 +31,97 @@ const ExperienceGrid = ({ experience }: ExperienceGridProps) => {
     }, [experience.img]);
 
     return (
-        <div className="flex flex-col md:grid md:grid-cols-2 md:grid-rows-[auto_250px] gap-4 md:gap-6 bg-white rounded-lg transition-shadow duration-300">
+        <div className="flex flex-col md:grid md:grid-cols-2 md:grid-rows-[auto_250px] p-2 md:p-6 gap-4 md:gap-8 rounded-lg transition-shadow duration-300">
             {/* Header Section */}
-            <div className="order-1 md:col-start-1 md:col-end-2 md:row-start-1 md:row-end-2 flex items-start justify-between">
-                <div className="flex-1">
-                    <Heading4 className="text-xl font-bold text-gray-900 mb-1">
-                        {experience.title}
-                    </Heading4>
-                    <Text className="text-stone-600 font-medium">
-                        {experience.org}
-                    </Text>
-                    <Text className="text-gray-500 font-medium">
-                        {experience.period}
-                    </Text>
+            <div className='order-1 md:col-start-1 md:col-end-2 md:row-start-1 md:row-end-2 flex flex-col flex-nowrap justify-between'>
+                <div className="flex items-start justify-between">
+                    <div className="flex-1">
+                        <Heading4 className="text-xl font-bold mb-1">
+                            {experience.title}
+                        </Heading4>
+                        <Text className="font-medium">
+                            {experience.org}
+                        </Text>
+                        <Text className="font-medium">
+                            {experience.period}
+                        </Text>
+                    </div>
+
+                    {/* Logo placeholder */}
+                    <div className="w-24 h-24 bg-gray-100 rounded-lg flex items-center justify-center ml-2 md:ml-4 relative overflow-hidden">
+                    <Image
+                        src={experience.logo}
+                        alt="Company Logo"
+                        fill 
+                        className="object-contain"
+                    />
+                    </div>
                 </div>
 
-                {/* Logo placeholder */}
-                <div className="w-24 h-24 bg-gray-100 rounded-lg flex items-center justify-center ml-2 md:ml-4 relative overflow-hidden">
-                <Image
-                    src={experience.logo}
-                    alt="Company Logo"
-                    fill 
-                    className="object-contain"
-                />
+                {/* Link Section - Conditional Icons */}
+                <div className='flex items-center gap-3 pt-6 md:pt-10'>
+                    {experience.code && (
+                        <Link 
+                            href={experience.code}
+                            className="group relative p-2 rounded-lg bg-primary hover:bg-gray-100 transition-all duration-200 hover:scale-105"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        >
+                            <Image 
+                                src={code} 
+                                alt="View code repository"
+                                width={24}
+                                height={24}
+                                className="w-4 h-4 md:w-6 md:h-6 transition-transform group-hover:scale-110"
+                            />
+                            <span className="absolute -top-10 left-1/2 transform -translate-x-1/2 bg-black text-white text-xs px-2 py-1 rounded opacity-0 group-hover:opacity-100 transition-opacity duration-200 whitespace-nowrap">
+                                View Code
+                            </span>
+                        </Link>
+                    )}
+                    
+                    {experience.site && (
+                        <Link 
+                            href={experience.site}
+                            className="group relative p-2 rounded-lg bg-primary hover:bg-green-50 transition-all duration-200 hover:scale-105"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        >
+                            <Image 
+                                src={web} 
+                                alt="Visit live demo"
+                                width={24}
+                                height={24}
+                                className="w-4 h-4 md:w-6 md:h-6 transition-transform group-hover:scale-110"
+                            />
+                            <span className="absolute -top-10 left-1/2 transform -translate-x-1/2 bg-black text-white text-xs px-2 py-1 rounded opacity-0 group-hover:opacity-100 transition-opacity duration-200 whitespace-nowrap">
+                                Live Demo
+                            </span>
+                        </Link>
+                    )}
+                    
+                    {experience.video && (
+                        <Link 
+                            href={experience.video}
+                            className="group relative p-2 rounded-lg bg-primary hover:bg-red-50 transition-all duration-200 hover:scale-105"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        >
+                            <Image 
+                                src={yt} 
+                                alt="Watch video demo"
+                                width={24}
+                                height={24}
+                                className="w-4 h-4 md:w-6 md:h-6 transition-transform group-hover:scale-110"
+                            />
+                            <span className="absolute -top-10 left-1/2 transform -translate-x-1/2 bg-black text-white text-xs px-2 py-1 rounded opacity-0 group-hover:opacity-100 transition-opacity duration-200 whitespace-nowrap">
+                                Watch Video
+                            </span>
+                        </Link>
+                    )}
                 </div>
-
             </div>
 
-            {/* Skills Section */}
-            {experience.skills && experience.skills.length > 0 && (
-                <div className="order-3 md:col-start-2 md:col-end-3 md:row-start-1 md:row-end-2">
-                <Paragraph className="text-gray-600 font-bold">Relevant Skills and Technologies</Paragraph>
-                <div className="flex flex-wrap gap-1 md:gap-2">
-                    {experience.skills.map((skill, index) => (
-                    <Text
-                        key={index}
-                        className="px-2 py-1 md:px-4 md:py-2 bg-stone-100 text-stone-800 font-medium rounded-md flex items-center"
-                    >
-                        {skill}
-                    </Text>
-                    ))}
-                </div>
-                </div>
-            )}
 
             {/* Image Slider Section */}
             <div className="order-2 md:col-start-1 md:col-end-2 md:row-start-2 md:row-end-3">
@@ -115,6 +168,23 @@ const ExperienceGrid = ({ experience }: ExperienceGridProps) => {
                 </div>
             )}
             </div>
+
+            {/* Skills Section */}
+            {experience.skills && experience.skills.length > 0 && (
+                <div className="order-3 md:col-start-2 md:col-end-3 md:row-start-1 md:row-end-2 bg-primary-foreground p-2 md:p-3 rounded-md">
+                <Paragraph className="text-font-secondary font-bold">Relevant Skills and Technologies</Paragraph>
+                <div className="flex flex-wrap gap-1 md:gap-2">
+                    {experience.skills.map((skill, index) => (
+                    <Text
+                        key={index}
+                        className="px-2 py-1 md:px-4 md:py-2 bg-primary text-font-secondary border-accent font-medium rounded-md flex items-center"
+                    >
+                        {skill}
+                    </Text>
+                    ))}
+                </div>
+                </div>
+            )}
 
             {/* Description Section */}
             <div className="order-4 md:col-start-2 md:col-end-3 md:row-start-2 md:row-end-3">

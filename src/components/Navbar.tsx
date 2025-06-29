@@ -1,23 +1,46 @@
 "use client";
 
-import { useState } from "react";
-import { Sun, FileText } from "lucide-react";
+import { useState, useEffect } from "react";
+import { Sun, Moon, FileText } from "lucide-react";
 import { Link } from "react-scroll";
+import { useTheme } from 'next-themes'
 
 const NavBar = () => {
+  const [mounted, setMounted] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
 
   const toggleMenu = () => setMenuOpen((prev) => !prev);
 
+  const { theme, setTheme } = useTheme()
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
+  // Show a skeleton or neutral state until mounted
+  if (!mounted) {
+    return (
+      <div className="relative flex flex-row flex-nowrap justify-between items-center px-2 md:px-8 lg:px-12 py-4 md:py-6 mx-4 md:mx-8 lg:mx-12 bg-background border-b border-border">
+        <div className="text-xl font-bold text-foreground">Logo</div>
+        <div className="flex items-center space-x-2">
+          {/* Neutral button states */}
+          <div className="w-10 h-10 rounded-md bg-secondary"></div>
+          <div className="w-10 h-10 rounded-md bg-secondary"></div>
+          <div className="w-10 h-10 rounded-md bg-secondary"></div>
+        </div>
+      </div>
+    );
+  }
+
   return (
-    <div className="relative flex flex-row flex-nowrap justify-between items-center px-2 md:px-8 lg:px-12 py-4 md:py-6 mx-4 md:mx-8 lg:mx-12 bg-white dark:bg-stone-900 border-b border-stone-200 dark:border-stone-800">
+    <div className="relative flex flex-row flex-nowrap justify-between items-center px-2 md:px-8 lg:px-12 py-4 md:py-6 mx-4 md:mx-8 lg:mx-12 bg-background border-b">
       {/* Logo */}
-      <div className="text-xl font-bold text-stone-800 dark:text-stone-200">
+      <div className="text-xl font-bold">
         Logo
       </div>
 
       {/* Navigation Links (Desktop) */}
-      <nav className="absolute text-xl left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 hidden md:flex items-center space-x-4 lg:space-x-8 font-medium text-stone-600 dark:text-stone-300">
+      <nav className="absolute text-2xl left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 hidden md:flex items-center space-x-4 lg:space-x-8 font-normal">
         {["about", "experience", "contact"].map((section) => (
           <button
             key={section}
@@ -29,6 +52,7 @@ const NavBar = () => {
               spy={true}
               smooth={true}
               duration={500}
+              offset={-48}
             >
               {section.charAt(0).toUpperCase() + section.slice(1)}
             </Link>
@@ -38,20 +62,20 @@ const NavBar = () => {
 
       {/* Action Buttons */}
       <div className="flex items-center space-x-2">
-        <button className="w-10 h-10 rounded-md flex items-center justify-center bg-stone-100 hover:bg-stone-200 dark:bg-stone-800 dark:hover:bg-stone-700 text-stone-700 dark:text-stone-300 transition-colors">
-          <Sun size={20} />
+        <button onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')} className="w-10 h-10 rounded-md flex items-center justify-center bg-primary hover:bg-stone-200 dark:bg-stone-800 dark:hover:bg-stone-700 text-stone-700 dark:text-stone-300 transition-colors">
+          {theme === "dark" ? <Moon size={20}/> : <Sun size={20} />}
         </button>
-        <button className="w-10 h-10 rounded-md flex items-center justify-center bg-stone-100 hover:bg-stone-200 dark:bg-stone-800 dark:hover:bg-stone-700 text-stone-700 dark:text-stone-300 transition-colors">
+        <button className="w-10 h-10 rounded-md flex items-center justify-center bg-primary hover:bg-accent-foreground transition-colors">
           <span className="text-lg">中</span>
         </button>
-        <button className="w-10 h-10 rounded-md flex items-center justify-center bg-stone-100 hover:bg-stone-200 dark:bg-stone-800 dark:hover:bg-stone-700 text-stone-700 dark:text-stone-300 transition-colors">
+        <button className="w-10 h-10 rounded-md flex items-center justify-center bg-primary hover:bg-stone-200 dark:bg-stone-800 dark:hover:bg-stone-700 text-stone-700 dark:text-stone-300 transition-colors">
           <FileText size={20} />
         </button>
 
         {/* Mobile Menu Button */}
         <button
           onClick={toggleMenu}
-          className="md:hidden w-10 h-10 rounded-md flex items-center justify-center bg-stone-100 hover:bg-stone-200 dark:bg-stone-800 dark:hover:bg-stone-700 text-stone-700 dark:text-stone-300 transition-colors"
+          className="md:hidden w-10 h-10 rounded-md flex items-center justify-center bg-primary hover:bg-stone-200 dark:bg-stone-800 dark:hover:bg-stone-700 text-stone-700 dark:text-stone-300 transition-colors"
         >
           <span className="sr-only">Open menu</span>
           <svg
@@ -73,7 +97,7 @@ const NavBar = () => {
 
       {/* Mobile Slide-Out Menu */}
       {menuOpen && (
-        <div className="absolute top-full left-0 w-full flex flex-col bg-stone-50 dark:bg-stone-900 border-t border-stone-200 dark:border-stone-800 md:hidden z-50">
+        <div className="absolute top-full left-0 w-full flex flex-col bg-primary dark:bg-stone-900 border-t border-stone-200 dark:border-stone-800 md:hidden z-50">
           {["about", "experience", "contact"].map((section) => (
             <button
               key={section}

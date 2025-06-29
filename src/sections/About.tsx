@@ -4,29 +4,29 @@ import Image from "next/image";
 
 const About = () => {
   return (
-    <section id="about" className="">
+    <section id="about" className="min-h-screen py-8 md:py-16">
       {/* Heading with extended line */}
-      <div className="md:mb-16 mb-8">
-        <Heading2 className="mb-2">About Me</Heading2>
-        <div className="h-1 w-full bg-gray-300 rounded"></div>
+      <div className="md:mb-10 mb-6">
+        <Heading2 className="mb-4">About Me</Heading2>
+        <div className="h-1 w-full rounded bg-primary"></div>
       </div>
       
       {/* Content container */}
-      <div className="flex flex-col md:flex-row gap-16 items-center md:items-start md:px-8">
+      <div className="flex flex-col md:flex-row gap-16 items-center md:items-start md:px-4">
         {/* Text content - takes 3/5 on desktop */}
-        <div className="order-2 w-full md:w-3/5 md:order-1">
+        <div className="order-2 w-full md:w-3/5 md:order-1 flex-col gap-4">
           <Paragraph>
-            As a passionate software developer with over 8 years of experience, I specialize in building 
-            modern web applications using React, Next.js, and TypeScript. My approach combines technical 
-            expertise with creative problem-solving to deliver exceptional user experiences. Throughout 
-            my career, I&apos;ve collaborated with cross-functional teams to bring innovative solutions to 
-            complex challenges. 
+            I&apos;m an aspiring technical strategist specialising in Computer Engineering. 
+            I&apos;m passionate about building solutions that impact, and thrive at the intersection of tech, people, and product. 
+            This summer, I&apos;m interning as an Algorithm Engineer at DSO National Laboratories, optimising clustering algorithms used for de-interleaving signals.
           </Paragraph>
           <Paragraph>
-            When I&apos;m not coding, you can find me exploring new technologies, 
-            contributing to open-source projects, or mentoring aspiring developers. I&apos;m driven by the 
-            belief that thoughtful design and clean code can make a meaningful impact on how people 
-            interact with technology.
+            Currently, a Year 3 Computer Engineering student under Nanyang Technological University&apos;s Renaissance Engineering Programme, a scholarship program with an accelerated Master's degree in Tech Management.
+          </Paragraph>
+          <Paragraph>
+            Outside of tech, I&apos;m always chasing the next challenge. 
+            From representing my school National Taekwondo Competitions, to surfing waves in Portugal, performing live as part of a band, and solo-backpacking across Europe, I love pushing myself to explore unfamiliar terrain — physically, creatively, and culturally. 
+            Now, I&apos;m taking on a new frontier, training for my first Ironman 70.3 Oceanside in Spring 2026!
           </Paragraph>
         </div>
         
