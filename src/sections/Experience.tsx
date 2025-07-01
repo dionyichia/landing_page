@@ -1,7 +1,7 @@
 "use client"
 
 import GridSlider from "@/components/experince_grid_slider";
-import { Heading2 } from "@/components/typography";
+import { Heading2} from "@/components/typography";
 
 import dso_logo from "@/assets/dso_national_laboratories_logo.jpeg";
 import lta_logo from "@/assets/lta_logo.jpeg";
@@ -215,7 +215,7 @@ const Experience = () => {
       <div className="flex flex-col gap-y-16">
         {/* Work Experience Section */}
         <div className="flex flex-col flex-nowrap items-stretch px-0 md:px-2 lg:px-4">
-          <Heading2 className="mb-2 flex justify-center text-2xl">Work Experience</Heading2>
+          <Heading2 className="mb-2 flex justify-center">Work Experience</Heading2>
           <GridSlider experiences={workExperience} />
         </div>
 

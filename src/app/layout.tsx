@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Arapey, Cormorant, Raleway, Questrial } from "next/font/google";
+import { Arapey, Cormorant, Raleway, Questrial, Bodoni_Moda, Work_Sans, Nunito_Sans } from "next/font/google";
 import { ThemeProvider } from 'next-themes'
 import "./globals.css";
 
@@ -9,6 +9,13 @@ const arapey = Arapey({
   variable: "--font-arapey",
 });
 
+const arapey_italic = Arapey({
+  weight: "400",
+  style: 'italic',
+  subsets: ["latin"],
+  variable: "--font-arapey_italic",
+});
+
 const cormorant = Cormorant({
   weight: "400",
   subsets: ["latin"],
@@ -16,7 +23,7 @@ const cormorant = Cormorant({
 });
 
 const raleway = Raleway({
-  weight: "600",
+  weight: "500",
   subsets: ["latin"],
   variable: "--font-raleway",
 });
@@ -25,6 +32,25 @@ const questrial = Questrial({
   weight: "400",
   subsets: ["latin"],
   variable: "--font-questrial",
+});
+
+const bodoni = Bodoni_Moda({
+  weight: "400",
+  subsets: ["latin"],
+  variable: "--font-bodoni",
+});
+
+
+const nunito = Nunito_Sans({
+  weight: "300",
+  subsets: ["latin"],
+  variable: "--font-nunito",
+});
+
+const work = Work_Sans({
+  weight: "400",
+  subsets: ["latin"],
+  variable: "--font-work",
 });
 
 
@@ -40,7 +66,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className={`${arapey.variable} ${cormorant.variable} ${raleway.variable} ${questrial.variable} antialiased`}>
+      <body className={`${arapey.variable} ${arapey_italic.variable} ${cormorant.variable} 
+                        ${raleway.variable} ${questrial.variable} ${bodoni.variable} 
+                        ${nunito.variable} ${work.variable}antialiased`}>
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
           {children}
         </ThemeProvider>  

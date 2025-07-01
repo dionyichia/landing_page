@@ -2,7 +2,7 @@
 import { useState, useEffect } from 'react';
 
 import { ExperienceData } from "@/sections/Experience";
-import { Heading4, Paragraph, Text } from "./typography";
+import { Heading3, Heading4, AccentText, SmallText } from "./typography";
 import Image from "next/image";
 
 import code from "@/assets/code.svg"
@@ -36,15 +36,15 @@ const ExperienceGrid = ({ experience }: ExperienceGridProps) => {
             <div className='order-1 md:col-start-1 md:col-end-2 md:row-start-1 md:row-end-2 flex flex-col flex-nowrap justify-between'>
                 <div className="flex items-start justify-between">
                     <div className="flex-1">
-                        <Heading4 className="text-xl font-bold mb-1">
+                        <Heading3 className="font-bold mb-1">
                             {experience.title}
-                        </Heading4>
-                        <Text className="font-medium">
+                        </Heading3>
+                        <Heading4 className="font-medium">
                             {experience.org}
-                        </Text>
-                        <Text className="font-medium">
+                        </Heading4>
+                        <AccentText className="font-medium">
                             {experience.period}
-                        </Text>
+                        </AccentText>
                     </div>
 
                     {/* Logo placeholder */}
@@ -134,11 +134,11 @@ const ExperienceGrid = ({ experience }: ExperienceGridProps) => {
                         className="transition-opacity duration-500"
                         sizes="(max-width: 768px) 100vw, 75vw"
                         priority={currentImageIndex === 0}
-                        onError={(e) => {
-                            console.error('Image failed to load:', experience.img[currentImageIndex]);
-                            // Optional: Set a fallback image
-                            // e.currentTarget.src = '/fallback-image.jpg';
-                        }}
+                        // onError={(e) => {
+                        //     console.error('Image failed to load:', experience.img[currentImageIndex]);
+                        //     // Optional: Set a fallback image
+                        //     // e.currentTarget.src = '/fallback-image.jpg';
+                        // }}
                     />
                 
                     {/* Hover overlay */}
@@ -170,32 +170,32 @@ const ExperienceGrid = ({ experience }: ExperienceGridProps) => {
             </div>
 
             {/* Skills Section */}
-            {experience.skills && experience.skills.length > 0 && (
-                <div className="order-3 md:col-start-2 md:col-end-3 md:row-start-1 md:row-end-2 bg-primary-foreground p-2 md:p-3 rounded-md">
-                <Paragraph className="text-font-secondary font-bold">Relevant Skills and Technologies</Paragraph>
+            <div className="order-3 md:col-start-2 md:col-end-3 md:row-start-1 md:row-end-3 flex flex-col gap-4">
+                <div className="bg-primary-foreground p-2 md:p-3 rounded-md">
+                <Heading4 className="text-font-secondary pb-2 ">Relevant Skills and Technologies</Heading4>
                 <div className="flex flex-wrap gap-1 md:gap-2">
                     {experience.skills.map((skill, index) => (
-                    <Text
+                    <SmallText
                         key={index}
-                        className="px-2 py-1 md:px-4 md:py-2 bg-primary text-font-secondary border-accent font-medium rounded-md flex items-center"
+                        className="px-2 py-1 md:px-4 md:py-2 bg-primary text-font-secondary border-accent rounded-md flex items-center"
                     >
                         {skill}
-                    </Text>
+                    </SmallText>
                     ))}
                 </div>
                 </div>
-            )}
 
-            {/* Description Section */}
-            <div className="order-4 md:col-start-2 md:col-end-3 md:row-start-2 md:row-end-3">
-            <Paragraph className="text-gray-600 font-bold">Description</Paragraph>
-            <ul className="space-y-2">
-                {experience.description.map((desc, index) => (
-                <Text key={index}>
-                    {desc}
-                </Text>
-                ))}
-            </ul>
+                {/* Description Section */}
+                <div className="">
+                <Heading4 className="pb-2">Description</Heading4>
+                <ul className="space-y-2">
+                    {experience.description.map((desc, index) => (
+                    <SmallText className="font-bold" key={index}>
+                        {desc}
+                    </SmallText>
+                    ))}
+                </ul>
+                </div>
             </div>
         </div>
     );

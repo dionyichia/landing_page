@@ -3,7 +3,7 @@
 import { useState, useEffect, useRef } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { BriefcaseBusiness, GraduationCap, Tent, Sword, HeartHandshake } from 'lucide-react';
-import { Heading2, Heading3, Paragraph, Text } from "@/components/typography";
+import { Heading2, Heading3, Heading4, Text, AccentText } from "@/components/typography";
 
 const Lifeline = () => {
   // Array of timeline events in chronological order (newest first)
@@ -96,7 +96,7 @@ const Lifeline = () => {
     {
       title: "Early Education Years",
       subtitle: "Singapore",
-      period: "07' - 18'",
+      period: "2007 - 2018",
       role: "",
       description: [
         "Mayflower Secondary School",
@@ -232,16 +232,16 @@ const Lifeline = () => {
                          <Heading3 className="font-bold text-stone-800 md:mb-2">
                           {event.title}
                         </Heading3>
-                        <Text className="inline-block no-wrap text-right">
+                        <AccentText className="inline-block no-wrap text-right italic">
                           {event.period}
-                        </Text>
+                        </AccentText>
                       </div>
                     
                       {/* Role Badge */}
                       {event.role && (
-                        <Paragraph className="inline-block text-sm font-medium rounded-full md:mb-2">
+                        <Heading4 className="inline-block text-sm font-medium rounded-full md:mb-2">
                           {event.role}
-                        </Paragraph>
+                        </Heading4>
                       )}
 
                       {/* Description */}

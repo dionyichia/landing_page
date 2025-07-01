@@ -21,7 +21,7 @@ const About = () => {
             This summer, I&apos;m interning as an Algorithm Engineer at DSO National Laboratories, optimising clustering algorithms used for de-interleaving signals.
           </Paragraph>
           <Paragraph>
-            Currently, a Year 3 Computer Engineering student under Nanyang Technological University&apos;s Renaissance Engineering Programme, a scholarship program with an accelerated Master's degree in Tech Management.
+            Currently, a Year 3 Computer Engineering student under Nanyang Technological University&apos;s Renaissance Engineering Programme, a scholarship program with an accelerated Master&apos;s degree in Tech Management.
           </Paragraph>
           <Paragraph>
             Outside of tech, I&apos;m always chasing the next challenge. 

@@ -1,14 +1,15 @@
 import React from 'react';
+import { Heading1, SubHeader } from "@/components/typography";
 
 const HomeSection = () => {
   return (
     <section className="flex flex-col items-center justify-center min-h-screen h-screen text-font w-full px-4">
       <div className="max-w-4xl mx-auto text-center">
-        <h1 className="text-5xl md:text-7xl font-bold tracking-wider mb-6">DION</h1>
+        <Heading1 className="tracking-wider mb-6">DION</Heading1>
         <div className="mt-6">
-          <p className="text-lg md:text-xl leading-relaxed">
+          <SubHeader>
             Building meaningful technology.
-          </p>
+          </SubHeader>
         </div>
       </div>
     </section>

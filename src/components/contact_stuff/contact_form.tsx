@@ -121,12 +121,12 @@ const ContactForm = () => {
                         id="name"
                         name="name"
                         placeholder="Name"
-                        className="w-full  text-sm md:text-base bg-gray-100 bg-opacity-50 hover:bg-stone-200 rounded border border-gray-300 focus:border-stone-500 focus:bg-white focus:ring-2 focus:ring-stone-200 outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
+                        className="font-cormorant w-full text-sm md:text-base bg-gray-100 bg-opacity-50 hover:bg-stone-200 rounded border border-gray-300 focus:border-stone-500 focus:bg-white focus:ring-2 focus:ring-stone-200 outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
                     />
                     <ErrorMessage
                         name="name"
                         component="div"
-                        className="text-red-500"
+                        className="font-cormorant text-red-400 text-sm md:text-base"
                     />
                     </div>
                 </div>
@@ -137,12 +137,12 @@ const ContactForm = () => {
                         id="email"
                         name="email"
                         placeholder="Email"
-                        className="w-full text-sm md:text-base bg-gray-100 bg-opacity-50 hover:bg-stone-200 rounded border border-gray-300 focus:border-stone-500 focus:bg-white focus:ring-2 focus:ring-stone-200 outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
+                        className="w-full font-cormorant text-sm md:text-base bg-gray-100 bg-opacity-50 hover:bg-stone-200 rounded border border-gray-300 focus:border-stone-500 focus:bg-white focus:ring-2 focus:ring-stone-200 outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
                     />
                     <ErrorMessage
                         name="email"
                         component="div"
-                        className="text-red-500"
+                        className="text-red-500 font-cormorant text-sm md:text-base"
                     />
                     </div>
                 </div>
@@ -153,12 +153,12 @@ const ContactForm = () => {
                         id="subject"
                         name="subject"
                         placeholder="Subject"
-                        className="w-full text-sm md:text-base bg-gray-100 bg-opacity-50 hover:bg-stone-200 rounded border border-gray-300 focus:border-stone-500 focus:bg-white focus:ring-2 focus:ring-stone-200 outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
+                        className="w-full font-cormorant text-sm md:text-base bg-gray-100 bg-opacity-50 hover:bg-stone-200 rounded border border-gray-300 focus:border-stone-500 focus:bg-white focus:ring-2 focus:ring-stone-200 outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
                     />
                     <ErrorMessage
                         name="subject"
                         component="div"
-                        className="text-red-500"
+                        className="text-red-500 font-cormorant  text-sm md:text-base"
                     />
                     </div>
                 </div>
@@ -169,19 +169,19 @@ const ContactForm = () => {
                         name="message"
                         as="textarea"
                         placeholder="Drop me a message!"
-                        className="w-full text-sm md:text-base bg-gray-100 bg-opacity-50 hover:bg-stone-200 rounded border border-gray-300 focus:border-stone-500 focus:bg-white focus:ring-2 focus:ring-stone-200 h-32 outline-none text-gray-700 py-1 px-3 resize-none leading-6 transition-colors duration-200 ease-in-out"
+                        className="w-full font-cormorant text-sm md:text-base bg-gray-100 bg-opacity-50 hover:bg-stone-200 rounded border border-gray-300 focus:border-stone-500 focus:bg-white focus:ring-2 focus:ring-stone-200 h-32 outline-none text-gray-700 py-1 px-3 resize-none leading-6 transition-colors duration-200 ease-in-out"
                     />
                     <ErrorMessage
                         name="message"
                         component="div"
-                        className="text-red-500 text-sm md:text-base "
+                        className="text-red-500 font-cormorant text-sm md:text-base"
                     />
                     </div>
                 </div>
                 <div className="p-2 w-full flex flex-row flex-nowrap justify-between">
                     <button
                     disabled={isLoading}
-                    className="flex text-sm md:text-base lg:text-xl items-start text-white bg-stone-500 border-0 py-2 px-2 md:px-8 focus:outline-none hover:bg-stone-600 rounded disabled:opacity-50 disabled:cursor-not-allowed"
+                    className="flex font-cormorant text-sm md:text-base lg:text-lg items-start text-white bg-stone-500 border-0 py-2 px-2 md:px-8 focus:outline-none hover:bg-stone-600 rounded disabled:opacity-50 disabled:cursor-not-allowed"
                     type="submit"
                     >
                     {isLoading ? "Sending..." : "Send Message"}

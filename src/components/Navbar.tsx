@@ -53,6 +53,7 @@ const NavBar = () => {
               smooth={true}
               duration={500}
               offset={-48}
+              className="font-arapey"
             >
               {section.charAt(0).toUpperCase() + section.slice(1)}
             </Link>

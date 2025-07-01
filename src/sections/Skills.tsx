@@ -1,30 +1,30 @@
 
-import { Heading2, Heading3, Text } from "@/components/typography";
+import { Heading2, Heading4, Text } from "@/components/typography";
 
 const Skills = () => {
   const skillCategories = [
     {
-      title: "Programming Languages",
+      title: "PROGRAMMING LANGUAGES",
       skills: ["Python", "C", "C++", "JavaScript", "TypeScript", "Java", "HTML/CSS", "Verilog"]
     },
     {
-      title: "Machine Learning & Data Science",
+      title: "MACHINE LEARNING & DATA SCIENCE",
       skills: ["TensorFlow", "scikit-learn", "LangChain", "pandas", "numpy", "Matplotlib"]
     },
     {
-      title: "Frontend & Backend Development",
+      title: "FRONTEND & BACKEND DEV",
       skills: ["React.js", "Next.js", "Tailwind", "React Router", "PyQT6"]
     },
     {
-      title: "Embedded Systems & IoT",
+      title: "EMBEDDED SYSTEMS & IOT",
       skills: ["Arduino", "Arduino Cloud", "MQTT", "Vivado"]
     },
     {
-      title: "DevOps",
+      title: "DEVOPS",
       skills: ["Git", "GitHub", "Microsoft Azure", "Vercel"]
     },
     {
-      title: "Languages & Others",
+      title: "LANGUAGES & OTHERS",
       skills: ["English", "Chinese", "Spanish", "Electric Bass", "Taekwondo", "Basketball"]
     }
   ];
@@ -42,7 +42,7 @@ const Skills = () => {
             key={index} 
             className="bg-foreground rounded-lg md:rounded-xl p-4 md:p-5 shadow-sm hover:shadow-md transition-shadow duration-300"
           >
-            <Heading3 className="mb-2 md:mb-4 text-stone-200">{category.title}</Heading3>
+            <Heading4 className="mb-2 md:mb-4 text-stone-200">{category.title}</Heading4>
             <div className="flex flex-wrap gap-3">
               {category.skills.map((skill, idx) => (
                 <Text 
