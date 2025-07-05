@@ -138,9 +138,9 @@
 } */
 
 .dark {
-  --background: #f8f7f2; 
+  --background: rgb(30, 30, 30); 
   --foreground: #505457;
-  --font-colour: #2d2926;
+  --font-colour: #f8f7f2;
   --font-colour-secondary: #f8f7f2;
   --primary: #c3c5c4;
   --primary-hover: oklch(0.85 0.003 48.717);

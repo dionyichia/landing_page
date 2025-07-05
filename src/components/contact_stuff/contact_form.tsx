@@ -181,7 +181,7 @@ const ContactForm = () => {
                 <div className="p-2 w-full flex flex-row flex-nowrap justify-between">
                     <button
                     disabled={isLoading}
-                    className="flex font-cormorant text-sm md:text-base lg:text-lg items-start text-white bg-stone-500 border-0 py-2 px-2 md:px-8 focus:outline-none hover:bg-stone-600 rounded disabled:opacity-50 disabled:cursor-not-allowed"
+                    className="bg-primary-foreground text-background hover:bg-foreground flex font-cormorant text-sm md:text-base lg:text-lg items-start border-0 py-2 px-2 md:px-8 focus:outline-none rounded disabled:opacity-50 disabled:cursor-not-allowed"
                     type="submit"
                     >
                     {isLoading ? "Sending..." : "Send Message"}

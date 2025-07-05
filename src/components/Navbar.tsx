@@ -40,11 +40,11 @@ const NavBar = () => {
       </div>
 
       {/* Navigation Links (Desktop) */}
-      <nav className="absolute text-2xl left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 hidden md:flex items-center space-x-4 lg:space-x-8 font-normal">
+      <nav className="absolute text-font text-2xl left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 hidden md:flex items-center space-x-4 lg:space-x-8 font-normal">
         {["about", "experience", "contact"].map((section) => (
           <button
             key={section}
-            className="px-2 py-1 transition-colors hover:text-stone-900 dark:hover:text-stone-100"
+            className="px-2 py-1 transition-colors opacity-70 hover:opacity-90"
           >
             <Link
               activeClass="active"
