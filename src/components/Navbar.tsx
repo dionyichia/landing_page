@@ -69,9 +69,15 @@ const NavBar = () => {
         <button className="w-10 h-10 rounded-md flex items-center justify-center btn transition-colors">
           <span className="text-lg">中</span>
         </button>
-        <button className="w-10 h-10 rounded-md flex items-center justify-center btn transition-colors">
-          <FileText size={20} />
-        </button>
+        <a
+          href="/Chia_Dion_Yi_Resume.pdf"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <button className="w-10 h-10 rounded-md flex items-center justify-center btn transition-colors">
+            <FileText size={20} />
+          </button>
+        </a>
 
         {/* Mobile Menu Button */}
         <button
