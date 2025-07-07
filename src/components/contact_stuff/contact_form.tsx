@@ -3,7 +3,7 @@
 import React, { useState, useEffect } from "react";
 
 import { validationSchema } from "@/utils/validation";
-import { Formik, Form, Field, ErrorMessage } from "formik";
+import { Formik, Form, Field, ErrorMessage, FormikProps } from "formik";
 import { toFormikValidationSchema } from "zod-formik-adapter";
 
 import { ToastContainer, toast } from "react-toastify";
@@ -111,6 +111,7 @@ const ContactForm = () => {
             validationSchema={toFormikValidationSchema(validationSchema)}
             onSubmit={handleSubmit}
         >
+            {({ errors, isValid }: FormikProps<FormValues>) => (
             <Form>
             <div className="mx-auto">
                 <div className="flex flex-wrap -m-2">
@@ -180,8 +181,8 @@ const ContactForm = () => {
                 </div>
                 <div className="p-2 w-full flex flex-row flex-nowrap justify-between">
                     <button
-                    disabled={isLoading}
-                    className="bg-primary-foreground text-background hover:bg-foreground flex font-cormorant text-sm md:text-base lg:text-lg items-start border-0 py-2 px-2 md:px-8 focus:outline-none rounded disabled:opacity-50 disabled:cursor-not-allowed"
+                    disabled={isLoading || !isValid || Object.keys(errors).length > 0}
+                    className="btn-primary flex font-cormorant text-sm md:text-base lg:text-lg items-start border-0 py-2 px-2 md:px-8 focus:outline-none rounded disabled:opacity-50 disabled:cursor-not-allowed"
                     type="submit"
                     >
                     {isLoading ? "Sending..." : "Send Message"}
@@ -213,6 +214,7 @@ const ContactForm = () => {
                 </div>
             </div>
             </Form>
+            )}
         </Formik>
 
         <ToastContainer
@@ -236,6 +238,7 @@ const ContactForm = () => {
                 recycle={true}
                 numberOfPieces={200}
                 gravity={0.3}
+                style={{ zIndex: 9999, position: 'fixed', top: 0, left: 0 }}
             />
         )}
         </>

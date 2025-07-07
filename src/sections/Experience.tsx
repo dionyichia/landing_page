@@ -27,7 +27,9 @@ import mindscope from "@/assets/MindScope.png"
 import rag_archi from "@/assets/rag_archi.png"
 import finder_img from "@/assets/finder.png"
 
-import { StaticImageData } from "next/image";
+import oop from "@/assets/2002.jpg"
+
+import { StaticImageData } from "next/image"
 
 
 export interface ExperienceData {
@@ -53,7 +55,8 @@ const Experience = () => {
       skills: ["Python", "C++", "HIP Programming", "Linux", "Embedded Systems"],
       img: [nn_img, cv_img, nlp_img, rnn_img, rl_img],
       description: [
-        "Benchmarked different clustering algorithms and optimized implementation for gpu and vpu accelerated, edge processing purposes."
+        "Optimised clustering algorithms for gpu acceleration, improving clustering efficiency by 80%",
+        "Developed in an offline Linux environment."
       ],
       code: "https://github.com/dionyichia/clustering",
       site: "",
@@ -67,7 +70,8 @@ const Experience = () => {
       skills: ["Retreieval Augmented Generation", "Computer Vision","Reinforcement Learning", "Generative AI"],
       img: [nn_img, cv_img, nlp_img, rnn_img, rl_img],
       description: [
-        "Benchmarked different clustering algorithms and optimized implementation for edge processing purposes"
+        "Researched on five different fields of Artificial Intelligence: ANNs, CNNs, Generative AI, Retrieval Augmented Generation, Reinforcement Learning.",
+        ""
       ],
       code: "",
       site: "",
@@ -81,7 +85,8 @@ const Experience = () => {
       skills: ["Javascript", "Google Appscript", "B2B Sales", "Lead Generation"],
       img: [],
       description: [
-        "Benchmarked different clustering algorithms and optimized implementation for edge processing purposes"
+        "Developed tools such as an automated mailing and reminder system, to automate Customer-Relations Management processes, reducing manual outreach workload by 30%.",
+        "Generated over 50 leads and sucessfully closed 3 partners, through various outreach programmes and B2B sales."
       ],
       code: "",
       site: "",
@@ -91,14 +96,15 @@ const Experience = () => {
 
   const projectsAndCompetitions: ExperienceData[] = [
     {
-      title: "EyeTraker - Visual Field Analyser",
+      title: "EyeTracker - Visual Field Analyser",
       org: "Tan Tock Seng General Hospital",
       period: "May 2025 - August 2025",
-      logo: dso_logo,
-      skills: ["Computer Vision", "Python", "PyQT6", "Arduino", "Serial"],
+      logo: lta_logo,
+      skills: ["Computer Vision", "Python", "C", "PyQT6", "Arduino", "Serial"],
       img: [],
       description: [
-        "Benchmarked different clustering algorithms and optimized implementation for edge processing purposes"
+        "Created pre-assessment tutorial booth to better prepare patients for the Humphrey Visual Field test.",
+        "Pythonic computer vision system with manual image processing, integrated with an arduino and other hardware modules (e.g. Pan-tilt servo system, lasers, buzzers etc.)",
       ],
       code: "https://github.com/dionyichia/visual_field_test",
       site: "",
@@ -107,12 +113,14 @@ const Experience = () => {
     {
       title: "Inflatacare",
       org: "Renaissance Engineering Program (REP), Singapore",
-      period: "May 2025 - August 2025",
+      period: "August 2024 - April 2025",
       logo: dso_logo,
       skills: ["Node.js", "Vite", "MQTT", "Arduino Cloud", "Javascript", "Hardware - Software Integration"],
       img: [infl, infl_home, infl_post],
       description: [
-        "Benchmarked different clustering algorithms and optimized implementation for edge processing purposes"
+        "A comprehensive smart inflation device designed to assist everyday movement (e.g. sitting upright) and to combat bedsores amongst elderly patients.",
+        "By monitoring pressure points and providing automated inflation controls, the system helps prevent pressure ulcers that develop from prolonged periods in the same position",
+        "Interfaced with webapp connected to Arduino Cloud Server to visualize pressure data in real-time and allows caregivers or patients to control inflation settings to redistribute pressure as needed."
       ],
       code: "https://github.com/dionyichia/Inflatacare",
       site: "",
@@ -121,12 +129,13 @@ const Experience = () => {
     {
       title: "Finder",
       org: "Corrective-Retreival Augmented Generation for Student Notes",
-      period: "May 2025 - August 2025",
+      period: "November 2024 - December 2024",
       logo: dso_logo,
       skills: ["Langchain", "Docker", "Marker (PDF Parsing)", "Ollama", "Milvus", "Flask", "WebSockets", "Semantic Chunking", "Merged Rank Retrieval"],
       img: [finder_img, rag_archi],
       description: [
-        "Benchmarked different clustering algorithms and optimized implementation for edge processing purposes"
+        "A tool to help students search through their documents and notes easily. Simply upload all notes and relevant documents and query the chatbot to get line-specific replies.",
+        "A adpative RAG solution integrated with a Flask frontend, using Langgraph for agentic behaviour. Web-search is also available."
       ],
       code: "https://github.com/dionyichia/finder",
       site: "",
@@ -135,26 +144,30 @@ const Experience = () => {
     {
       title: "MindScope",
       org: "A mutimodal mental health classifier for early student mental disorder detection",
-      period: "May 2025",
+      period: "March 2025 - April 2025",
       logo: dso_logo,
       skills: ["Next.js", "Tailwind CSS", "Typescript"],
       img: [mindscope],
       description: [
-        "Created personal landing page to collate past experiences, projects, and thoughts. Hope you enjoyed my page!"
+        "A early-stage predictor of depression and severe anxiety in university students.",
+        "A multimodal approach, applying various machine learning techniques to build a balanced tool that takes input from various mediums. (e.g. multiple choice answers, short essays about their day)",
+        "Combination of a fine-tuned llama-3.1 model for sentiment analysis, a ANN trained for depression classification, and a Support Vector Machine for anxiety classification."
       ],
       code: "https://github.com/dionyichia/MindScope",
-      site: "",
+      site: "https://huggingface.co/fiendfrye/mental-status-classifier-lama-3.1-8b-fine-tuned",
       video: "https://www.youtube.com/watch?v=GDiBVJ74Snk",
     },
     {
       title: "HomeFinder",
       org: "Software Engineering Module Final Project",
-      period: "May 2025 - August 2025",
+      period: "Jan 2025 - April 2025",
       logo: dso_logo,
       skills: ["React", "Typescript", "React Router", "Flask", "SQLite", "Python", "Object Oriented Programming"],
       img: [hf_explore, hf_compare, hf_exp_loc, hf_logo],
       description: [
-        "Benchmarked different clustering algorithms and optimized implementation for edge processing purposes"
+        "A tool designed to help prospective homebuyers in Singapore find their ideal neighborhood based on personalized preferences and real-time data",
+        "Reccomends unqiue top 5 neighbourhoods for each user based on their ranked preferences (e.g. security, mobility, num schools) and budget.",
+        "Centralises crucial livability metrics, such as number of malls, schools, transport options and even police stations, and enables side-by-side neighbourhood comparison.",
       ],
       code: "https://github.com/dionyichia/home-finder",
       site: "",
@@ -177,12 +190,12 @@ const Experience = () => {
     {
       title: "The Dating Platform",
       org: "NUS HacknRoll Hackfest 2024",
-      period: "May 2025 - August 2025",
+      period: "Feburary 2025",
       logo: dso_logo,
       skills: [],
       img: [],
       description: [
-        "Have you ever noticed how it is always so difficult to get swipes on dating platforms as a man? Well, as a 5'8 average looking male - I have :( BUT LOOK NO FURTHER, for the change is now!"
+        "Have you ever noticed how it is always so difficult to get quality swipes on dating platforms? Well, as a 5'7 average looking male - I have :( BUT LOOK NO FURTHER, for the change is now!"
       ],
       code: "",
       site: "",
@@ -191,12 +204,15 @@ const Experience = () => {
     {
       title: "Hospital Inventory Management System",
       org: "Software Engineering Module Final Project",
-      period: "May 2025 - August 2025",
+      period: "September 2024 - October 2024",
       logo: dso_logo,
       skills: ["Java", "Object Oriented Programming", "SOLID Principles"],
-      img: [],
+      img: [oop],
       description: [
-        "Benchmarked different clustering algorithms and optimized implementation for edge processing purposes"
+        "Hospital Mangement System developed using foundational Object-Oriented Programming Principles.",
+        "Enable role-limited functions such as account creation, patient registration, appointement management, billing and payment, mediciation dispensing, and stock management",
+        "Created class diagrams as part of good software development practice.",
+        "Used Git & Github for version control & collaboration."
       ],
       code: "https://github.com/keechongwei/SC2002",
       site: "",

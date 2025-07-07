@@ -219,8 +219,8 @@ const Lifeline = () => {
                     initial="hidden" 
                     animate={isVisible ? "visible" : "hidden"}
                   >
-                    <div className="w-16 h-16 bg-white border-4 border-stone-600 rounded-full flex items-center justify-center shadow-lg">
-                      <IconComponent className="w-7 h-7 text-font" />
+                    <div className="w-16 h-16 bg-foreground rounded-full text-font-secondary flex items-center justify-center shadow-lg">
+                      <IconComponent className="w-7 h-7" />
                     </div>
                   </motion.div>
 

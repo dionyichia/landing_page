@@ -33,7 +33,7 @@ const ExperienceGrid = ({ experience }: ExperienceGridProps) => {
     return (
         <div className="flex flex-col md:grid md:grid-cols-2 md:grid-rows-[auto_250px] p-2 md:p-6 gap-4 md:gap-8 rounded-lg transition-shadow duration-300">
             {/* Header Section */}
-            <div className='order-1 md:col-start-1 md:col-end-2 md:row-start-1 md:row-end-2 flex flex-col flex-nowrap justify-between'>
+            <div className='order-1 md:col-start-1 md:col-end-2 md:row-start-1 md:row-end-2 flex flex-col items-start flex-nowrap'>
                 <div className="flex items-start justify-between">
                     <div className="flex-1">
                         <Heading3 className="font-bold mb-1">
@@ -63,7 +63,7 @@ const ExperienceGrid = ({ experience }: ExperienceGridProps) => {
                     {experience.code && (
                         <Link 
                             href={experience.code}
-                            className="group relative p-2 rounded-lg bg-primary hover:bg-gray-100 transition-all duration-200 hover:scale-105"
+                            className="group relative p-2 rounded-lg btn"
                             target="_blank"
                             rel="noopener noreferrer"
                         >
@@ -177,7 +177,7 @@ const ExperienceGrid = ({ experience }: ExperienceGridProps) => {
                     {experience.skills.map((skill, index) => (
                     <SmallText
                         key={index}
-                        className="px-2 py-1 md:px-4 md:py-2 bg-primary text-font-secondary border-accent rounded-md flex items-center"
+                        className="px-2 py-1 md:px-4 md:py-2 bg-primary text-font border-accent rounded-md flex items-center"
                     >
                         {skill}
                     </SmallText>

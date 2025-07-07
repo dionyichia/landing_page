@@ -63,20 +63,20 @@ const NavBar = () => {
 
       {/* Action Buttons */}
       <div className="flex items-center space-x-2">
-        <button onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')} className="w-10 h-10 rounded-md flex items-center justify-center bg-primary hover:bg-stone-200 dark:bg-stone-800 dark:hover:bg-stone-700 text-stone-700 dark:text-stone-300 transition-colors">
+        <button onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')} className="w-10 h-10 rounded-md flex items-center justify-center btn transition-colors">
           {theme === "dark" ? <Moon size={20}/> : <Sun size={20} />}
         </button>
-        <button className="w-10 h-10 rounded-md flex items-center justify-center bg-primary hover:bg-accent-foreground transition-colors">
+        <button className="w-10 h-10 rounded-md flex items-center justify-center btn transition-colors">
           <span className="text-lg">中</span>
         </button>
-        <button className="w-10 h-10 rounded-md flex items-center justify-center bg-primary hover:bg-stone-200 dark:bg-stone-800 dark:hover:bg-stone-700 text-stone-700 dark:text-stone-300 transition-colors">
+        <button className="w-10 h-10 rounded-md flex items-center justify-center btn transition-colors">
           <FileText size={20} />
         </button>
 
         {/* Mobile Menu Button */}
         <button
           onClick={toggleMenu}
-          className="md:hidden w-10 h-10 rounded-md flex items-center justify-center bg-primary hover:bg-stone-200 dark:bg-stone-800 dark:hover:bg-stone-700 text-stone-700 dark:text-stone-300 transition-colors"
+          className="md:hidden w-10 h-10 rounded-md flex items-center justify-center btn transition-colors"
         >
           <span className="sr-only">Open menu</span>
           <svg
@@ -97,23 +97,30 @@ const NavBar = () => {
       </div>
 
       {/* Mobile Slide-Out Menu */}
-      {menuOpen && (
-        <div className="absolute top-full left-0 w-full flex flex-col bg-primary dark:bg-stone-900 border-t border-stone-200 dark:border-stone-800 md:hidden z-50">
+      <div
+        className={`absolute top-full right-0 w-full flex flex-col items-center rounded-2xl bg-primary border-t border-stone-200 md:hidden z-50
+          transition-all duration-300 ease-in-out
+          ${menuOpen ? "opacity-100 translate-y-0" : "opacity-0 -translate-y-2 pointer-events-none"}
+        `}
+      >
           {["about", "experience", "contact"].map((section) => (
             <button
               key={section}
               onClick={() => {
                 setMenuOpen(false);
                 const el = document.getElementById(section);
-                el?.scrollIntoView({ behavior: "smooth" });
+                if (el) {
+                  const yOffset = -48; // adjust this to your header height
+                  const y = el.getBoundingClientRect().top + window.pageYOffset + yOffset;
+                  window.scrollTo({ top: y, behavior: "smooth" });
+                }
               }}
-              className="w-full text-left px-6 py-4 font-medium text-stone-700 dark:text-stone-300 hover:bg-stone-100 dark:hover:bg-stone-800 transition-colors"
+              className="w-min text-center rounded-2xl px-6 py-4 transition-colors"
             >
               {section.charAt(0).toUpperCase() + section.slice(1)}
             </button>
           ))}
         </div>
-      )}
     </div>
   );
 };
