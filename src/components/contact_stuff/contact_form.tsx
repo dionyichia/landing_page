@@ -9,10 +9,8 @@ import { toFormikValidationSchema } from "zod-formik-adapter";
 import { ToastContainer, toast } from "react-toastify";
 import Confetti from "react-confetti";
 
-import GithubLogo from "@/assets/github.svg"
-import LinkedInLogo from "@/assets/linkedin.svg"
-import EmailLogo from "@/assets/email.svg"
-import Image from "next/image";
+import { FaGithub, FaLinkedin, FaEnvelope } from "react-icons/fa";
+
 import Link from "next/link";
 
 type FormValues = {
@@ -122,7 +120,7 @@ const ContactForm = () => {
                         id="name"
                         name="name"
                         placeholder="Name"
-                        className="font-cormorant w-full text-sm md:text-base bg-gray-100 bg-opacity-50 hover:bg-stone-200 rounded border border-gray-300 focus:border-stone-500 focus:bg-white focus:ring-2 focus:ring-stone-200 outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
+                        className="font-cormorant w-full text-sm md:text-base bg-white bg-opacity-50 hover:bg-gray-200 rounded border border-gray-300 focus:border-gray-500 focus:bg-white focus:ring-2 focus:ring-gray-200 outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
                     />
                     <ErrorMessage
                         name="name"
@@ -138,7 +136,7 @@ const ContactForm = () => {
                         id="email"
                         name="email"
                         placeholder="Email"
-                        className="w-full font-cormorant text-sm md:text-base bg-gray-100 bg-opacity-50 hover:bg-stone-200 rounded border border-gray-300 focus:border-stone-500 focus:bg-white focus:ring-2 focus:ring-stone-200 outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
+                        className="w-full font-cormorant text-sm md:text-base bg-white bg-opacity-50 hover:bg-gray-200 rounded border border-gray-300 focus:border-gray-500 focus:bg-white focus:ring-2 focus:ring-gray-200 outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
                     />
                     <ErrorMessage
                         name="email"
@@ -154,7 +152,7 @@ const ContactForm = () => {
                         id="subject"
                         name="subject"
                         placeholder="Subject"
-                        className="w-full font-cormorant text-sm md:text-base bg-gray-100 bg-opacity-50 hover:bg-stone-200 rounded border border-gray-300 focus:border-stone-500 focus:bg-white focus:ring-2 focus:ring-stone-200 outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
+                        className="w-full font-cormorant text-sm md:text-base bg-white bg-opacity-50 hover:bg-gray-200 rounded border border-gray-300 focus:border-gray-500 focus:bg-white focus:ring-2 focus:ring-gray-200 outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
                     />
                     <ErrorMessage
                         name="subject"
@@ -170,7 +168,7 @@ const ContactForm = () => {
                         name="message"
                         as="textarea"
                         placeholder="Drop me a message!"
-                        className="w-full font-cormorant text-sm md:text-base bg-gray-100 bg-opacity-50 hover:bg-stone-200 rounded border border-gray-300 focus:border-stone-500 focus:bg-white focus:ring-2 focus:ring-stone-200 h-32 outline-none text-gray-700 py-1 px-3 resize-none leading-6 transition-colors duration-200 ease-in-out"
+                        className="w-full font-cormorant text-sm md:text-base bg-white bg-opacity-50 hover:bg-gray-200 rounded border border-gray-300 focus:border-gray-500 focus:bg-white focus:ring-2 focus:ring-gray-200 h-32 outline-none text-gray-700 py-1 px-3 resize-none leading-6 transition-colors duration-200 ease-in-out"
                     />
                     <ErrorMessage
                         name="message"
@@ -193,21 +191,21 @@ const ContactForm = () => {
                             target="_blank" 
                             rel="noopener noreferrer"
                             className="transition-opacity hover:opacity-70" >
-                            <Image src={GithubLogo} alt="Github Icon" className="w-6 h-6 md:w-8 md:h-8 filter grayscale hover:grayscale-0 transition-all duration-200" />
+                            <FaGithub className="w-6 h-6 md:w-8 md:h-8 text-font hover:scale-105 filter grayscale hover:grayscale-0 transition-all" />
                         </Link>
                         <Link 
                             href="https://www.linkedin.com/in/dionyichia/" 
                             target="_blank" 
                             rel="noopener noreferrer"
                             className="transition-opacity hover:opacity-70" >
-                            <Image src={LinkedInLogo} alt="LinknedIn Icon" className="w-8 h-8 md:w-10 md:h-10 filter grayscale hover:grayscale-0 transition-all duration-200" />
+                            <FaLinkedin className="w-6 h-6 md:w-8 md:h-8 filter grayscale text-font hover:scale-105 hover:grayscale-0 transition-all duration-200" />
                         </Link>
                         <Link 
                             href="mailto:dionyichia@gmail.com?subject=Hello from your website&body=Hey Dion,%0D%0A%0D%0AI found your website and wanted to reach out..."
                             target="_blank" 
                             rel="noopener noreferrer"
                             className="transition-opacity hover:opacity-70" >
-                            <Image src={EmailLogo} alt="Email Icon" className="w-6 h-6 md:w-8 md:h-8 filter grayscale hover:grayscale-0 transition-all duration-200" />
+                            <FaEnvelope className="w-6 h-6 md:w-8 md:h-8 filter text-font hover:scale-105 grayscale hover:grayscale-0 transition-all duration-200" />
                         </Link>
                     </div>
                 </div>

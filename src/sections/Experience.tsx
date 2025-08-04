@@ -3,8 +3,8 @@
 import GridSlider from "@/components/experince_grid_slider";
 import { Heading2} from "@/components/typography";
 
-import dso_logo from "@/assets/dso_national_laboratories_logo.jpeg";
-import lta_logo from "@/assets/lta_logo.jpeg";
+import dso_logo from "@/assets/dso_logo.svg";
+import lta_logo from "@/assets/lta_no_bg.png";
 import cosmose_logo from "@/assets/cosmoseai_logo.jpeg";
 
 import nn_img from "@/assets/lta/nn_img.jpg"
@@ -27,6 +27,12 @@ import mindscope from "@/assets/MindScope.png"
 import rag_archi from "@/assets/rag_archi.png"
 import finder_img from "@/assets/finder.png"
 
+import hnr_logo from "@/assets/hnr_logo.svg"
+
+import ttsh from "@/assets/tan-tock-seng-hospital.svg"
+
+import rep_logo from "@/assets/rep_logo_no_bg.svg"
+
 import oop from "@/assets/2002.jpg"
 
 import { StaticImageData } from "next/image"
@@ -36,13 +42,13 @@ export interface ExperienceData {
   title: string;
   org: string;
   period: string;
-  logo: StaticImageData;
+  logo?: StaticImageData| null;
   skills: string[];
-  img: StaticImageData[];
+  img?: StaticImageData[]| null;
   description: string[];
-  code: string,
-  site: string,
-  video: string,
+  code?: string| null;
+  site?: string| null;
+  video?: string| null;
 }
 
 const Experience = () => {
@@ -99,7 +105,7 @@ const Experience = () => {
       title: "EyeTracker - Visual Field Analyser",
       org: "Tan Tock Seng General Hospital",
       period: "May 2025 - August 2025",
-      logo: lta_logo,
+      logo: ttsh,
       skills: ["Computer Vision", "Python", "C", "PyQT6", "Arduino", "Serial"],
       img: [],
       description: [
@@ -114,7 +120,7 @@ const Experience = () => {
       title: "Inflatacare",
       org: "Renaissance Engineering Program (REP), Singapore",
       period: "August 2024 - April 2025",
-      logo: dso_logo,
+      logo: rep_logo,
       skills: ["Node.js", "Vite", "MQTT", "Arduino Cloud", "Javascript", "Hardware - Software Integration"],
       img: [infl, infl_home, infl_post],
       description: [
@@ -127,15 +133,30 @@ const Experience = () => {
       video: "",
     },
     {
+      title: "Automated PowerPoint Generator",
+      org: "DSO Hackathon",
+      period: "July 2025",
+      logo: null,
+      skills: ["Azure Services", "Streamlit", "Uvicorn", "FastAPI ", "PymuPDF", "python-pptx"],
+      img: [],
+      description: [
+        "A slide generation tool that creates tailored PowerPoint presentations from your documents, templates and preferences.",
+        ""
+      ],
+      code: "https://github.com/dionyichia/finder",
+      site: "",
+      video: "https://www.youtube.com/watch?v=YT9dohAY-Kk",
+    },
+    {
       title: "Finder",
       org: "Corrective-Retreival Augmented Generation for Student Notes",
       period: "November 2024 - December 2024",
-      logo: dso_logo,
+      logo: null,
       skills: ["Langchain", "Docker", "Marker (PDF Parsing)", "Ollama", "Milvus", "Flask", "WebSockets", "Semantic Chunking", "Merged Rank Retrieval"],
       img: [finder_img, rag_archi],
       description: [
         "A tool to help students search through their documents and notes easily. Simply upload all notes and relevant documents and query the chatbot to get line-specific replies.",
-        "A adpative RAG solution integrated with a Flask frontend, using Langgraph for agentic behaviour. Web-search is also available."
+        "An adpative RAG solution integrated with a Flask frontend, using Langgraph for agentic behaviour. Web-search is also available."
       ],
       code: "https://github.com/dionyichia/finder",
       site: "",
@@ -145,7 +166,7 @@ const Experience = () => {
       title: "MindScope",
       org: "A mutimodal mental health classifier for early student mental disorder detection",
       period: "March 2025 - April 2025",
-      logo: dso_logo,
+      logo: null,
       skills: ["Next.js", "Tailwind CSS", "Typescript"],
       img: [mindscope],
       description: [
@@ -191,7 +212,7 @@ const Experience = () => {
       title: "The Dating Platform",
       org: "NUS HacknRoll Hackfest 2024",
       period: "Feburary 2025",
-      logo: dso_logo,
+      logo: hnr_logo,
       skills: [],
       img: [],
       description: [
@@ -205,7 +226,7 @@ const Experience = () => {
       title: "Hospital Inventory Management System",
       org: "Software Engineering Module Final Project",
       period: "September 2024 - October 2024",
-      logo: dso_logo,
+      logo: null,
       skills: ["Java", "Object Oriented Programming", "SOLID Principles"],
       img: [oop],
       description: [

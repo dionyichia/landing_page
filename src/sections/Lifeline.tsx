@@ -229,7 +229,7 @@ const Lifeline = () => {
                     <div className="rounded-xl md:p-6 hover:shadow-md transition-all duration-300 hover:border-stone-200">
                       {/* Title and Date */}
                       <div className="flex flex-row no-wrap justify-between gap-2">
-                         <Heading3 className="font-bold text-stone-800 md:mb-2">
+                         <Heading3 className="font-bold md:mb-2">
                           {event.title}
                         </Heading3>
                         <AccentText className="inline-block no-wrap text-right italic">

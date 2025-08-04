@@ -6,7 +6,7 @@ interface TextProps {
 }
 
 export const Heading1 = ({ children, className = '' }: TextProps) => (
-  <h1 className={`font-bodoni text-4xl md:text-6xl lg:text-8xl ${className}`}>
+  <h1 className={`font-bodoni text-5xl md:text-7xl lg:text-8xl ${className}`}>
     {children}
   </h1>
 );

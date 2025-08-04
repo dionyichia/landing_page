@@ -23,7 +23,7 @@ const Contact = () => {
           <div className="order-2 lg:order-1">
             <div className="mb-8">
               <Paragraph className="leading-relaxed">
-                Let&apos;s connect and discuss how we can work together. I&apos;d love to hear from you.
+                Thank you for visiting my website! If you have any questions or just want a quick chat, just drop a message. I&apos;d love to hear from you!
               </Paragraph>
             </div>
             <ContactForm/>

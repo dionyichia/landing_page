@@ -34,7 +34,7 @@ const ExperienceGrid = ({ experience }: ExperienceGridProps) => {
         <div className="flex flex-col md:grid md:grid-cols-2 md:grid-rows-[auto_250px] p-2 md:p-6 gap-4 md:gap-8 rounded-lg transition-shadow duration-300">
             {/* Header Section */}
             <div className='order-1 md:col-start-1 md:col-end-2 md:row-start-1 md:row-end-2 flex flex-col items-start flex-nowrap'>
-                <div className="flex items-start justify-between">
+                <div className="w-full flex items-start justify-between">
                     <div className="flex-1">
                         <Heading3 className="font-bold mb-1">
                             {experience.title}
@@ -48,13 +48,13 @@ const ExperienceGrid = ({ experience }: ExperienceGridProps) => {
                     </div>
 
                     {/* Logo placeholder */}
-                    <div className="w-24 h-24 bg-gray-100 rounded-lg flex items-center justify-center ml-2 md:ml-4 relative overflow-hidden">
-                    <Image
+                    <div className="md:w-20 md:h-20 rounded-lg flex items-center justify-center ml-2 md:ml-4 relative overflow-hidden">
+                    {experience.logo && <Image
                         src={experience.logo}
                         alt="Company Logo"
                         fill 
                         className="object-contain"
-                    />
+                    />}
                     </div>
                 </div>
 
@@ -171,13 +171,13 @@ const ExperienceGrid = ({ experience }: ExperienceGridProps) => {
 
             {/* Skills Section */}
             <div className="order-3 md:col-start-2 md:col-end-3 md:row-start-1 md:row-end-3 flex flex-col gap-4">
-                <div className="bg-primary-foreground p-2 md:p-3 rounded-md">
+                <div className="bg-primary-foreground dark:bg-foreground p-2 md:p-3 rounded-md">
                 <Heading4 className="text-font-secondary pb-2 ">Relevant Skills and Technologies</Heading4>
                 <div className="flex flex-wrap gap-1 md:gap-2">
                     {experience.skills.map((skill, index) => (
                     <SmallText
                         key={index}
-                        className="px-2 py-1 md:px-4 md:py-2 bg-primary text-font border-accent rounded-md flex items-center"
+                        className="px-2 py-1 md:px-4 md:py-2 bg-primary text-font dark:text-background border-accent rounded-md flex items-center"
                     >
                         {skill}
                     </SmallText>
@@ -190,7 +190,7 @@ const ExperienceGrid = ({ experience }: ExperienceGridProps) => {
                 <Heading4 className="pb-2">Description</Heading4>
                 <ul className="space-y-2">
                     {experience.description.map((desc, index) => (
-                    <SmallText className="font-bold" key={index}>
+                    <SmallText className="font-extrabold" key={index}>
                         {desc}
                     </SmallText>
                     ))}
