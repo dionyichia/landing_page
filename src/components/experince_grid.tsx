@@ -19,11 +19,11 @@ const ExperienceGrid = ({ experience }: ExperienceGridProps) => {
 
     // Auto-slide effect (every 5 seconds)
     useEffect(() => {
-        if (!experience.img || experience.img.length <= 1) return;
+        if (!Array.isArray(experience.img) || experience.img.length <= 1) return;
 
         const interval = setInterval(() => {
         setCurrentImageIndex((prev) => 
-            prev === experience.img.length - 1 ? 0 : prev + 1
+            prev === experience.img!.length - 1 ? 0 : prev + 1
         );
         }, 5000);
 
