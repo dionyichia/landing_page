@@ -11,8 +11,9 @@ export default function Home() {
   return (
     <div className="relative w-9/12 mx-auto bg-background">
       {/* Fixed navbar at the top */}
-      <div className="fixed top-0 right-0 left-0 z-50 px-8 md:px-12 lg:px-16">
-        <NavBar />
+      <div className="navbar">
+        {/* Need to reapply width styles because navbar class is fixed (not part of DOM, relative to viewport) */}
+        < NavBar className="w-9/12 mx-auto"/> 
       </div>
 
       {/* Full-screen home section */}

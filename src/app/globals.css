@@ -168,3 +168,18 @@
     background-color: var(--foreground);
   }
 }
+
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 50; /* To ensure it's above content */
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+
+body.scrolled .navbar {
+  opacity: 1;
+  background-color: var(--background);
+}

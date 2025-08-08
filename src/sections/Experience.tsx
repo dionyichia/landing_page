@@ -13,6 +13,11 @@ import nlp_img from "@/assets/lta/nlp_img.jpg"
 import rnn_img from "@/assets/lta/rnn_img.jpg"
 import rl_img from "@/assets/lta/rl_img.jpg"
 
+import presenter_view from "@/assets/slidr/presenter_view.png"
+import rdmap from "@/assets/slidr/roadmap.png"
+import slidr from "@/assets/slidr/slidr_gen.png"
+import tone_n_pres from "@/assets/slidr/tone_n_pres_len.png"
+
 import hf_compare from "@/assets/homefinder/compare.png"
 import hf_explore from "@/assets/homefinder/explore.png"
 import hf_exp_loc from "@/assets/homefinder/explore_location.png"
@@ -136,9 +141,9 @@ const Experience = () => {
       title: "Automated PowerPoint Generator",
       org: "DSO Hackathon",
       period: "July 2025",
-      logo: null,
+      logo: dso_logo,
       skills: ["Azure Services", "Streamlit", "Uvicorn", "FastAPI ", "PymuPDF", "python-pptx"],
-      img: [],
+      img: [slidr, rdmap, presenter_view, tone_n_pres],
       description: [
         "A slide generation tool that creates tailored PowerPoint presentations from your documents, templates and preferences.",
         ""

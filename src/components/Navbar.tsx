@@ -5,7 +5,11 @@ import { Sun, Moon, FileText } from "lucide-react";
 import { Link } from "react-scroll";
 import { useTheme } from 'next-themes'
 
-const NavBar = () => {
+interface NavBarProps {
+  className?: string;
+}
+
+const NavBar: React.FC<NavBarProps> = ({ className = "" }) => {
   const [mounted, setMounted] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
 
@@ -17,10 +21,22 @@ const NavBar = () => {
     setMounted(true);
   }, []);
 
+  useEffect(() => {
+    function onScroll() {
+      if (window.scrollY > 50) {
+        document.body.classList.add("scrolled");
+      } else {
+        document.body.classList.remove("scrolled");
+      }
+    }
+    window.addEventListener("scroll", onScroll);
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
+
   // Show a skeleton or neutral state until mounted
   if (!mounted) {
     return (
-      <div className="relative flex flex-row flex-nowrap justify-between items-center px-2 md:px-8 lg:px-12 py-4 md:py-6 mx-4 md:mx-8 lg:mx-12 bg-background border-b border-border">
+      <div className={`${className} relative flex flex-row flex-nowrap justify-between items-center py-4 md:py-6 bg-background border-b border-border`}>
         <div className="text-xl font-bold text-foreground">Logo</div>
         <div className="flex items-center space-x-2">
           {/* Neutral button states */}
@@ -33,7 +49,7 @@ const NavBar = () => {
   }
 
   return (
-    <div className="relative flex flex-row flex-nowrap justify-between items-center px-2 md:px-8 lg:px-12 py-4 md:py-6 mx-4 md:mx-8 lg:mx-12 bg-background border-b">
+    <div className={`${className} relative flex flex-row flex-nowrap justify-between items-center py-4 md:py-6 border-b`}>
       {/* Logo */}
       <div className="text-xl font-bold">
         Logo

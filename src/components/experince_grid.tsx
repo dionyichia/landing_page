@@ -74,7 +74,7 @@ const ExperienceGrid = ({ experience }: ExperienceGridProps) => {
                                 height={24}
                                 className="w-4 h-4 md:w-6 md:h-6 transition-transform group-hover:scale-110"
                             />
-                            <span className="absolute -top-10 left-1/2 transform -translate-x-1/2 bg-black text-white text-xs px-2 py-1 rounded opacity-0 group-hover:opacity-100 transition-opacity duration-200 whitespace-nowrap">
+                            <span className="absolute -top-8 left-1/2 transform -translate-x-1/2 bg-black text-white text-xs px-2 py-1 rounded opacity-0 group-hover:opacity-100 transition-opacity duration-200 whitespace-nowrap">
                                 View Code
                             </span>
                         </Link>
@@ -83,7 +83,7 @@ const ExperienceGrid = ({ experience }: ExperienceGridProps) => {
                     {experience.site && (
                         <Link 
                             href={experience.site}
-                            className="group relative p-2 rounded-lg bg-primary hover:bg-green-50 transition-all duration-200 hover:scale-105"
+                            className="group relative p-2 rounded-lg btn"
                             target="_blank"
                             rel="noopener noreferrer"
                         >
@@ -94,7 +94,7 @@ const ExperienceGrid = ({ experience }: ExperienceGridProps) => {
                                 height={24}
                                 className="w-4 h-4 md:w-6 md:h-6 transition-transform group-hover:scale-110"
                             />
-                            <span className="absolute -top-10 left-1/2 transform -translate-x-1/2 bg-black text-white text-xs px-2 py-1 rounded opacity-0 group-hover:opacity-100 transition-opacity duration-200 whitespace-nowrap">
+                            <span className="absolute -top-8 left-1/2 transform -translate-x-1/2 bg-black text-white text-xs px-2 py-1 rounded opacity-0 group-hover:opacity-100 transition-opacity duration-200 whitespace-nowrap">
                                 Live Demo
                             </span>
                         </Link>
@@ -103,7 +103,7 @@ const ExperienceGrid = ({ experience }: ExperienceGridProps) => {
                     {experience.video && (
                         <Link 
                             href={experience.video}
-                            className="group relative p-2 rounded-lg bg-primary hover:bg-red-50 transition-all duration-200 hover:scale-105"
+                            className="group relative p-2 rounded-lg btn"
                             target="_blank"
                             rel="noopener noreferrer"
                         >
@@ -114,7 +114,7 @@ const ExperienceGrid = ({ experience }: ExperienceGridProps) => {
                                 height={24}
                                 className="w-4 h-4 md:w-6 md:h-6 transition-transform group-hover:scale-110"
                             />
-                            <span className="absolute -top-10 left-1/2 transform -translate-x-1/2 bg-black text-white text-xs px-2 py-1 rounded opacity-0 group-hover:opacity-100 transition-opacity duration-200 whitespace-nowrap">
+                            <span className="absolute -top-8 left-1/2 transform -translate-x-1/2 bg-black text-white text-xs px-2 py-1 rounded opacity-0 group-hover:opacity-100 transition-opacity duration-200 whitespace-nowrap">
                                 Watch Video
                             </span>
                         </Link>

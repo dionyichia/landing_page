@@ -155,7 +155,7 @@ const Lifeline = () => {
       x: 0,
       scale: 1,
       transition: {
-        duration: 0.6,
+        duration: 1,
         ease: "easeOut"
       }
     }
@@ -170,7 +170,7 @@ const Lifeline = () => {
       scale: 1,
       rotate: 0,
       transition: {
-        duration: 0.5,
+        duration: 0.75,
         ease: "backOut",
         delay: 0.2
       }
