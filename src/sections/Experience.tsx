@@ -1,7 +1,7 @@
 "use client"
 
 import GridSlider from "@/components/experince_grid_slider";
-import { Heading2} from "@/components/typography";
+import { Heading2 } from "@/components/typography";
 
 import dso_logo from "@/assets/dso_logo.svg";
 import lta_logo from "@/assets/lta_no_bg.png";
@@ -17,6 +17,9 @@ import presenter_view from "@/assets/slidr/presenter_view.png"
 import rdmap from "@/assets/slidr/roadmap.png"
 import slidr from "@/assets/slidr/slidr_gen.png"
 import tone_n_pres from "@/assets/slidr/tone_n_pres_len.png"
+
+import calib from "@/assets/calib_phase.png"
+import test from "@/assets/test_phase.png"
 
 import hf_compare from "@/assets/homefinder/compare.png"
 import hf_explore from "@/assets/homefinder/explore.png"
@@ -112,7 +115,7 @@ const Experience = () => {
       period: "May 2025 - August 2025",
       logo: ttsh,
       skills: ["Computer Vision", "Python", "C", "PyQT6", "Arduino", "Serial"],
-      img: [],
+      img: [calib, test],
       description: [
         "Created pre-assessment tutorial booth to better prepare patients for the Humphrey Visual Field test.",
         "Pythonic computer vision system with manual image processing, integrated with an arduino and other hardware modules (e.g. Pan-tilt servo system, lasers, buzzers etc.)",
