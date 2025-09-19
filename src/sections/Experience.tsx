@@ -69,8 +69,9 @@ const Experience = () => {
       skills: ["Python", "C++", "HIP Programming", "Linux", "Embedded Systems"],
       img: [nn_img, cv_img, nlp_img, rnn_img, rl_img],
       description: [
-        "Optimised clustering algorithms for gpu acceleration, improving clustering efficiency by 80%",
-        "Developed in an offline Linux environment."
+        "Researched on partitional, hierarchical, and density-based clustering algorithms. Reviewed classical and modern signal deinterleaving processes.",
+        "Benchmarked K-Means, Mean-Shift, DBSCAN, and HDBSCAN implementations on simulated data for performance and accuracy",
+        "Parallelized open-source clustering algorithms in an offline Linux environment on a HIP-based GPU system, achieving a 10x speedup while preserving accuracy."
       ],
       code: "https://github.com/dionyichia/clustering",
       site: "",
@@ -85,7 +86,8 @@ const Experience = () => {
       img: [nn_img, cv_img, nlp_img, rnn_img, rl_img],
       description: [
         "Researched on five different fields of Artificial Intelligence: ANNs, CNNs, Generative AI, Retrieval Augmented Generation, Reinforcement Learning.",
-        ""
+        "Researched on AI Safety and Governance, ",
+        "Created documentation to distil technical concepts for clarity and understandability for a diverse audience.",
       ],
       code: "",
       site: "",
@@ -100,6 +102,7 @@ const Experience = () => {
       img: [],
       description: [
         "Developed tools such as an automated mailing and reminder system, to automate Customer-Relations Management processes, reducing manual outreach workload by 30%.",
+        "Automated CRM processes using JavaScript with Google Appscript platform, integrating processes across Gmail, Google Spreadsheet and Powerpoint.",
         "Generated over 50 leads and sucessfully closed 3 partners, through various outreach programmes and B2B sales."
       ],
       code: "",
@@ -148,8 +151,9 @@ const Experience = () => {
       skills: ["Azure Services", "Streamlit", "Uvicorn", "FastAPI ", "PymuPDF", "python-pptx"],
       img: [slidr, rdmap, presenter_view, tone_n_pres],
       description: [
-        "A slide generation tool that creates tailored PowerPoint presentations from your documents, templates and preferences.",
-        ""
+        "A slide generation tool that creates tailored PowerPoint presentations from your documents, templates and preferences. This project aims to reduce the inertia needed for anyone who needs to create slides from scratch.",
+        "Allows user to specify and provide template for generation, specify conditions such as length, tone, audience, and submit relevant documents to be referenced for content.",
+        "Provides an interactive interface for users to fine-tune content before slides are created.",
       ],
       code: "https://github.com/dionyichia/finder",
       site: "",
