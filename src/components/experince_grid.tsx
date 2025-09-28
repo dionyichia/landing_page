@@ -126,33 +126,45 @@ const ExperienceGrid = ({ experience }: ExperienceGridProps) => {
             {/* Image Slider Section */}
             <div className="order-2 md:col-start-1 md:col-end-2 md:row-start-2 md:row-end-3">
             {experience.img && experience.img.length > 0 && (
-                <div className="h-48 md:h-full bg-gray-100 rounded-lg border border-gray-200 overflow-hidden relative cursor-pointer hover:shadow-lg transition-shadow duration-300">
-                    <Image
-                        src={experience.img[currentImageIndex]}
-                        alt={`Exp image ${currentImageIndex + 1}`}
-                        fill
-                        className="transition-opacity duration-500"
-                        sizes="(max-width: 768px) 100vw, 75vw"
-                        priority={currentImageIndex === 0}
-                        // onError={(e) => {
-                        //     console.error('Image failed to load:', experience.img[currentImageIndex]);
-                        //     // Optional: Set a fallback image
-                        //     // e.currentTarget.src = '/fallback-image.jpg';
-                        // }}
-                    />
+
+                <>
+                <div className="h-48 md:h-full relative cursor-pointer transition-transform ease-in-out duration-300">
+                    {/* Image Container with fixed positioning context */}
+                    <div className="absolute inset-0 flex items-center justify-center">
+                        {/* Render all images stacked */}
+                        {experience.img.map((imgSrc, index) => (
+                            <div
+                                key={index}
+                                className={`transition-opacity duration-500 ease-in-out overflow-hidden flex items-center justify-center ${
+                                    index === currentImageIndex ? 'opacity-100' : 'opacity-0'
+                                } ${index !== currentImageIndex ? 'absolute inset-0' : ''}`}
+                            >
+                                <Image
+                                    src={imgSrc}
+                                    alt={`Exp image ${index + 1}`}
+                                    width={0} 
+                                    height={0}
+                                    className="w-auto h-auto max-w-full max-h-48 md:max-h-[250px] object-contain rounded-lg shadow-lg hover:shadow-xl"
+                                    sizes="(max-width: 768px) 100vw, 75vw"
+                                    priority={index === 0}
+                                />
+                            </div>
+                        ))}
+                    </div>
                 
                     {/* Hover overlay */}
-                    <div className="absolute inset-0 bg-opacity-0 hover:bg-opacity-20 transition-all duration-300 flex items-center justify-center">
-                        <div className="text-white opacity-0 hover:opacity-100 transition-opacity duration-300">
+                    <div className="absolute inset-0 bg-opacity-0 hover:bg-opacity-20 transition-all duration-300 flex items-center justify-center rounded-lg z-10">
+                        <div className="opacity-0 hover:opacity-100 transition-opacity duration-300">
                         <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7" />
                         </svg>
                         </div>
                     </div>
-                
-                    {/* Dots indicator */}
+                </div>
+
+                {/* Dots indicator */}
                     {experience.img.length > 1 && (
-                        <div className="absolute bottom-2 left-1/2 transform -translate-x-1/2 flex space-x-1">
+                        <div className="flex justify-center mt-2 space-x-2">
                             {experience.img.map((_, index) => (
                                 <button
                                     key={index}
@@ -164,8 +176,8 @@ const ExperienceGrid = ({ experience }: ExperienceGridProps) => {
                                 />
                             ))}
                         </div>
-                    )}
-                </div>
+                )}
+                </>
             )}
             </div>
 

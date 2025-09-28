@@ -7,6 +7,8 @@ import dso_logo from "@/assets/dso_logo.svg";
 import lta_logo from "@/assets/lta_no_bg.png";
 import cosmose_logo from "@/assets/cosmoseai_logo.jpeg";
 
+import dso_img from "@/assets/dso/dso_img.jpg"
+
 import nn_img from "@/assets/lta/nn_img.jpg"
 import cv_img from "@/assets/lta/cv_img.jpg"
 import nlp_img from "@/assets/lta/nlp_img.jpg"
@@ -67,7 +69,7 @@ const Experience = () => {
       period: "May 2025 - August 2025",
       logo: dso_logo,
       skills: ["Python", "C++", "HIP Programming", "Linux", "Embedded Systems"],
-      img: [nn_img, cv_img, nlp_img, rnn_img, rl_img],
+      img: [dso_img],
       description: [
         "Researched on partitional, hierarchical, and density-based clustering algorithms. Reviewed classical and modern signal deinterleaving processes.",
         "Benchmarked K-Means, Mean-Shift, DBSCAN, and HDBSCAN implementations on simulated data for performance and accuracy",
