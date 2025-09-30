@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 import { Sun, Moon, FileText } from "lucide-react";
 import { Link } from "react-scroll";
 import { useTheme } from 'next-themes'
+import { PiMountainsFill } from "react-icons/pi";
 
 interface NavBarProps {
   className?: string;
@@ -37,7 +38,7 @@ const NavBar: React.FC<NavBarProps> = ({ className = "" }) => {
   if (!mounted) {
     return (
       <div className={`${className} relative flex flex-row flex-nowrap justify-between items-center py-4 md:py-6 bg-background border-b border-border`}>
-        <div className="text-xl font-bold text-foreground">Logo</div>
+        <div className="text-xl font-bold text-foreground"><PiMountainsFill/></div>
         <div className="flex items-center space-x-2">
           {/* Neutral button states */}
           <div className="w-10 h-10 rounded-md bg-secondary"></div>
@@ -51,8 +52,8 @@ const NavBar: React.FC<NavBarProps> = ({ className = "" }) => {
   return (
     <div className={`${className} relative flex flex-row flex-nowrap justify-between items-center py-4 md:py-6 border-b`}>
       {/* Logo */}
-      <div className="text-xl font-bold">
-        Logo
+      <div className="text-2xl md:text-3xl lg:text-4xl font-bold p-2 text-primary transition-colors">
+        <PiMountainsFill/>
       </div>
 
       {/* Navigation Links (Desktop) */}
@@ -82,7 +83,7 @@ const NavBar: React.FC<NavBarProps> = ({ className = "" }) => {
         <button onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')} className="w-10 h-10 rounded-md flex items-center justify-center btn transition-colors">
           {theme === "dark" ? <Moon size={20}/> : <Sun size={20} />}
         </button>
-        <button className="w-10 h-10 rounded-md flex items-center justify-center btn transition-colors">
+        <button disabled className="w-10 h-10 rounded-md flex items-center justify-center btn transition-colors">
           <span className="text-lg">中</span>
         </button>
         <a
@@ -132,7 +133,7 @@ const NavBar: React.FC<NavBarProps> = ({ className = "" }) => {
                 setMenuOpen(false);
                 const el = document.getElementById(section);
                 if (el) {
-                  const yOffset = -48; // adjust this to your header height
+                  const yOffset = -48; 
                   const y = el.getBoundingClientRect().top + window.pageYOffset + yOffset;
                   window.scrollTo({ top: y, behavior: "smooth" });
                 }

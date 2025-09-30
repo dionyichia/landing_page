@@ -69,7 +69,7 @@ export default function RootLayout({
       <body className={`${arapey.variable} ${arapey_italic.variable} ${cormorant.variable} 
                         ${raleway.variable} ${questrial.variable} ${bodoni.variable} 
                         ${nunito.variable} ${work.variable}antialiased`}>
-        <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
+        <ThemeProvider attribute="class" defaultTheme="light" enableSystem>
           {children}
         </ThemeProvider>  
       </body>
