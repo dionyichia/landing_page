@@ -76,8 +76,8 @@ const Experience = () => {
         "Parallelized open-source clustering algorithms in an offline Linux environment on a HIP-based GPU system, achieving a 10x speedup while preserving accuracy."
       ],
       code: "https://github.com/dionyichia/clustering",
-      site: "",
-      video: "https://www.youtube.com/watch?v=YT9dohAY-Kk",
+      site: "https://www.dso.org.sg/about/",
+      video: "",
     },
     {
       title: "Artificial Intelligence Engineer",
@@ -92,7 +92,7 @@ const Experience = () => {
         "Created documentation to distil technical concepts for clarity and understandability for a diverse audience.",
       ],
       code: "",
-      site: "",
+      site: "https://www.lta.gov.sg/content/ltagov/en/who_we_are.html/#our_organisation",
       video: "",
     },
     {
@@ -108,7 +108,7 @@ const Experience = () => {
         "Generated over 50 leads and sucessfully closed 3 partners, through various outreach programmes and B2B sales."
       ],
       code: "",
-      site: "",
+      site: "https://cosmose.ai/about-us",
       video: "",
     },
   ];
