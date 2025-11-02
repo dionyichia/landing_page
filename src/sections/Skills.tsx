@@ -9,11 +9,11 @@ const Skills = () => {
     },
     {
       title: "MACHINE LEARNING & DATA SCIENCE",
-      skills: ["TensorFlow", "scikit-learn", "LangChain", "pandas", "numpy", "Matplotlib"]
+      skills: ["TensorFlow", "scikit-learn", "LangChain", "pandas", "numpy", "Matplotlib", "AgentVerse"]
     },
     {
       title: "FRONTEND & BACKEND DEV",
-      skills: ["React.js", "Next.js", "Tailwind", "React Router", "PyQT6"]
+      skills: ["React.js", "Next.js", "Tailwind", "PyQT6", "Supabase"]
     },
     {
       title: "EMBEDDED SYSTEMS & IOT",

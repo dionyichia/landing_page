@@ -9,9 +9,19 @@ const Lifeline = () => {
   // Array of timeline events in chronological order (newest first)
   const timelineEvents = [
     {
+      title: "University of California, Berkeley",
+      subtitle: "GLOBE Exchange Student",
+      period: "Aug 25' - May 26'",
+      role: "Computer Engineering Scholar",
+      description: [
+        "Pursuing a Bachelor's in Computer Science & a Master's in Technology Management"
+      ],
+      icon: GraduationCap,
+    },
+    {
       title: "Nanyang Technological University",
       subtitle: "Renaissance Engineering Program (REP), Singapore",
-      period: "Aug 21' - Present",
+      period: "Aug 23' - May 27'",
       role: "Computer Engineering Scholar",
       description: [
         "Pursuing a Bachelor's in Computer Science & a Master's in Technology Management"
