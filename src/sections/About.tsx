@@ -17,16 +17,14 @@ const About = () => {
         <div className="order-2 w-full md:w-3/5 md:order-1 flex-col gap-4">
           <Paragraph>
             I&apos;m an aspiring technical strategist specialising in Computer Engineering. 
-            I&apos;m passionate about building solutions that impact, and thrive at the intersection of tech, people, and product. 
-            This summer, I&apos;m interning as a Software Engineer at DSO National Laboratories, optimising clustering algorithms used for de-interleaving signals.
+            I&apos;m passionate about building solutions that impact, and thrive at the intersection of tech, people, and product.
           </Paragraph>
           <Paragraph>
             Currently, I am a Year 3 exchange student at University of California, Berkeley. Back home, a Year 3 Computer Engineering student under Nanyang Technological University&apos;s Renaissance Engineering Programme, a scholarship program with an accelerated Master&apos;s degree in Tech Management.
           </Paragraph>
           <Paragraph>
             Outside of tech, I&apos;m always chasing the next challenge. 
-            From representing my school at varsity Taekwondo Competitions, to surfing waves in Portugal, performing live as part of a band, and solo-backpacking across Europe, I love pushing myself to explore unfamiliar terrain — physically, creatively, and culturally. 
-            Now, I&apos;m taking on a new frontier, training for my first Ironman 70.3 Oceanside in Spring 2026!
+            From representing my school at varsity Taekwondo Competitions, to surfing waves in Portugal, performing live as part of a band, and solo-backpacking, I love pushing myself to explore unfamiliar terrain — physically, creatively, and culturally. 
           </Paragraph>
         </div>
         
