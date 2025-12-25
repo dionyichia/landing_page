@@ -12,7 +12,7 @@ export const Heading1 = ({ children, className = '' }: TextProps) => (
 );
 
 export const SubHeader = ({ children, className = '' }: TextProps) => (
-  <h2 className={`font-cormorant text-base md:text-lg lg:text-xl leading-relaxed ${className}`}>
+  <h2 className={`font-arapey text-base md:text-lg lg:text-2xl leading-relaxed ${className}`}>
     {children}
   </h2>
 );
@@ -30,7 +30,7 @@ export const Heading3 = ({ children, className = '' }: TextProps) => (
 );
 
 export const Heading4 = ({ children, className = '' }: TextProps) => (
-  <div className={`font-cormorant text-sm md:text-base lg:text-xl text-font ${className}`}>
+  <div className={`font-cormorant text-sm md:text-base lg:text-xl ${className}`}>
     {children}
   </div>
 );
