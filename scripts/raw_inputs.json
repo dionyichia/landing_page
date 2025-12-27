@@ -1,0 +1,17 @@
+[
+  {
+    "id": "eyetracker-project",
+    "text": "Built a cross-platform eye tracker using OpenCV and PyQt6 with real-time pupil detection and calibration.",
+    "embedding": [0.021, -0.114, 0.337, -0.052, 0.198]
+  },
+  {
+    "id": "rag-system",
+    "text": "Developed a self-corrective Retrieval-Augmented Generation system using Flask, Milvus, and document parsing pipelines.",
+    "embedding": [-0.087, 0.264, -0.041, 0.119, -0.302]
+  },
+  {
+    "id": "smart-bakery",
+    "text": "Designed an inclusive smart bakery system integrating hardware cues and software to support bakers with intellectual disabilities.",
+    "embedding": [0.143, -0.019, 0.221, 0.078, -0.056]
+  }
+]

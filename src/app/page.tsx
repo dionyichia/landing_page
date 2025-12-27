@@ -1,3 +1,5 @@
+'use client'
+
 import NavBar from "@/components/Navbar";
 import HomeSection from "@/sections/Home";
 import About from "@/sections/About";
@@ -16,7 +18,11 @@ export default function Home() {
         < NavBar className="w-9/12 mx-auto"/> 
       </div>
 
-      {/* left and right bars */}
+      {/* Left and Right Bars */}
+      <div className='fixed bottom-10 left-0'>
+        <div className='h-0.5 md:h-0.75 bg-foreground animate-extend-vertical origin-bottom'/>
+        {/* <div className='w-0.5 md:w-0.75 bg-foreground animate-extend-vertical-tl origin-top'/> */}
+      </div>
 
       {/* 
       <div className='absolute top-0 left-0'>
@@ -74,6 +80,56 @@ export default function Home() {
           right: 0;
         }
       `}</style> */}
+      <style jsx>{`
+        @keyframes extend-vertical {
+          0%, 50% { height: 0; }
+          100% { height: clamp(2rem, 15vh, 8rem); }
+        }
+
+        @keyframes extend-horizontal-tl {
+          0% { width: 0; }
+          50% { width: clamp(8rem, 25vw, 25rem); }
+          100% { width: clamp(8rem, 25vw, 25rem); }
+        }
+        
+        @keyframes extend-vertical-tl {
+          0%, 50% { height: 0; }
+          100% { height: clamp(2rem, 15vh, 8rem); }
+        }
+        
+        @keyframes extend-horizontal-br {
+          0% { width: 0; }
+          50% { width: clamp(8rem, 25vw, 24rem); }
+          100% { width: clamp(8rem, 25vw, 24rem); }
+        }
+        
+        @keyframes extend-vertical-br {
+          0%, 50% { height: 0; }
+          100% { height: clamp(2rem, 15vh, 7rem); }
+        }
+        
+        .animate-extend-horizontal-tl {
+          animation: extend-horizontal-tl 2s ease-out forwards;
+        }
+        
+        .animate-extend-vertical-tl {
+          animation: extend-vertical-tl 2s ease-out forwards;
+        }
+        
+        .animate-extend-horizontal-br {
+          animation: extend-horizontal-br 2s ease-out forwards;
+          position: absolute;
+          bottom: 0;
+          right: 0;
+        }
+        
+        .animate-extend-vertical-br {
+          animation: extend-vertical-br 2s ease-out forwards;
+          position: absolute;
+          bottom: 0;
+          right: 0;
+        }
+      `}</style>
 
       {/* Full-screen home section */}
       <HomeSection/>

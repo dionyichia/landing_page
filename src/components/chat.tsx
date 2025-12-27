@@ -14,25 +14,11 @@ import {
 } from '@/components/ai-elements/message';
 import {
   PromptInput,
-  PromptInputActionAddAttachments,
-  PromptInputActionMenu,
-  PromptInputActionMenuContent,
-  PromptInputActionMenuTrigger,
-  PromptInputAttachment,
-  PromptInputAttachments,
   PromptInputBody,
-  PromptInputButton,
-  PromptInputHeader,
   type PromptInputMessage,
-  PromptInputSelect,
-  PromptInputSelectContent,
-  PromptInputSelectItem,
-  PromptInputSelectTrigger,
-  PromptInputSelectValue,
   PromptInputSubmit,
   PromptInputTextarea,
   PromptInputFooter,
-  PromptInputTools,
 } from '@/components/ai-elements/prompt-input';
 import { Dispatch, SetStateAction, useRef, useState } from 'react';
 import { useChat } from '@ai-sdk/react';
@@ -49,7 +35,6 @@ import {
   ReasoningTrigger,
 } from '@/components/ai-elements/reasoning';
 import { Loader } from '@/components/ai-elements/loader';
-import { cn } from '@/lib/utils';
 
 const models = [
   {
@@ -60,6 +45,10 @@ const models = [
     name: 'Deepseek R1',
     value: 'deepseek/deepseek-r1',
   },
+  {
+    name: 'claude',
+    value: 'anthropic/claude-3-haiku'
+  }
 ];
 
 type ChatBotProps = {
@@ -69,8 +58,7 @@ type ChatBotProps = {
 
 export default function ChatBot ({ showChat, setShowChat }: ChatBotProps) {
     const [input, setInput] = useState('');
-    const [model, setModel] = useState<string>(models[0].value);
-    const [webSearch, setWebSearch] = useState(false);
+    const [model, setModel] = useState<string>(models[2].value);
     const { messages, sendMessage, status, regenerate } = useChat();
     const [isMultiline, setIsMultiline] = useState(false);
     const textareaRef = useRef<HTMLTextAreaElement>(null);
@@ -92,7 +80,7 @@ export default function ChatBot ({ showChat, setShowChat }: ChatBotProps) {
         {
             body: {
             model: model,
-            webSearch: webSearch,
+            webSearch: false,
             },
         },
         );

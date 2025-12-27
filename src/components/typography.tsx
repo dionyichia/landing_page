@@ -6,13 +6,13 @@ interface TextProps {
 }
 
 export const Heading1 = ({ children, className = '' }: TextProps) => (
-  <h1 className={`font-bodoni text-5xl md:text-7xl lg:text-8xl ${className}`}>
+  <h1 className={`font-bodoni text-6xl md:text-7xl lg:text-8xl ${className}`}>
     {children}
   </h1>
 );
 
 export const SubHeader = ({ children, className = '' }: TextProps) => (
-  <h2 className={`font-arapey text-base md:text-lg lg:text-2xl leading-relaxed ${className}`}>
+  <h2 className={`font-arapey text-lg md:text-lg lg:text-2xl leading-relaxed ${className}`}>
     {children}
   </h2>
 );
@@ -24,13 +24,13 @@ export const Heading2 = ({ children, className = '' }: TextProps) => (
 );
 
 export const Heading3 = ({ children, className = '' }: TextProps) => (
-  <h3 className={`font-cormorant text-sm md:text-lg lg:text-2xl text-font ${className}`}>
+  <h3 className={`font-cormorant text-lg md:text-lg lg:text-2xl text-font ${className}`}>
     {children}
   </h3>
 );
 
 export const Heading4 = ({ children, className = '' }: TextProps) => (
-  <div className={`font-cormorant text-sm md:text-base lg:text-xl ${className}`}>
+  <div className={`font-cormorant text-lg md:text-base lg:text-2xl ${className}`}>
     {children}
   </div>
 );

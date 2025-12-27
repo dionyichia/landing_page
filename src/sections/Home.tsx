@@ -1,7 +1,7 @@
 "use client"
 
 import React, { useState } from 'react';
-import { Heading1, SubHeader, Heading3, Heading4 } from "@/components/typography";
+import { Heading1, SubHeader, Heading4 } from "@/components/typography";
 import Typewriter from "typewriter-effect"
 
 import ChatBot from '@/components/chat';
