@@ -11,6 +11,12 @@ export const Heading1 = ({ children, className = '' }: TextProps) => (
   </h1>
 );
 
+export const Heading1_2 = ({ children, className = '' }: TextProps) => (
+  <h1 className={`font-bodoni text-4xl md:text-5xl lg:text-6xl ${className}`}>
+    {children}
+  </h1>
+);
+
 export const SubHeader = ({ children, className = '' }: TextProps) => (
   <h2 className={`font-arapey text-lg md:text-lg lg:text-2xl leading-relaxed ${className}`}>
     {children}

@@ -103,9 +103,7 @@ export default function ChatBot ({ showChat, setShowChat }: ChatBotProps) {
 
     
     return (
-        <div className="lg:w-2xl mx-auto p-6 relative">
-        <div className="flex flex-col">
-            
+        <div className="w-full md:w-[50vw] lg:w-[40vw] xl:w-[40vw] mx-auto md:py-6 relative flex flex-col h-full">
             { showChat && 
                 <Conversation className="h-full">
                 <ConversationContent>
@@ -184,7 +182,7 @@ export default function ChatBot ({ showChat, setShowChat }: ChatBotProps) {
                 </Conversation>
             }
 
-            <PromptInput onSubmit={handleSubmit} globalDrop multiple className='mt-4'>
+            <PromptInput onSubmit={handleSubmit} globalDrop multiple className="mt-auto mb-4 md:mb-8">
                 <PromptInputBody>
                     <PromptInputTextarea
                         ref={textareaRef}
@@ -204,7 +202,6 @@ export default function ChatBot ({ showChat, setShowChat }: ChatBotProps) {
                     </PromptInputFooter>
                 }
             </PromptInput>
-        </div>
         </div>
     );
 };
