@@ -30,27 +30,67 @@ TEXT_BLOCK_TYPES = {
     "code",
 }
 
-def extract_text_from_block(block: dict) -> str:
+HEADINGS = {"heading_1", "heading_2", "heading_3"}
+LISTS = {"bulleted_list_item","numbered_list_item"}
+
+def extract_text_from_block(block: dict) -> tuple[str, str, str]:
     block_type = block["type"]
 
+    # Skip images
     if block_type not in TEXT_BLOCK_TYPES:
-        return ""
-
+        return "", "", ""
+    
     rich_text = block[block_type].get("rich_text", [])
-    return "".join(rt["plain_text"] for rt in rich_text)
+    text = "".join(rt["plain_text"] for rt in rich_text)
 
-def get_all_text_from_block(block_id: str) -> list[str]:
+    if block_type in HEADINGS:
+        return text, "", ""
+
+    if block_type == "paragraph":
+        return "", "", text
+
+    # If it not a paragraph on its own, add to previous, i.e. combine all list items, quotes and every thing else into 1 paragraph
+    return "", block_type, text
+
+def get_all_text_from_page(page_id: str, most_recent_header="Root") -> list[str]:
     texts = []
-    blocks = list_all_block_children(block_id)
+    cur_para = []
+    blocks = list_all_block_children(page_id)
+
+    most_recent_header = "Root"
 
     for block in blocks:
-        text = extract_text_from_block(block)
-        if text.strip():
-            texts.append(text)
+        header, block_type, text = extract_text_from_block(block)
+
+        # If it is a header, update the last header 
+        if header:
+            # flush previous paragraph
+            if cur_para:
+                texts.append(f"{most_recent_header}\n" + " ".join(cur_para))
+                cur_para = []
+
+            most_recent_header = header
+        else:
+            # If text not empty
+            if text.strip():
+                # If it is not a paragraph block, cache text
+                if block_type:
+                    cur_para.append(text)
+                    continue
+                
+                # If it is a para block and prev cache not empty, flush cache
+                elif cur_para: 
+                    texts.append(f"{most_recent_header}\n" + " ".join(cur_para))
+                    cur_para = []
+
+                texts.append(f"{most_recent_header}\n{text}")
 
         # recurse if this block has children
         if block.get("has_children"):
-            texts.extend(get_all_text_from_block(block["id"]))
+            texts.extend(get_all_text_from_page(block["id"], most_recent_header=most_recent_header))
+
+    if cur_para:
+        texts.append(f"{most_recent_header}\n" + " ".join(cur_para))
 
     return texts
 
@@ -118,14 +158,13 @@ def build_raw_corpus(database_id: str):
 
         print(f"Reading page: {title}")
 
-        page_text = get_all_text_from_block(page_id)
-
-        combined_text = "\n".join(page_text)
+        # List of texts
+        page_text = get_all_text_from_page(page_id=page_id, most_recent_header=title)
 
         corpus.append({
             "id": page_id,
             "title": title,
-            "text": combined_text,
+            "text": page_text,
         })
 
     return corpus
@@ -148,18 +187,17 @@ def main():
     with open(OUTPUT, "w") as f:
         json.dump(corpus, f, indent=4)
 
-    return 
+    for page in corpus:
+        for chunk in page["text"]:
+            print(f"Embedding: {page['id']}")
+            embedding = 1 ## embed_text(chunk)
 
-    for chunk in corpus:
-        print(f"Embedding: {chunk['id']}")
-        embedding = embed_text(chunk["text"])
-
-        output.append({
-            "id": chunk["id"],
-            "text": chunk["text"],
-            "title": chunk["title"],
-            "embedding": embedding
-        })
+            output.append({
+                "page_id": page["id"],
+                "text": chunk,
+                "title": page["title"],
+                "embedding": embedding
+            })
 
     with open(OUTPUT, "w") as f:
         json.dump(output, f, indent=4)

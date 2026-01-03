@@ -42,3 +42,5 @@ next-env.d.ts
 
 # dev
 *.python-version
+/src/components/ai-elements_remove
+/src/components/ui_remove

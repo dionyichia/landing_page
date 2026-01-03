@@ -1,27 +1,410 @@
 [
     {
-        "id": "2d30de09-c096-8102-81c6-fce94a88dc4d",
-        "title": "Exploring New Cuisines",
-        "text": "In today's world, exploring new cuisines is as simple as walking down the street or ordering takeout. This blog post is a chronicle of my personal adventures in discovering new cuisines, providing a peek into different culinary cultures, and sharing the unique experiences that each one offers.\nA Taste of Italy\nMy first stop was Italy, a country renowned for its rich culinary heritage. I was instantly drawn to their authentic pizzas, prepared in wood-fired ovens, and the variety of pasta dishes, each telling a story of a different region. The simplicity of Italian cuisine, emphasizing fresh, quality ingredients, was a refreshing change from the heavily processed meals we often consume.\nThe Spice Route: India\nNext, I ventured into the vibrant world of Indian cuisine. Known for its bold, complex flavors and diverse range of dishes, Indian food was a treat for my taste buds. From the spicy curries of the North to the tangy rasam of the South, Indian food is a testament to the country's rich cultural diversity and history.\nSushi and Beyond: Japan\nLastly, my culinary journey took me to Japan, a country that blends tradition and innovation in its cuisine. While sushi is undoubtedly the poster child of Japanese food, I was intrigued by other dishes such as ramen, tempura, and the delicate kaiseki meals. The meticulous preparation and presentation of each dish was a sight to behold, reflecting the Japanese philosophy of treating food with respect.\nThe Fusion of Flavors: Mexico\nMoving on from Japan, my taste buds were welcomed by the fiery flavors of Mexico. Known for its delicious tacos, enchiladas, and guacamole, Mexican cuisine is a perfect blend of indigenous Mesoamerican and European cooking techniques. The use of staples like corn, beans, and chili peppers in their dishes gives them a distinct taste, one that left me yearning for more.\nAromatic Journey: Thailand\nMy culinary expedition then took me to Thailand, a country celebrated for its aromatic dishes. Thai cuisine is a balance of five flavors: sour, sweet, salty, bitter, and spicy. Their famous Pad Thai and Green Curry offered an explosion of flavors, leaving an unforgettable mark on my food journey.\nSavoring Simplicity: France\nFrance, often considered the culinary capital of the world, was my next stop. French cuisine is all about simplicity and quality ingredients. Whether it was the hearty coq au vin or the delicate cr\u00e8me br\u00fbl\u00e9e, each dish was a masterpiece in its own right, reflecting the French's profound respect for food.\nEpilogue\nIn conclusion, each cuisine has a story to tell, each dish a culture to represent. As I continue my gastronomic journey, I am excited to explore more cuisines, to taste their unique flavors, and to learn the stories behind them. Because exploring new cuisines is not just about tantalizing your taste buds, but also about experiencing different cultures, traditions, and histories."
+        "page_id": "2d30de09-c096-8102-81c6-fce94a88dc4d",
+        "text": "Root\nIn today's world, ",
+        "title": "Slidr",
+        "embedding": 1
     },
     {
-        "id": "2d30de09-c096-8146-b184-c5579c39ef47",
+        "page_id": "2d30de09-c096-8102-81c6-fce94a88dc4d",
+        "text": "Powerpoint Fe \nMy first stop was Italy, a country renowned for its rich culinary heritage. I was instantly drawn to their authentic pizzas, prepared in wood-fired ovens, and the variety of pasta dishes, each telling a story of a different region. The simplicity of Italian cuisine, emphasizing fresh, quality ingredients, was a refreshing change from the heavily processed meals we often consume.",
+        "title": "Slidr",
+        "embedding": 1
+    },
+    {
+        "page_id": "2d30de09-c096-8102-81c6-fce94a88dc4d",
+        "text": "Slide Fitting vs Slide Generation \nNext, I ventured into the vibrant world of Indian cuisine. Known for its bold, complex flavors and diverse range of dishes, Indian food was a treat for my taste buds. From the spicy curries of the North to the tangy rasam of the South, Indian food is a testament to the country's rich cultural diversity and history.",
+        "title": "Slidr",
+        "embedding": 1
+    },
+    {
+        "page_id": "2d30de09-c096-8102-81c6-fce94a88dc4d",
+        "text": "Sushi and Beyond: Japan\nLastly, my culinary journey took me to Japan, a country that blends tradition and innovation in its cuisine. While sushi is undoubtedly the poster child of Japanese food, I was intrigued by other dishes such as ramen, tempura, and the delicate kaiseki meals. The meticulous preparation and presentation of each dish was a sight to behold, reflecting the Japanese philosophy of treating food with respect.",
+        "title": "Slidr",
+        "embedding": 1
+    },
+    {
+        "page_id": "2d30de09-c096-8102-81c6-fce94a88dc4d",
+        "text": "The Fusion of Flavors: Mexico\nMoving on from Japan, my taste buds were welcomed by the fiery flavors of Mexico. Known for its delicious tacos, enchiladas, and guacamole, Mexican cuisine is a perfect blend of indigenous Mesoamerican and European cooking techniques. The use of staples like corn, beans, and chili peppers in their dishes gives them a distinct taste, one that left me yearning for more.",
+        "title": "Slidr",
+        "embedding": 1
+    },
+    {
+        "page_id": "2d30de09-c096-8102-81c6-fce94a88dc4d",
+        "text": "Aromatic Journey: Thailand\nMy culinary expedition then took me to Thailand, a country celebrated for its aromatic dishes. Thai cuisine is a balance of five flavors: sour, sweet, salty, bitter, and spicy. Their famous Pad Thai and Green Curry offered an explosion of flavors, leaving an unforgettable mark on my food journey.",
+        "title": "Slidr",
+        "embedding": 1
+    },
+    {
+        "page_id": "2d30de09-c096-8102-81c6-fce94a88dc4d",
+        "text": "Savoring Simplicity: France\nFrance, often considered the culinary capital of the world, was my next stop. French cuisine is all about simplicity and quality ingredients. Whether it was the hearty coq au vin or the delicate cr\u00e8me br\u00fbl\u00e9e, each dish was a masterpiece in its own right, reflecting the French's profound respect for food.",
+        "title": "Slidr",
+        "embedding": 1
+    },
+    {
+        "page_id": "2d30de09-c096-8102-81c6-fce94a88dc4d",
+        "text": "Epilogue\nIn conclusion, each cuisine has a story to tell, each dish a culture to represent. As I continue my gastronomic journey, I am excited to explore more cuisines, to taste their unique flavors, and to learn the stories behind them. Because exploring new cuisines is not just about tantalizing your taste buds, but also about experiencing different cultures, traditions, and histories.",
+        "title": "Slidr",
+        "embedding": 1
+    },
+    {
+        "page_id": "2d30de09-c096-8146-b184-c5579c39ef47",
+        "text": "Root\nIn our fast paced",
         "title": "My Favorite Hobbies: How I Spend My Free Time",
-        "text": "In our fast-paced world, it's easy to get caught up in work, responsibilities, and the demands of everyday life. Amidst this whirlwind of activities, it's essential to have hobbies that provide a much-needed escape. These hobbies add joy and relaxation to our lives, helping us to recharge and refocus. In this blog post, I will share my three favorite hobbies that enrich my free time and contribute positively to my well-being.\nReading\nReading is not just a hobby for me, it's a refuge. With a book in my hand, I can explore different worlds, understand diverse cultures, and delve into various ideas without leaving the comfort of my home. The genres I enjoy are wide-ranging. I might be engrossed in a gripping thriller one day, a thought-provoking non-fiction another day, or a beautifully penned poetry collection the next. Each book offers a unique experience and perspective, stretching my imagination and broadening my worldview.\nBeyond its entertainment value, reading also serves as a tool for self-improvement. It enhances my vocabulary, sharpens my critical thinking skills, and boosts my empathy towards people from different walks of life. In essence, reading is a hobby that's not just enjoyable but also beneficial, enriching both my mind and soul.\nGardening\nGardening is another hobby that I deeply enjoy. It's a tangible interaction with Mother Nature herself. There is something profoundly satisfying about planting a seed, nurturing it with care, and watching it grow into a beautiful, thriving plant. This process requires patience, dedication, and a fair amount of hard work, but the rewards are well worth it.\nGardening offers more than just a sense of accomplishment. It provides a direct connection to nature, which can be incredibly calming and therapeutic. The vibrant colors, the earthy smell, the feel of the soil, and the gentle rhythm of growth, all contribute to a sense of tranquility that's hard to replicate elsewhere.\nCooking\nCooking is my third favorite hobby and a creative outlet that allows me to experiment and innovate. I love the entire process, from planning a menu, shopping for fresh produce, to finally presenting a delicious dish. The kitchen is my canvas, and ingredients are my paints. The act of combining different flavors, ingredients, and techniques is an artistic endeavor that brings immense joy.\nMoreover, cooking gives me the opportunity to share something tangible and enjoyable with my loved ones. A well-prepared meal can bring people together, fostering connection and creating lasting memories. Hence, cooking is not just a hobby; it's a means of expressing love and fostering relationships.\nConclusion\nIn conclusion, hobbies are more than just pastimes. They provide a break from our regular routines, allow us to learn new skills, and add joy and fulfillment to our lives. Each one of my hobbies \u2013 reading, gardening, and cooking \u2013 has enriched my free time, nurtured my personal growth, and brought me immense pleasure. By sharing my favorite hobbies, I hope to inspire you to pursue activities that bring you happiness and satisfaction. After all, life is not just about surviving, but also about enjoying and making the most of our free time."
+        "embedding": 1
     },
     {
-        "id": "2d30de09-c096-814d-9745-dd239bb2eded",
-        "title": "The Power of Positive Thinking",
-        "text": "In the complex and often challenging world we live in today, it's easy to find ourselves trapped in patterns of negative thinking and pessimism. However, the transformative power of positive thinking is something that cannot and should not be underestimated. This blog post will delve deeply into the fascinating concept of positive thinking, its myriad psychological benefits, and how it can be consciously cultivated as a habit for personal growth, success, and overall well-being.\nUnderstanding Positive Thinking\nPositive thinking revolves around the intriguing process of manifesting thoughts that create and transform energy into reality. It represents a mental and emotional attitude that focuses unwaveringly on the bright side of life and constantly expects positive results.\nPositive thinking is absolutely not about pretending that life's less pleasant situations simply don't exist. It's not about turning a blind eye to the negative. Rather, it's about approaching these less than ideal situations in a more positive and productive way, firmly believing that the best is going to happen, not the worst. It's about viewing the glass as half-full rather than half-empty. It's about seeing problems as challenges and viewing these challenges as opportunities to grow, learn and evolve.\nThe Extensive Psychological Benefits of Positive Thinking\nPositive thinking brings with it a veritable wealth of psychological benefits. It has the potential to significantly enhance your mood and broaden your sense of possibility. This, in turn, allows you to develop and build new skills and resources that can provide immense value in other areas of your life.\nThere's a growing body of research to support the benefits of positive thinking. Studies have shown that a positive mindset can lead to better stress management and coping strategies, lower levels of depression, and even an increased life span. It's not just mental health that can benefit from positive thinking. Physical health can improve too. Positive thinking can improve cardiovascular health and notably reduce the risk of death from cardiovascular disease.\nCultivating Positive Thinking\nCultivating positive thinking is not a passive process. It's a habit that requires consistent practice, patience, and commitment. Start by identifying areas of your life that you usually think negatively about and make a conscious effort to spin them into something positive.\nSurround yourself with positive people who inspire and uplift you. Practice positive self-talk, and make it a point to start each and every day on a positive note. Set the tone for the day with positivity and watch how it influences your interactions, your work, and your relationships.\nIt's also important to remember that it's okay to have negative thoughts sometimes. We're all human, and it's not about eliminating all negative thoughts. It's about not letting them control you, not letting them dictate your emotions, and not letting them affect your outlook on life.\nConclusion\nThe power of positive thinking is immense and far-reaching. It has the potential to transform your mental, emotional, and physical health, open up new opportunities, and lead you down a path of success and fulfillment. Remember, the mind is an incredibly powerful tool, and the thoughts we harbor within it can shape our reality. So, foster positivity, nurture it, and watch how it profoundly changes your life for the better."
+        "page_id": "2d30de09-c096-8146-b184-c5579c39ef47",
+        "text": "Basketball \nI was about 8 years old when i first laid my eyes on a basketball. __, though it has been ages since i last played competitively, __ have not stopped loving the sport ever since. ",
+        "title": "My Favorite Hobbies: How I Spend My Free Time",
+        "embedding": 1
     },
     {
-        "id": "2d30de09-c096-8177-9d03-ed2d8c453ae2",
-        "title": "My Top 10 Books and Why I Love Them",
-        "text": "Books have always been a significant part of my life, playing various roles. They've been my companions in solitude, my teachers in the quest for knowledge, and my windows into the minds of others. Through books, I've lived a thousand lives, visited places I've never been, and expanded my understanding of the world. They have served as a refuge during difficult times and a source of joy during periods of happiness. This post will delve into my top 10 favorite books, each one having left an indelible impact on me.\n\"To Kill a Mockingbird\" by Harper Lee\nTo Kill a Mockingbird is a timeless classic that never fails to move me. It's a beautifully written tale of innocence, courage, and the struggle against injustice. Harper Lee paints a vivid picture of the racial tension in the deep south during the 1930s. This book is not just about racial inequality; it's also a profound study of human nature, about understanding people by stepping into their shoes. This lesson has resonated deeply with me and influenced my perspective on empathy and understanding.\n\"1984\" by George Orwell\n1984 is a chilling prophecy about the future that has left an indelible print on my mind. George Orwell's depiction of a dystopian society where surveillance and propaganda are rampant is a stark warning about the loss of individuality and freedom. This dystopian novel is not just a work of fiction; it's a mirror held up to humanity, reflecting our darkest fears about power, control, and loss of freedom. This book has made me value my rights as an individual and appreciate the democracy we often take for granted.\n\"Pride and Prejudice\" by Jane Austen\nPride and Prejudice is a timeless romance novel that I absolutely adore. Jane Austen's wit, character development, and exploration of societal norms in the 19th-century England are nothing short of brilliant. The story of Elizabeth Bennet and Mr. Darcy is not just a love story; it's a narrative about overcoming personal flaws, societal pressure, and the importance of understanding and overcoming one's prejudices. It's a tale that has taught me about the importance of self-awareness and personal growth.\nConclusion\nThe books I've mentioned are just three of my top 10 favorites that have shaped my life in one way or another. Each one of them has had a different impact, teaching me valuable lessons about life, society, and human nature. They've not only entertained me but also broadened my perspectives, ignited my imagination, and taught me to appreciate the complexity of the world we live in. I hope you find them as enlightening and enjoyable as I do and perhaps they might inspire you to explore new genres, authors, or themes in literature."
+        "page_id": "2d30de09-c096-8146-b184-c5579c39ef47",
+        "text": "Basketball \nAllen Iverson and his crossover",
+        "title": "My Favorite Hobbies: How I Spend My Free Time",
+        "embedding": 1
     },
     {
-        "id": "2d30de09-c096-81c8-8b6b-ff881fa9a073",
+        "page_id": "2d30de09-c096-8146-b184-c5579c39ef47",
+        "text": "Taekwondo\nIn my freshman year of college, i was torn. I sought the rigour, camaraderie and thrill of competitive team sport, but also wanted to explore while understanding the limitations of my body. After having suffering multiple injures from __, it was quite evident that my physicality, could not match my fervour for ____. That was when i stumbled upon the world of Poomsae and Taekwondo. Little did i know, i would soon be representing my university in varsity level competitions, and training with and befriending the most wonderful people. ",
+        "title": "My Favorite Hobbies: How I Spend My Free Time",
+        "embedding": 1
+    },
+    {
+        "page_id": "2d30de09-c096-8146-b184-c5579c39ef47",
+        "text": "Taekwondo\nPoomsae is art of __. It consists of several sequential movements, __. Though",
+        "title": "My Favorite Hobbies: How I Spend My Free Time",
+        "embedding": 1
+    },
+    {
+        "page_id": "2d30de09-c096-8146-b184-c5579c39ef47",
+        "text": "Music\nMusic has always been a major part of my life. ___ Dad playing ABBA in the car, and his love for ___. ",
+        "title": "My Favorite Hobbies: How I Spend My Free Time",
+        "embedding": 1
+    },
+    {
+        "page_id": "2d30de09-c096-8146-b184-c5579c39ef47",
+        "text": "Music\nBand, Bass ",
+        "title": "My Favorite Hobbies: How I Spend My Free Time",
+        "embedding": 1
+    },
+    {
+        "page_id": "2d30de09-c096-8146-b184-c5579c39ef47",
+        "text": "Music\nIn college,  ",
+        "title": "My Favorite Hobbies: How I Spend My Free Time",
+        "embedding": 1
+    },
+    {
+        "page_id": "2d30de09-c096-8146-b184-c5579c39ef47",
+        "text": "Music\nVulfpeck ",
+        "title": "My Favorite Hobbies: How I Spend My Free Time",
+        "embedding": 1
+    },
+    {
+        "page_id": "2d30de09-c096-8146-b184-c5579c39ef47",
+        "text": "Music\nDJing",
+        "title": "My Favorite Hobbies: How I Spend My Free Time",
+        "embedding": 1
+    },
+    {
+        "page_id": "2d30de09-c096-8146-b184-c5579c39ef47",
+        "text": "Music\nAfter another career-ending ankle injury, i was stuck in a boot on some crutches in the winter of ___. ",
+        "title": "My Favorite Hobbies: How I Spend My Free Time",
+        "embedding": 1
+    },
+    {
+        "page_id": "2d30de09-c096-8146-b184-c5579c39ef47",
+        "text": "Giving Back \nMeaningful work drives me. Knowing that what i do would improve the lives of people who need it the most __.",
+        "title": "My Favorite Hobbies: How I Spend My Free Time",
+        "embedding": 1
+    },
+    {
+        "page_id": "2d30de09-c096-8146-b184-c5579c39ef47",
+        "text": "Giving Back \nJoined REACH in college,_. Renaissance Engineers Are Caring Humans, as the name subtly hints, ",
+        "title": "My Favorite Hobbies: How I Spend My Free Time",
+        "embedding": 1
+    },
+    {
+        "page_id": "2d30de09-c096-8146-b184-c5579c39ef47",
+        "text": "Giving Back \nBerkeley, joined Blueprint ",
+        "title": "My Favorite Hobbies: How I Spend My Free Time",
+        "embedding": 1
+    },
+    {
+        "page_id": "2d30de09-c096-8146-b184-c5579c39ef47",
+        "text": "Conclusion\nIn conclusion, hobbies are more than just pastimes. They provide a break from our regular routines, allow us to learn new skills, and add joy and fulfillment to our lives. Each one of my hobbies \u2013 reading, gardening, and cooking \u2013 has enriched my free time, nurtured my personal growth, and brought me immense pleasure. By sharing my favorite hobbies, I hope to inspire you to pursue activities that bring you happiness and satisfaction. After all, life is not just about surviving, but also about enjoying and making the most of our free time.",
+        "title": "My Favorite Hobbies: How I Spend My Free Time",
+        "embedding": 1
+    },
+    {
+        "page_id": "2d30de09-c096-814d-9745-dd239bb2eded",
+        "text": "Root\nLast summer, ",
+        "title": "Summer 2025",
+        "embedding": 1
+    },
+    {
+        "page_id": "2d30de09-c096-814d-9745-dd239bb2eded",
+        "text": "DSO\nPositive thinking revolves around the intriguing process of manifesting thoughts that create and transform energy into reality. It represents a mental and emotional attitude that focuses unwaveringly on the bright side of life and constantly expects positive results.",
+        "title": "Summer 2025",
+        "embedding": 1
+    },
+    {
+        "page_id": "2d30de09-c096-814d-9745-dd239bb2eded",
+        "text": "DSO\nPositive thinking is absolutely not about pretending that life's less pleasant situations simply don't exist. It's not about turning a blind eye to the negative. Rather, it's about approaching these less than ideal situations in a more positive and productive way, firmly believing that the best is going to happen, not the worst. It's about viewing the glass as half-full rather than half-empty. It's about seeing problems as challenges and viewing these challenges as opportunities to grow, learn and evolve.",
+        "title": "Summer 2025",
+        "embedding": 1
+    },
+    {
+        "page_id": "2d30de09-c096-814d-9745-dd239bb2eded",
+        "text": "Margaret River \nPositive thinking brings with it a veritable wealth of psychological benefits. It has the potential to significantly enhance your mood and broaden your sense of possibility. This, in turn, allows you to develop and build new skills and resources that can provide immense value in other areas of your life.",
+        "title": "Summer 2025",
+        "embedding": 1
+    },
+    {
+        "page_id": "2d30de09-c096-814d-9745-dd239bb2eded",
+        "text": "Margaret River \nThere's a growing body of research to support the benefits of positive thinking. Studies have shown that a positive mindset can lead to better stress management and coping strategies, lower levels of depression, and even an increased life span. It's not just mental health that can benefit from positive thinking. Physical health can improve too. Positive thinking can improve cardiovascular health and notably reduce the risk of death from cardiovascular disease.",
+        "title": "Summer 2025",
+        "embedding": 1
+    },
+    {
+        "page_id": "2d30de09-c096-814d-9745-dd239bb2eded",
+        "text": "Landing Page \nCultivating positive thinking is not a passive process. It's a habit that requires consistent practice, patience, and commitment. Start by identifying areas of your life that you usually think negatively about and make a conscious effort to spin them into something positive.",
+        "title": "Summer 2025",
+        "embedding": 1
+    },
+    {
+        "page_id": "2d30de09-c096-814d-9745-dd239bb2eded",
+        "text": "Landing Page \nSurround yourself with positive people who inspire and uplift you. Practice positive self-talk, and make it a point to start each and every day on a positive note. Set the tone for the day with positivity and watch how it influences your interactions, your work, and your relationships.",
+        "title": "Summer 2025",
+        "embedding": 1
+    },
+    {
+        "page_id": "2d30de09-c096-814d-9745-dd239bb2eded",
+        "text": "Landing Page \nIt's also important to remember that it's okay to have negative thoughts sometimes. We're all human, and it's not about eliminating all negative thoughts. It's about not letting them control you, not letting them dictate your emotions, and not letting them affect your outlook on life.",
+        "title": "Summer 2025",
+        "embedding": 1
+    },
+    {
+        "page_id": "2d30de09-c096-814d-9745-dd239bb2eded",
+        "text": "Conclusion\nThe power of positive thinking is immense and far-reaching. It has the potential to transform your mental, emotional, and physical health, open up new opportunities, and lead you down a path of success and fulfillment. Remember, the mind is an incredibly powerful tool, and the thoughts we harbor within it can shape our reality. So, foster positivity, nurture it, and watch how it profoundly changes your life for the better.",
+        "title": "Summer 2025",
+        "embedding": 1
+    },
+    {
+        "page_id": "2d30de09-c096-8177-9d03-ed2d8c453ae2",
+        "text": "General Background\nI am a third-year Computer Engineering student at Nanyang Technological University in Singapore, currently on exchange at the University of California, Berkeley. I have completed several internships and am actively involved in college clubs and societies, where I enjoy working in dynamic, collaborative environments. I am deeply passionate about innovative technology\u2014especially when it can be applied meaningfully to create positive real-world impact. Beyond academics and work, I enjoy staying active and creative. I play basketball, compete in varsity-level Taekwondo competitions, and am training as an aspiring triathlete. I also play electric bass in a band and have performed at several university events. I thrive in fast-paced, rigorous environments and am driven by curiosity, exploration, and new experiences.",
+        "title": "About Me",
+        "embedding": 1
+    },
+    {
+        "page_id": "2d30de09-c096-8177-9d03-ed2d8c453ae2",
+        "text": "Passion & Interests\nI am passionate about meaningful technology. ",
+        "title": "About Me",
+        "embedding": 1
+    },
+    {
+        "page_id": "2d30de09-c096-8177-9d03-ed2d8c453ae2",
+        "text": "Experience\nI have completed several internships across startups, public-sector organizations, and deep-tech research environments, which have collectively shaped my technical foundation and understanding of how technology is applied at scale.",
+        "title": "About Me",
+        "embedding": 1
+    },
+    {
+        "page_id": "2d30de09-c096-8177-9d03-ed2d8c453ae2",
+        "text": "Experience\nLast summer, I worked at DSO, where I was involved in improving existing systems in collaboration with a third-party Hardware-as-a-Service (HaaS) provider. My work focused on increasing computational efficiency by leveraging GPU-based systems, particularly through parallelising clustering algorithms on a HIP-based GPU architecture. I researched and implemented clustering techniques such as DBSCAN, HDBSCAN, and Mean-Shift, and benchmarked their performance using simulated datasets. This experience deepened my understanding of high-performance computing, parallel algorithms, and the practical challenges of deploying GPU-accelerated systems.",
+        "title": "About Me",
+        "embedding": 1
+    },
+    {
+        "page_id": "2d30de09-c096-8177-9d03-ed2d8c453ae2",
+        "text": "Experience\nIn my second internship, I worked at the Land Transport Authority (LTA) as an Artificial Intelligence Intern. As a mature organization, LTA placed strong emphasis on upskilling and educating its officers on the evolving state of AI and modern technologies. I conducted in-depth research across multiple areas of deep learning, including artificial neural networks, convolutional neural networks, generative AI, retrieval-augmented generation, and reinforcement learning. I then distilled these concepts into clear, accessible explanations tailored for non-technical audiences. Alongside this, I completed several deep learning courses to strengthen my technical foundation, an experience I found both challenging and highly rewarding.",
+        "title": "About Me",
+        "embedding": 1
+    },
+    {
+        "page_id": "2d30de09-c096-8177-9d03-ed2d8c453ae2",
+        "text": "Experience\nMy first internship was at a startup focused on gamifying the shopping experience, where I worked as a Business Development and Automation Intern. While my primary responsibility involved lead generation and sales pitching, I also took initiative in improving internal workflows through automation. I developed tools to streamline lead generation and onboarding processes, automated CRM workflows using JavaScript, and learned Google Apps Script to build systems that enabled large-scale outreach emails. Additionally, I automated the onboarding pipeline by creating scheduled reminder, chaser, and follow-up emails, significantly improving operational efficiency.",
+        "title": "About Me",
+        "embedding": 1
+    },
+    {
+        "page_id": "2d30de09-c096-8177-9d03-ed2d8c453ae2",
+        "text": "Education \nI am a third-year Computer Engineering student at Nanyang Technological Uiversity (NTU) in Singapore, currently on exchange at the University of California, Berkeley. I am in my penultimate year and expect to graduate in 2027. At UC Berkeley, I have taken technically rigorous courses including Efficient Algorithms and Intractable Problems, Feedback Control Systems, Control Theory and Reinforcement Learning, Databases, and Computer Networks, which strengthened my foundations in algorithms, systems, and control.",
+        "title": "About Me",
+        "embedding": 1
+    },
+    {
+        "page_id": "2d30de09-c096-8177-9d03-ed2d8c453ae2",
+        "text": "Education \nAt NTU, my coursework focuses on core computer engineering and software fundamentals, including Data Structures and Algorithms, Algorithm Design and Analysis, Object-Oriented Design and Programming, Software Engineering, Introduction to Data Science and Artificial Intelligence, Microprocessor System Design and Development, and Digital Systems Design. In addition to technical training, I have completed non-technical modules such as Fundamentals of Management, Accounting for Managerial Decisions, Science and Technology for Humanity, and Foundations of Engineering Leadership, which inform my approach to leadership and decision-making.",
+        "title": "About Me",
+        "embedding": 1
+    },
+    {
+        "page_id": "2d30de09-c096-8177-9d03-ed2d8c453ae2",
+        "text": "Extra Curriculars\nBlueprint (UC Berkeley)",
+        "title": "About Me",
+        "embedding": 1
+    },
+    {
+        "page_id": "2d30de09-c096-8177-9d03-ed2d8c453ae2",
+        "text": "Extra Curriculars\nAt UC Berkeley, I joined Blueprint, a technology club that partners with non-profits to build impactful software solutions. As a developer, I worked with a team to design and implement a full-stack application that digitises tabletop exercises used to train and evaluate emergency response workflows during pandemic outbreaks. From a technical standpoint, the system features a Next.js frontend, Supabase for database management and orchestration of real-time asynchronous operations, and is deployed on Vercel. The project emphasised reliability, real-time coordination, and reusability across emergency preparedness scenarios.",
+        "title": "About Me",
+        "embedding": 1
+    },
+    {
+        "page_id": "2d30de09-c096-8177-9d03-ed2d8c453ae2",
+        "text": "Extra Curriculars\nREACH (NTU)",
+        "title": "About Me",
+        "embedding": 1
+    },
+    {
+        "page_id": "2d30de09-c096-8177-9d03-ed2d8c453ae2",
+        "text": "Extra Curriculars\nAt NTU, I am part of REACH, an engineering club focused on developing assistive technologies for the differently abled in collaboration with organisations such as AWWA and MDAS. The club runs approximately seven active projects each academic year, and I am directly involved in two of them. My primary project aims to improve visual testing workflows in hospitals through an integrated hardware\u2013software system. The software component is built in Python using PyQt6 for the graphical user interface and computer vision pipelines involving filtering, cascade thresholding, and vectorised operations for efficiency. The hardware component uses an Arduino interfaced with servo motors, lasers, and haptic and feedback devices such as buttons, buzzers, and lights, with real-time communication between hardware and software handled via serial communication. ",
+        "title": "About Me",
+        "embedding": 1
+    },
+    {
+        "page_id": "2d30de09-c096-81c8-8b6b-ff881fa9a073",
+        "text": "The Context\nGlaucoma is a chronic, progressive optic neuropathy and is the leading cause of irreversible blindness worldwide. Key to the management of glaucoma is the accurate and precise assessment of visual field (VF) function to detect VF loss from glaucoma and to monitor disease progression, which impacts important clinical decisions with respect to medication titration, laser procedures and even surgery. VF function is monitored commonly with automated perimetry; This utilises light stimulus and requires similar user interactions to evaluate the user\u2019s VF.",
         "title": "The Evolution of EyeTracker",
-        "text": "The Context\nGlaucoma is a chronic, progressive optic neuropathy and is the leading cause of irreversible blindness worldwide. Key to the management of glaucoma is the accurate and precise assessment of visual field (VF) function to detect VF loss from glaucoma and to monitor disease progression, which impacts important clinical decisions with respect to medication titration, laser procedures and even surgery. VF function is monitored commonly with automated perimetry; This utilises light stimulus and requires similar user interactions to evaluate the user\u2019s VF.\nThe Problem \nThe reliability of VF testing is critical in ensuring meaningful results which will accurately inform clinical management decisions. Reliability is often difficult to achieve, due to the initial learning curve for the patients, as well as variability in patient understanding and executing the test protocols. Current practices rely heavily on explanation and attention of the attending ophthalmic technician, and patient comprehension and cooperation \u2013 both of which may be highly variable, leading to unreliable results that can compromise the accuracy of disease monitoring. This undermines efforts to optimise treatment strategies tailored to individual patient needs.\nIn real-world clinical setting, appointment slots for VF testing are often limited by manpower and availability of testing devices. VF testing is a relatively time-consuming and tedious process, taking up to 10 minutes per patient, depending on the testing algorithm used. This does not include additional time required for equipment set up, patient transfer and explanation of testing process. Hence, when a patient\u2019s VF test results are unreliable, resource constraints make it challenging to schedule a retest in close time proximity. This leads to an inefficient use of appointment slots for the clinic, and a missed opportunity to collect valuable data for the patient\u2019s care. This would delay diagnosis or detection of disease progression.\nThe Problem Breakdown\nTo tackle this problem, we first spoke to ophthalmologists to identify the gaps in current practices. After extensive discussion, we broke the problem down into two parts: Instruction and Execution.\nInstruction: \nThe patients in which these ophthalmologists have the most trouble with, are usually the elderly. With this group of people, struggles usually originate from a communicative breakdown. Due to the relative complexity of the test, significant time is spent on clarification. This problem is also exacerbated by potential language barriers and/or hearing impairments. \nExecution:\nGiven the enclosed nature of the test and that results are not known until the end of the 10 minute long procedure, doctors or nurses would not be able to consistently track and correct any mistakes in execution. Hence, any misunderstandings, unconscious habits or errors will go unidentified and only be reflected in via a failed test.\nHence, we to sufficiently address both parts of the problem, we decided to 1. Create a simplified instructional video to relay information and 2. Make a pre-assessment simulation booth for patients to familiarise with test procedures and environment as well as nurses to identify any potential misunderstandings or errors. \nThis solution should provide standardised, user-friendly instruction for patients, accompanied by hands-on practical practice with immediate sensory or tactile feedback.\nIn totality, this aims to reduce the VF testing learning curve for patients and enhance patient education - thereby improving reliability and consistency of test outcomes.\nThe Early Prototype\nRun in Terminal, Simple one stop UX\nVisualiser system\n\nOur initial prototype consisted of several components. In our design, we aimed to adapt current technologies to reduce friction and workload. \nVisualiser to screen dots on a white back ground\nCamera with pupil tracking capabilities\nBasic electronics such as an Arduino with some buttons to record presses and a buzzer to provide haptic feedback on erroneous presses.\nSome dark box to ensure ample illumination from the visualiser\nSome major challenges we faced:\nCamera placement\nA big problem we we faced was placing the camera at an appropriate location that ensured ample view of the eye while also avoiding the reflection from the light thrown by the visualiser.\nIllumination\nSample rate and pupil tracker accuracy\nMid-course correction\nConsulted ophthalmologists and realised flaws with lightning, not intuitive\nOne step further in, utilise existing neck support, box architecture,\nThe HI-FI\n\u2018Laser Turret\u2019 to shine spots at particular coordinates \nStaged PyQt6 GUI, more intuitive UX, build initialise, start stop into GUI, do not need to touch the terminal\nCalibration stage to adjust for differences for each patient. \nAdapted pupil tracker with vectorised calculations\n3D Printed Box\nLearning Points\ntechnical growth exposure\nfancy technical architecture not important, just need to fulfil user requriements, meet user standards\nWhat Now?\nGPU integration with PCB for fast processing of images. Allow more calculations more accurate detection of pupil, allow more light correction and editing.\nActual user testing, to identify painpoints."
+        "embedding": 1
+    },
+    {
+        "page_id": "2d30de09-c096-81c8-8b6b-ff881fa9a073",
+        "text": "The Problem \nThe reliability of VF testing is critical in ensuring meaningful results which will accurately inform clinical management decisions. Reliability is often difficult to achieve, due to the initial learning curve for the patients, as well as variability in patient understanding and executing the test protocols. Current practices rely heavily on explanation and attention of the attending ophthalmic technician, and patient comprehension and cooperation \u2013 both of which may be highly variable, leading to unreliable results that can compromise the accuracy of disease monitoring. This undermines efforts to optimise treatment strategies tailored to individual patient needs.",
+        "title": "The Evolution of EyeTracker",
+        "embedding": 1
+    },
+    {
+        "page_id": "2d30de09-c096-81c8-8b6b-ff881fa9a073",
+        "text": "The Problem \nIn real-world clinical setting, appointment slots for VF testing are often limited by manpower and availability of testing devices. VF testing is a relatively time-consuming and tedious process, taking up to 10 minutes per patient, depending on the testing algorithm used. This does not include additional time required for equipment set up, patient transfer and explanation of testing process. Hence, when a patient\u2019s VF test results are unreliable, resource constraints make it challenging to schedule a retest in close time proximity. This leads to an inefficient use of appointment slots for the clinic, and a missed opportunity to collect valuable data for the patient\u2019s care. This would delay diagnosis or detection of disease progression.",
+        "title": "The Evolution of EyeTracker",
+        "embedding": 1
+    },
+    {
+        "page_id": "2d30de09-c096-81c8-8b6b-ff881fa9a073",
+        "text": "The Problem Breakdown\nTo tackle this problem, we first spoke to ophthalmologists to identify the gaps in current practices. After extensive discussion, we broke the problem down into two parts: Instruction and Execution.",
+        "title": "The Evolution of EyeTracker",
+        "embedding": 1
+    },
+    {
+        "page_id": "2d30de09-c096-81c8-8b6b-ff881fa9a073",
+        "text": "The Problem Breakdown\nInstruction: ",
+        "title": "The Evolution of EyeTracker",
+        "embedding": 1
+    },
+    {
+        "page_id": "2d30de09-c096-81c8-8b6b-ff881fa9a073",
+        "text": "The Problem Breakdown\nThe patients in which these ophthalmologists have the most trouble with, are usually the elderly. With this group of people, struggles usually originate from a communicative breakdown. Due to the relative complexity of the test, significant time is spent on clarification. This problem is also exacerbated by potential language barriers and/or hearing impairments. ",
+        "title": "The Evolution of EyeTracker",
+        "embedding": 1
+    },
+    {
+        "page_id": "2d30de09-c096-81c8-8b6b-ff881fa9a073",
+        "text": "The Problem Breakdown\nExecution:",
+        "title": "The Evolution of EyeTracker",
+        "embedding": 1
+    },
+    {
+        "page_id": "2d30de09-c096-81c8-8b6b-ff881fa9a073",
+        "text": "The Problem Breakdown\nGiven the enclosed nature of the test and that results are not known until the end of the 10 minute long procedure, doctors or nurses would not be able to consistently track and correct any mistakes in execution. Hence, any misunderstandings, unconscious habits or errors will go unidentified and only be reflected in via a failed test.",
+        "title": "The Evolution of EyeTracker",
+        "embedding": 1
+    },
+    {
+        "page_id": "2d30de09-c096-81c8-8b6b-ff881fa9a073",
+        "text": "The Problem Breakdown\nHence, we to sufficiently address both parts of the problem, we decided to 1. Create a simplified instructional video to relay information and 2. Make a pre-assessment simulation booth for patients to familiarise with test procedures and environment as well as nurses to identify any potential misunderstandings or errors. ",
+        "title": "The Evolution of EyeTracker",
+        "embedding": 1
+    },
+    {
+        "page_id": "2d30de09-c096-81c8-8b6b-ff881fa9a073",
+        "text": "The Problem Breakdown\nThis solution should provide standardised, user-friendly instruction for patients, accompanied by hands-on practical practice with immediate sensory or tactile feedback.",
+        "title": "The Evolution of EyeTracker",
+        "embedding": 1
+    },
+    {
+        "page_id": "2d30de09-c096-81c8-8b6b-ff881fa9a073",
+        "text": "The Problem Breakdown\nIn totality, this aims to reduce the VF testing learning curve for patients and enhance patient education - thereby improving reliability and consistency of test outcomes.",
+        "title": "The Evolution of EyeTracker",
+        "embedding": 1
+    },
+    {
+        "page_id": "2d30de09-c096-81c8-8b6b-ff881fa9a073",
+        "text": "The Early Prototype\nRun in Terminal, Simple one stop UX Visualiser system",
+        "title": "The Evolution of EyeTracker",
+        "embedding": 1
+    },
+    {
+        "page_id": "2d30de09-c096-81c8-8b6b-ff881fa9a073",
+        "text": "The Early Prototype\n\nOur initial prototype consisted of several components. In our design, we aimed to adapt current technologies to reduce friction and workload. ",
+        "title": "The Evolution of EyeTracker",
+        "embedding": 1
+    },
+    {
+        "page_id": "2d30de09-c096-81c8-8b6b-ff881fa9a073",
+        "text": "The Early Prototype\nVisualiser to screen dots on a white back ground Camera with pupil tracking capabilities Basic electronics such as an Arduino with some buttons to record presses and a buzzer to provide haptic feedback on erroneous presses. Some dark box to ensure ample illumination from the visualiser",
+        "title": "The Evolution of EyeTracker",
+        "embedding": 1
+    },
+    {
+        "page_id": "2d30de09-c096-81c8-8b6b-ff881fa9a073",
+        "text": "The Early Prototype\nSome major challenges we faced:",
+        "title": "The Evolution of EyeTracker",
+        "embedding": 1
+    },
+    {
+        "page_id": "2d30de09-c096-81c8-8b6b-ff881fa9a073",
+        "text": "The Early Prototype\nCamera placement Illumination Sample rate and pupil tracker accuracy",
+        "title": "The Evolution of EyeTracker",
+        "embedding": 1
+    },
+    {
+        "page_id": "2d30de09-c096-81c8-8b6b-ff881fa9a073",
+        "text": "Mid-course correction\nConsulted ophthalmologists and realised flaws with lightning, not intuitive One step further in, utilise existing neck support, box architecture,",
+        "title": "The Evolution of EyeTracker",
+        "embedding": 1
+    },
+    {
+        "page_id": "2d30de09-c096-81c8-8b6b-ff881fa9a073",
+        "text": "The HI-FI\n\u2018Laser Turret\u2019 to shine spots at particular coordinates  Staged PyQt6 GUI, more intuitive UX, build initialise, start stop into GUI, do not need to touch the terminal Calibration stage to adjust for differences for each patient.  Adapted pupil tracker with vectorised calculations 3D Printed Box",
+        "title": "The Evolution of EyeTracker",
+        "embedding": 1
+    },
+    {
+        "page_id": "2d30de09-c096-81c8-8b6b-ff881fa9a073",
+        "text": "Learning Points\ntechnical growth exposure fancy technical architecture not important, just need to fulfil user requriements, meet user standards",
+        "title": "The Evolution of EyeTracker",
+        "embedding": 1
+    },
+    {
+        "page_id": "2d30de09-c096-81c8-8b6b-ff881fa9a073",
+        "text": "What Now?\nGPU integration with PCB for fast processing of images. Allow more calculations more accurate detection of pupil, allow more light correction and editing. Actual user testing, to identify painpoints.",
+        "title": "The Evolution of EyeTracker",
+        "embedding": 1
+    },
+    {
+        "page_id": "2db0de09-c096-803b-b5ae-ddeb05bc6d59",
+        "text": "Root\nJust a musing of places that have my heart. My favourite answers to where i might wna move to in the morning",
+        "title": "My favourite travel destinations",
+        "embedding": 1
+    },
+    {
+        "page_id": "2db0de09-c096-803b-b5ae-ddeb05bc6d59",
+        "text": "Root\nPorto",
+        "title": "My favourite travel destinations",
+        "embedding": 1
+    },
+    {
+        "page_id": "2db0de09-c096-803b-b5ae-ddeb05bc6d59",
+        "text": "Root\nLos Angles",
+        "title": "My favourite travel destinations",
+        "embedding": 1
+    },
+    {
+        "page_id": "2db0de09-c096-803b-b5ae-ddeb05bc6d59",
+        "text": "Root\nAmsterdam",
+        "title": "My favourite travel destinations",
+        "embedding": 1
     }
 ]
