@@ -37,7 +37,7 @@ const NavBar: React.FC<NavBarProps> = ({ className = "" }) => {
   // Show a skeleton or neutral state until mounted
   if (!mounted) {
     return (
-      <div className={`${className} relative flex flex-row flex-nowrap justify-between items-center py-4 md:py-6 bg-background border-b border-border`}>
+      <div className={`${className} relative flex flex-row flex-nowrap justify-between items-center py-4 md:py-6 bg-background border-border`}>
         <div className="text-xl font-bold text-foreground"><PiMountainsFill/></div>
         <div className="flex items-center space-x-2">
           {/* Neutral button states */}

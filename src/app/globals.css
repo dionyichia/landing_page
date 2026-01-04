@@ -184,3 +184,30 @@ body.scrolled .navbar {
   opacity: 1;
   background-color: var(--background);
 }
+
+@keyframes grow-up {
+  from {
+    height: 0;
+  }
+  to {
+    height: 90px;
+  }
+}
+
+.sidebar {
+  position: fixed;
+  bottom: 0;
+  margin-bottom: 0;
+  height: 35vh;
+}
+
+.sidebar::after {
+  content: '';
+  display: block;
+  width: 4px;
+  margin-top: 20px;
+  background-color: transparent;
+  animation: grow-up 1.5s ease-in-out forwards;
+  animation-delay: 0.5s; /* Wait before starting */
+  height: 20; /* Start at 0 */
+}

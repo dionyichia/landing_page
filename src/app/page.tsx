@@ -8,14 +8,24 @@ import Skills from "@/sections/Skills";
 import Experience from "@/sections/Experience";
 import Contact from "@/sections/Contact";
 import { SmallText } from "@/components/typography";
+import SideSocials from "@/components/side_socials";
+import SideEmail from "@/components/side_email";
 
 export default function Home() {
   return (
-    <div className="relative w-9/12 mx-auto bg-background">
+    <div className="relative mx-auto bg-background w-11/12">
       {/* Fixed navbar at the top */}
       <div className="navbar">
         {/* Need to reapply width styles because navbar class is fixed (not part of DOM, relative to viewport) */}
-        < NavBar className="w-9/12 mx-auto"/> 
+        <NavBar className="max-w-11/12 mx-auto"/> 
+      </div>
+
+      {/* Side Bars */}
+      <div className="hidden md:block sidebar">
+        <SideSocials className=""/> 
+      </div>
+      <div className="hidden md:block sidebar right-[4.1667vw]">
+        <SideEmail className="[writing-mode:vertical-rl] [text-orientation:left] "/>
       </div>
 
       {/* Left and Right Bars */}
@@ -131,11 +141,9 @@ export default function Home() {
         }
       `}</style>
 
-      {/* Full-screen home section */}
-      <HomeSection/>
-
-      {/* Container for the rest of the sections */}
-      <div className="py-16 flex flex-col items-center sm:items-start mx-auto max-w-7xl px-2 md:px-6 lg:px-8">
+      {/* Container for each sections */}
+      <div className="flex flex-col items-center sm:items-start mx-auto w-10/12 px-2 md:px-6 lg:px-8">
+        <HomeSection/>
         <About />
         <Skills />
         <Lifeline />
