@@ -3,6 +3,7 @@ import os
 import dotenv
 from openai import OpenAI
 from notion_client import Client
+import hashlib
 
 dotenv.load_dotenv()
 
@@ -55,6 +56,7 @@ def extract_text_from_block(block: dict) -> tuple[str, str, str]:
 def get_all_text_from_page(page_id: str, most_recent_header="Root") -> list[str]:
     texts = []
     cur_para = []
+    cur_para_block_ids = []
     blocks = list_all_block_children(page_id)
 
     most_recent_header = "Root"
@@ -66,8 +68,15 @@ def get_all_text_from_page(page_id: str, most_recent_header="Root") -> list[str]
         if header:
             # flush previous paragraph
             if cur_para:
-                texts.append(f"{most_recent_header}\n" + " ".join(cur_para))
+                chunk_id = ":".join(cur_para_block_ids)
+
+                texts.append({
+                    "chunk_id": chunk_id,
+                    "text": f"{most_recent_header}\n" + " ".join(cur_para)
+                    })
+                
                 cur_para = []
+                cur_para_block_ids = []
 
             most_recent_header = header
         else:
@@ -76,21 +85,41 @@ def get_all_text_from_page(page_id: str, most_recent_header="Root") -> list[str]
                 # If it is not a paragraph block, cache text
                 if block_type:
                     cur_para.append(text)
+                    cur_para_block_ids.append(block["id"])
                     continue
                 
                 # If it is a para block and prev cache not empty, flush cache
                 elif cur_para: 
-                    texts.append(f"{most_recent_header}\n" + " ".join(cur_para))
-                    cur_para = []
+                    chunk_id = ":".join(cur_para_block_ids)
 
-                texts.append(f"{most_recent_header}\n{text}")
+                    texts.append({
+                        "chunk_id": chunk_id,
+                        "text": f"{most_recent_header}\n" + " ".join(cur_para)
+                        })
+                    
+                    cur_para = []
+                    cur_para_block_ids = []
+
+
+                texts.append({
+                    "chunk_id": block["id"],
+                    "text": f"{most_recent_header}\n{text}"
+                    })
 
         # recurse if this block has children
         if block.get("has_children"):
             texts.extend(get_all_text_from_page(block["id"], most_recent_header=most_recent_header))
 
     if cur_para:
-        texts.append(f"{most_recent_header}\n" + " ".join(cur_para))
+        chunk_id = ":".join(cur_para_block_ids)
+
+        texts.append({
+            "chunk_id": chunk_id,
+            "text": f"{most_recent_header}\n" + " ".join(cur_para)
+            })
+        
+        cur_para = []
+        cur_para_block_ids = []
 
     return texts
 
@@ -158,11 +187,11 @@ def build_raw_corpus(database_id: str):
 
         print(f"Reading page: {title}")
 
-        # List of texts
+        # List of dictionary of text blocks
         page_text = get_all_text_from_page(page_id=page_id, most_recent_header=title)
 
         corpus.append({
-            "id": page_id,
+            "page_id": page_id,
             "title": title,
             "text": page_text,
         })
@@ -175,28 +204,43 @@ def embed_text(text: str):
         input=text
     ).data[0].embedding
 
+def hash_text(text: str) -> str:
+    return hashlib.sha256(text.encode("utf-8")).hexdigest()
+
 def main():
-    # with open(INPUT, "r") as f:
-    #     chunks = json.load(f)
+
+    # Load old embeddings
+    try:
+        with open(OUTPUT) as f:
+            old_data = json.load(f)
+            old_chunks = {c["chunk_id"]: c for c in old_data}
+    except FileNotFoundError:
+        old_chunks = {}
 
     output = []
-
     corpus = build_raw_corpus(DB_ID)
     print(corpus)
-    
-    with open(OUTPUT, "w") as f:
-        json.dump(corpus, f, indent=4)
 
     for page in corpus:
         for chunk in page["text"]:
-            print(f"Embedding: {page['id']}")
+
+            # Check if chunk exists in old_chunk
+            print(f"Checking: {page['page_id']}")
+            hashed_text = hash_text(text=chunk["text"])
+            old = old_chunks.get(chunk["id"], "")
+
+            if old and old
+
             embedding = 1 ## embed_text(chunk)
+            
+            
 
             output.append({
-                "page_id": page["id"],
-                "text": chunk,
+                "chunk_id": chunk["chunk_id"],
                 "title": page["title"],
-                "embedding": embedding
+                "text": chunk["text"],
+                "embedding": embedding,
+                "text_hash": hashed_text,
             })
 
     with open(OUTPUT, "w") as f:

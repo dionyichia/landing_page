@@ -11,11 +11,9 @@ export async function POST(req: Request) {
     const {
         messages,
         model,
-        webSearch,
     }: { 
         messages: UIMessage[]; 
         model: string; 
-        webSearch: boolean;
     } = await req.json();
 
     // 1. Convert UI messages
