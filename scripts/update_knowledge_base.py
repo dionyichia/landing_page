@@ -53,13 +53,20 @@ def extract_text_from_block(block: dict) -> tuple[str, str, str]:
     # If it not a paragraph on its own, add to previous, i.e. combine all list items, quotes and every thing else into 1 paragraph
     return "", block_type, text
 
+# Helper to flush paragraph into all_text_chunks_in_page array
+def flush_paragraph(cur_para, cur_para_block_ids, header):
+       if not cur_para:
+           return None
+       return {
+           "chunk_id": ":".join(cur_para_block_ids),
+           "text": f"{header}\n" + " ".join(cur_para)
+       }
+
 def get_all_text_from_page(page_id: str, most_recent_header="Root") -> list[str]:
-    texts = []
+    all_text_chunks_in_page = []
     cur_para = []
     cur_para_block_ids = []
     blocks = list_all_block_children(page_id)
-
-    most_recent_header = "Root"
 
     for block in blocks:
         header, block_type, text = extract_text_from_block(block)
@@ -68,13 +75,8 @@ def get_all_text_from_page(page_id: str, most_recent_header="Root") -> list[str]
         if header:
             # flush previous paragraph
             if cur_para:
-                chunk_id = ":".join(cur_para_block_ids)
-
-                texts.append({
-                    "chunk_id": chunk_id,
-                    "text": f"{most_recent_header}\n" + " ".join(cur_para)
-                    })
-                
+                all_text_chunks_in_page.append(flush_paragraph(cur_para=cur_para, cur_para_block_ids=cur_para_block_ids, header=most_recent_header))
+        
                 cur_para = []
                 cur_para_block_ids = []
 
@@ -90,38 +92,28 @@ def get_all_text_from_page(page_id: str, most_recent_header="Root") -> list[str]
                 
                 # If it is a para block and prev cache not empty, flush cache
                 elif cur_para: 
-                    chunk_id = ":".join(cur_para_block_ids)
-
-                    texts.append({
-                        "chunk_id": chunk_id,
-                        "text": f"{most_recent_header}\n" + " ".join(cur_para)
-                        })
+                    all_text_chunks_in_page.append(flush_paragraph(cur_para=cur_para, cur_para_block_ids=cur_para_block_ids, header=most_recent_header))
                     
                     cur_para = []
                     cur_para_block_ids = []
 
 
-                texts.append({
+                all_text_chunks_in_page.append({
                     "chunk_id": block["id"],
                     "text": f"{most_recent_header}\n{text}"
                     })
 
         # recurse if this block has children
         if block.get("has_children"):
-            texts.extend(get_all_text_from_page(block["id"], most_recent_header=most_recent_header))
+            all_text_chunks_in_page.extend(get_all_text_from_page(block["id"], most_recent_header=most_recent_header))
 
     if cur_para:
-        chunk_id = ":".join(cur_para_block_ids)
-
-        texts.append({
-            "chunk_id": chunk_id,
-            "text": f"{most_recent_header}\n" + " ".join(cur_para)
-            })
+        all_text_chunks_in_page.append(flush_paragraph(cur_para=cur_para, cur_para_block_ids=cur_para_block_ids, header=most_recent_header))
         
         cur_para = []
         cur_para_block_ids = []
 
-    return texts
+    return all_text_chunks_in_page
 
 def list_all_block_children(block_id: str):
     blocks = []
@@ -225,15 +217,18 @@ def main():
         for chunk in page["text"]:
 
             # Check if chunk exists in old_chunk
-            print(f"Checking: {page['page_id']}")
+            print(f"Checking: {chunk['chunk_id']}")
             hashed_text = hash_text(text=chunk["text"])
-            old = old_chunks.get(chunk["id"], "")
+            old_chunk = old_chunks.get(chunk["chunk_id"], "")
 
-            if old and old
+            # reuse old embedding
+            if old_chunk and old_chunk["text_hash"] == hashed_text:
+                print("Chunk exists and unchanged: Skipping Embed")
+                embedding = old_chunk["embedding"]
 
-            embedding = 1 ## embed_text(chunk)
-            
-            
+            else:
+                print("No chunk found or changed")
+                embedding = 1 ## embed_text(chunk)
 
             output.append({
                 "chunk_id": chunk["chunk_id"],

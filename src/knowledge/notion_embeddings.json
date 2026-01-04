@@ -2,9 +2,9 @@
     {
         "chunk_id": "2d30de09-c096-81ea-8ce8-c351d98fdbf8",
         "title": "Slidr",
-        "text": "Root\nIn today's world, ",
+        "text": "Slidr\nIn today's world, ",
         "embedding": 1,
-        "text_hash": "e4bcc9c6d8f776d71aac7bba38687fafd5086cddeeb27286e68977444279dbb3"
+        "text_hash": "cb518109f5d9b6aed65492c8573d9464ebd74c23a02499fc41790c42709f8571"
     },
     {
         "chunk_id": "2d30de09-c096-8168-a544-e0863eac870f",
@@ -58,9 +58,9 @@
     {
         "chunk_id": "2d30de09-c096-81e1-8b7f-e44ef77f5063",
         "title": "My Favorite Hobbies: How I Spend My Free Time",
-        "text": "Root\nIn our fast paced",
+        "text": "My Favorite Hobbies: How I Spend My Free Time\nIn our fast paced",
         "embedding": 1,
-        "text_hash": "68593e4f72a683b3a2bdd3c9963490505f6e222e0941f3ec1634bde32dec095b"
+        "text_hash": "973bfe3a2b1683ac3e87e2062c857959ec3aa2367f4565825f84d36db1379b04"
     },
     {
         "chunk_id": "2d70de09-c096-80e0-99ed-f6977326ff31",
@@ -163,9 +163,9 @@
     {
         "chunk_id": "2d30de09-c096-8144-9ef0-f51e7a0fb807",
         "title": "Summer 2025",
-        "text": "Root\nLast summer, ",
+        "text": "Summer 2025\nLast summer, ",
         "embedding": 1,
-        "text_hash": "12314eb561f2891c70e193c9428ccaf4166f947e63f1c7412ec2ad8a39d16e08"
+        "text_hash": "0b76cc2d7513499c1a92c1f69c6cfa2bb03413c07ce75fff5c63f04d6c2e3e69"
     },
     {
         "chunk_id": "2d30de09-c096-81a4-ab9c-daf70a1194c3",
@@ -450,29 +450,43 @@
     {
         "chunk_id": "2db0de09-c096-809a-821f-d6aea7969731",
         "title": "My favourite travel destinations",
-        "text": "Root\nJust a musing of places that have my heart. My favourite answers to where i might wna move to in the morning",
+        "text": "My favourite travel destinations\nJust a musing of places that have my heart. My favourite answers to where i might wna move to in the morning",
         "embedding": 1,
-        "text_hash": "378bb5a76801f222ba4c18808f93d4ab681fcae74c1dc8dbe97436b673f1169a"
+        "text_hash": "1ac0491980930b02aec0a263eee38cf00481927cb7bb3fe428403a98aa466b65"
     },
     {
         "chunk_id": "2db0de09-c096-80a0-9ba7-cf65dbb9d249",
         "title": "My favourite travel destinations",
-        "text": "Root\nPorto",
+        "text": "My favourite travel destinations\nPorto",
         "embedding": 1,
-        "text_hash": "e70fc1ff4fb7084ab6c9052360499661ad581ad3962033ddd5f15cd0799401f3"
+        "text_hash": "775d07a4ff59ed19d2d43b820a58c8313b42ab60bb2185e3e40843f78a997b55"
     },
     {
-        "chunk_id": "2db0de09-c096-8056-8182-d896ecc0b91a",
+        "chunk_id": "2db0de09-c096-80a6-9901-f44847920c73",
         "title": "My favourite travel destinations",
-        "text": "Root\nLos Angles",
+        "text": "My favourite travel destinations\nLos Angles",
         "embedding": 1,
-        "text_hash": "23a707d7a680aa11497613311178b19188839ec9a7cad8e62a653b3db2352da7"
+        "text_hash": "0a00d7c68d5bc7ce1bc8f5e158650e57ca0d4660b34fba49c58dcb76df234e2a"
+    },
+    {
+        "chunk_id": "2de0de09-c096-8001-a90c-f17466b41953",
+        "title": "My favourite travel destinations",
+        "text": "My favourite travel destinations\nNew woof",
+        "embedding": 1,
+        "text_hash": "59cc8d67bbe9e314761a488554c00e645ee42154cf2cb3c07fb1dd01e7a76e20"
     },
     {
         "chunk_id": "2db0de09-c096-8095-93e7-cb709f9cb73a",
         "title": "My favourite travel destinations",
-        "text": "Root\nAmsterdam",
+        "text": "My favourite travel destinations\nAmsterdam meowmeow",
         "embedding": 1,
-        "text_hash": "d35d49bc8da91c64e0ad2d908a253727e7be532584b3861908abd49ba985c136"
+        "text_hash": "354c4a62475478e641d7da58a8eb4c6d52fc29de69b035dfa689c5e5cf0cac64"
+    },
+    {
+        "chunk_id": "2de0de09-c096-807d-9459-ee109750ba43",
+        "title": "My favourite travel destinations",
+        "text": "My favourite travel destinations\nPorto Los Angles",
+        "embedding": 1,
+        "text_hash": "01c36c050b270e29479e5a66d2fa842b5478a6cf3e4ef3dc1a546fc2e935a7ed"
     }
 ]
