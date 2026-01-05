@@ -52,8 +52,13 @@ const NavBar: React.FC<NavBarProps> = ({ className = "" }) => {
   return (
     <div className={`${className} relative flex flex-row flex-nowrap justify-between items-center py-4 md:py-6 border-b`}>
       {/* Logo */}
-      <div className="text-2xl md:text-3xl lg:text-4xl font-bold p-2 text-primary transition-colors">
-        <PiMountainsFill/>
+      <div className="text-2xl md:text-3xl lg:text-4xl font-bold p-2 text-foreground hover:text-accent transition-colors">
+          <button
+              onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+              className="font-arapey"
+            >
+              <PiMountainsFill />
+          </button>
       </div>
 
       {/* Navigation Links (Desktop) */}
@@ -70,7 +75,7 @@ const NavBar: React.FC<NavBarProps> = ({ className = "" }) => {
               smooth={true}
               duration={500}
               offset={-48}
-              className="font-arapey"
+              className="font-arapey hover:text-accent"
             >
               {section.charAt(0).toUpperCase() + section.slice(1)}
             </Link>

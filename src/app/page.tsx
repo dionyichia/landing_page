@@ -21,125 +21,21 @@ export default function Home() {
       </div>
 
       {/* Side Bars */}
-      <div className="hidden md:block sidebar text-foreground dark:text-font">
+      {/* <div className="hidden md:block sidebar text-font">
         <SideSocials className=""/> 
+      </div> */}
+
+      <div className="hidden md:block">
+        <div className="sidebar dark:text-font">
+          <SideSocials className="animate-grow-up shrink-0" />
+          <div className="side-line" />
+        </div>  
+
+        <div className="sidebar md:right-[4.1667vw]">
+          <SideEmail className="animate-grow-up shrink-0 [writing-mode:vertical-rl] [text-orientation:left] transition-all"/>
+          <div className="side-line" />
+        </div>
       </div>
-      <div className="hidden md:block sidebar right-[4.1667vw]">
-        <SideEmail className="[writing-mode:vertical-rl] [text-orientation:left] transition-all"/>
-      </div>
-
-      {/* Left and Right Bars */}
-      <div className='fixed bottom-10 left-0'>
-        <div className='h-0.5 md:h-0.75 bg-foreground animate-extend-vertical origin-bottom'/>
-        {/* <div className='w-0.5 md:w-0.75 bg-foreground animate-extend-vertical-tl origin-top'/> */}
-      </div>
-
-      {/* 
-      <div className='absolute top-0 left-0'>
-        <div className='h-0.5 md:h-0.75 bg-foreground animate-extend-horizontal-tl origin-left'/>
-        <div className='w-0.5 md:w-0.75 bg-foreground animate-extend-vertical-tl origin-top'/>
-      </div>
-
-      <div className='absolute bottom-0 right-0'>
-        <div className='h-0.5 md:h-0.75 bg-foreground animate-extend-horizontal-br origin-right'/>
-        <div className='w-0.5 md:w-0.75 bg-foreground animate-extend-vertical-br origin-bottom'/>
-      </div> 
-
-      <style jsx>{`
-        @keyframes extend-horizontal-tl {
-          0% { width: 0; }
-          50% { width: clamp(8rem, 25vw, 25rem); }
-          100% { width: clamp(8rem, 25vw, 25rem); }
-        }
-        
-        @keyframes extend-vertical-tl {
-          0%, 50% { height: 0; }
-          100% { height: clamp(2rem, 15vh, 8rem); }
-        }
-        
-        @keyframes extend-horizontal-br {
-          0% { width: 0; }
-          50% { width: clamp(8rem, 25vw, 24rem); }
-          100% { width: clamp(8rem, 25vw, 24rem); }
-        }
-        
-        @keyframes extend-vertical-br {
-          0%, 50% { height: 0; }
-          100% { height: clamp(2rem, 15vh, 7rem); }
-        }
-        
-        .animate-extend-horizontal-tl {
-          animation: extend-horizontal-tl 2s ease-out forwards;
-        }
-        
-        .animate-extend-vertical-tl {
-          animation: extend-vertical-tl 2s ease-out forwards;
-        }
-        
-        .animate-extend-horizontal-br {
-          animation: extend-horizontal-br 2s ease-out forwards;
-          position: absolute;
-          bottom: 0;
-          right: 0;
-        }
-        
-        .animate-extend-vertical-br {
-          animation: extend-vertical-br 2s ease-out forwards;
-          position: absolute;
-          bottom: 0;
-          right: 0;
-        }
-      `}</style> */}
-      <style jsx>{`
-        @keyframes extend-vertical {
-          0%, 50% { height: 0; }
-          100% { height: clamp(2rem, 15vh, 8rem); }
-        }
-
-        @keyframes extend-horizontal-tl {
-          0% { width: 0; }
-          50% { width: clamp(8rem, 25vw, 25rem); }
-          100% { width: clamp(8rem, 25vw, 25rem); }
-        }
-        
-        @keyframes extend-vertical-tl {
-          0%, 50% { height: 0; }
-          100% { height: clamp(2rem, 15vh, 8rem); }
-        }
-        
-        @keyframes extend-horizontal-br {
-          0% { width: 0; }
-          50% { width: clamp(8rem, 25vw, 24rem); }
-          100% { width: clamp(8rem, 25vw, 24rem); }
-        }
-        
-        @keyframes extend-vertical-br {
-          0%, 50% { height: 0; }
-          100% { height: clamp(2rem, 15vh, 7rem); }
-        }
-        
-        .animate-extend-horizontal-tl {
-          animation: extend-horizontal-tl 2s ease-out forwards;
-        }
-        
-        .animate-extend-vertical-tl {
-          animation: extend-vertical-tl 2s ease-out forwards;
-        }
-        
-        .animate-extend-horizontal-br {
-          animation: extend-horizontal-br 2s ease-out forwards;
-          position: absolute;
-          bottom: 0;
-          right: 0;
-        }
-        
-        .animate-extend-vertical-br {
-          animation: extend-vertical-br 2s ease-out forwards;
-          position: absolute;
-          bottom: 0;
-          right: 0;
-        }
-      `}</style>
 
       {/* Container for each sections */}
       <div className="flex flex-col items-center sm:items-start mx-auto w-10/12 px-2 md:px-6 lg:px-8">

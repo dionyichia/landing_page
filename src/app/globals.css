@@ -147,17 +147,15 @@
   }
   body {
     @apply bg-background text-primary-foreground;
-    /* font-family: var(--font-cormorant), Arial; Updated to use Cormorant for body text */
   }
 
   .btn {
-    @apply transition-all duration-300 ease-in-out rounded-none text-foreground hover:scale-105;
-    background-color: var(--primary);
+    @apply transition-all duration-300 ease-in-out rounded-none bg-foreground text-background hover:scale-105;
   }
   
   .btn:hover {
     @apply shadow-md rounded-full;
-    background-color: var(--primary-hover);
+    background-color: var(--accent);
   }
   
   .btn-primary {
@@ -169,6 +167,8 @@
     background-color: var(--foreground);
   }
 }
+
+/* NavBar Stuff */
 
 .navbar {
   position: fixed;
@@ -185,29 +185,68 @@ body.scrolled .navbar {
   background-color: var(--background);
 }
 
+/* Side Bar Stuff */
+
 @keyframes grow-up {
   from {
-    height: 0;
+    transform: translateY(30vh);
+    opacity: 0;
   }
   to {
-    height: 90px;
+    transform: translateY(0);
+    opacity: 1;
   }
 }
 
 .sidebar {
   position: fixed;
   bottom: 0;
-  margin-bottom: 0;
   height: 35vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: var(--foreground);
 }
 
-.sidebar::after {
-  content: '';
-  display: block;
-  width: 4px;
+.dark .sidebar {
+  color: var(--primary);
+}
+
+.animate-grow-up {
+  animation: grow-up 0.75s ease-out forwards;
+}
+
+.side-line {
+  width: 2px;
+  flex-grow: 1;                               /* start collapsed */
   margin-top: 20px;
-  background-color: transparent;
-  animation: grow-up 1.5s ease-in-out forwards;
-  animation-delay: 0.5s; /* Wait before starting */
-  height: 20; /* Start at 0 */
+  background-color: var(--foreground);
+  color: var(--foreground);
+  transform: scaleY(0);
+  transform-origin: bottom;
+  animation: grow-line 0.75s ease-in-out forwards;
+}
+
+@keyframes grow-line {
+  to {
+    transform: scaleY(1);
+  }
+}
+
+.dark .side-line {
+  background-color: var(--primary);
+}
+
+/* Home Section Transitions */
+.text-container {
+  transition: transform 0.75s ease-in-out, font-size 0.75s ease-in-out;
+  transform-origin: top left; /* shrink/scale from top-left corner */
+  font-size: 3rem; /* example starting font size */
+  position: relative;
+}
+
+/* Shrunk and moved state */
+.text-container.shrunk {
+  /* transform: translate(100px, 50px) scale(0.5); */
+  font-size: 1.5rem; /* smaller font size */
 }

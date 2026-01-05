@@ -103,7 +103,7 @@ export default function ChatBot ({ showChat, setShowChat }: ChatBotProps) {
 
     
     return (
-        <div className="w-full md:w-[50vw] lg:w-[40vw] xl:w-[40vw] mx-auto md:py-6 relative flex flex-col h-full">
+        <div className="w-full md:w-[50vw] lg:w-[40vw] xl:w-[40vw] mx-auto py-12 relative flex flex-col h-full">
             { showChat && 
                 <Conversation className="h-full">
                 <ConversationContent>
