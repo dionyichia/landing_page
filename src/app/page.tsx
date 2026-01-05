@@ -21,11 +21,11 @@ export default function Home() {
       </div>
 
       {/* Side Bars */}
-      <div className="hidden md:block sidebar">
+      <div className="hidden md:block sidebar text-foreground dark:text-font">
         <SideSocials className=""/> 
       </div>
       <div className="hidden md:block sidebar right-[4.1667vw]">
-        <SideEmail className="[writing-mode:vertical-rl] [text-orientation:left] "/>
+        <SideEmail className="[writing-mode:vertical-rl] [text-orientation:left] transition-all"/>
       </div>
 
       {/* Left and Right Bars */}
