@@ -228,7 +228,7 @@ def main():
 
             else:
                 print("No chunk found or changed")
-                embedding = 1 ## embed_text(chunk)
+                embedding = embed_text(chunk)
 
             output.append({
                 "chunk_id": chunk["chunk_id"],
