@@ -206,28 +206,27 @@ def main():
         with open(OUTPUT) as f:
             old_data = json.load(f)
             old_chunks = {c["chunk_id"]: c for c in old_data}
-    except FileNotFoundError:
+    except: 
         old_chunks = {}
 
     output = []
     corpus = build_raw_corpus(DB_ID)
-    print(corpus)
 
     for page in corpus:
         for chunk in page["text"]:
 
             # Check if chunk exists in old_chunk
-            print(f"Checking: {chunk['chunk_id']}")
+            # print(f"Checking: {chunk['chunk_id']}")
             hashed_text = hash_text(text=chunk["text"])
             old_chunk = old_chunks.get(chunk["chunk_id"], "")
 
             # reuse old embedding
             if old_chunk and old_chunk["text_hash"] == hashed_text:
-                print("Chunk exists and unchanged: Skipping Embed")
+                # print("Chunk exists and unchanged: Skipping Embed")
                 embedding = old_chunk["embedding"]
 
             else:
-                print("No chunk found or changed")
+                # print("No chunk found or changed")
                 embedding = embed_text(chunk)
 
             output.append({
