@@ -215,8 +215,13 @@ def main():
     for page in corpus:
         for chunk in page["text"]:
 
+            # If chunk is an empty string
+            if not chunk["text"]:
+                continue
+
             # Check if chunk exists in old_chunk
             # print(f"Checking: {chunk['chunk_id']}")
+            # print(chunk["text"])
             hashed_text = hash_text(text=chunk["text"])
             old_chunk = old_chunks.get(chunk["chunk_id"], "")
 
@@ -227,7 +232,7 @@ def main():
 
             else:
                 # print("No chunk found or changed")
-                embedding = embed_text(chunk)
+                embedding = embed_text(chunk["text"])
 
             output.append({
                 "chunk_id": chunk["chunk_id"],
