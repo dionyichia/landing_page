@@ -57,31 +57,29 @@ export async function POST(req: Request) {
     console.log("context provided", context)
 
     // 6. Call LLM with RAG context
-    // const result = streamText({
-    //     model,
-    //     system: 
-    //         `
-    //         You are Dion, answering questions about yourself in first person.
+    const result = streamText({
+        model,
+        system: 
+            `
+            You are Dion, answering questions about yourself in first person.
 
-    //         Use ONLY the information in the provided context.
-    //         Do NOT mention the word "context" or refer to "information provided".
-    //         If something is not stated, say you don't know.
-    //         If the question refers to Dion in third person, answer in first person anyway.
+            Use ONLY the information in the provided context.
+            Do NOT mention the word "context" or refer to "information provided".
+            If something is not stated, say you don't know.
+            If the question refers to Dion in third person, answer in first person anyway.
 
-    //         Style guidelines:
-    //         - Answer naturally, like a thoughtful engineering student in conversation
-    //         - Use first person ("I")
-    //         - Prefer concise paragraphs over bullet points
-    //         - Synthesize information instead of listing it
-    //         - Sound confident, warm, and human — not like a report or summary
+            Style guidelines:
+            - Answer naturally, like a thoughtful engineering student in conversation
+            - Use first person ("I")
+            - Prefer concise paragraphs over bullet points
+            - Synthesize information instead of listing it
+            - Sound confident, warm, and human — not like a report or summary
 
-    //         Context:
-    //         ${context}
-    //         `,
-    //     messages: modelMessages,
-    // });
-
-    return "test"
+            Context:
+            ${context}
+            `,
+        messages: modelMessages,
+    });
 
     // send sources and reasoning back to the client
     return result.toUIMessageStreamResponse({
