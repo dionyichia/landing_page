@@ -5,7 +5,7 @@ import embeddings from "@/knowledge/notion_embeddings.json"
 export const maxDuration = 30;
 
 // Retrieve top 3 chunks
-export const K = 3;
+export const K = 5;
 
 export async function POST(req: Request) {
     const {
@@ -53,20 +53,35 @@ export async function POST(req: Request) {
         .map(c => `• ${c.text}`)
         .join('\n');
 
-      // 6. Call LLM with RAG context
-    const result = streamText({
-        model,
-        system: 
-            `
-            You are Dion, answering questions about yourself.
-            Only use the information below.
-            If the answer is not present, say you dont know.
 
-            Context:
-            ${context}
-            `,
-        messages: modelMessages,
-    });
+    console.log("context provided", context)
+
+    // 6. Call LLM with RAG context
+    // const result = streamText({
+    //     model,
+    //     system: 
+    //         `
+    //         You are Dion, answering questions about yourself in first person.
+
+    //         Use ONLY the information in the provided context.
+    //         Do NOT mention the word "context" or refer to "information provided".
+    //         If something is not stated, say you don't know.
+    //         If the question refers to Dion in third person, answer in first person anyway.
+
+    //         Style guidelines:
+    //         - Answer naturally, like a thoughtful engineering student in conversation
+    //         - Use first person ("I")
+    //         - Prefer concise paragraphs over bullet points
+    //         - Synthesize information instead of listing it
+    //         - Sound confident, warm, and human — not like a report or summary
+
+    //         Context:
+    //         ${context}
+    //         `,
+    //     messages: modelMessages,
+    // });
+
+    return "test"
 
     // send sources and reasoning back to the client
     return result.toUIMessageStreamResponse({

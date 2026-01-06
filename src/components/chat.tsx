@@ -37,18 +37,22 @@ import {
 import { Loader } from '@/components/ai-elements/loader';
 
 const models = [
-  {
-    name: 'GPT 4o',
-    value: 'openai/gpt-4o',
-  },
-  {
-    name: 'Deepseek R1',
-    value: 'deepseek/deepseek-r1',
-  },
-  {
-    name: 'claude',
-    value: 'anthropic/claude-3-haiku'
-  }
+    {
+        name: 'gemini flash lite',
+        value: 'google/gemini-2.5-flash-lite',
+    },
+    {
+        name: 'GPT 4o',
+        value: 'openai/gpt-4o',
+    },
+    {
+        name: 'Deepseek R1',
+        value: 'deepseek/deepseek-r1',
+    },
+    {
+        name: 'claude',
+        value: 'anthropic/claude-3-haiku'
+    }
 ];
 
 type ChatBotProps = {
@@ -58,7 +62,7 @@ type ChatBotProps = {
 
 export default function ChatBot ({ showChat, setShowChat }: ChatBotProps) {
     const [input, setInput] = useState('');
-    const [model, setModel] = useState<string>(models[2].value);
+    const [model, setModel] = useState<string>(models[0].value);
     const { messages, sendMessage, status, regenerate } = useChat();
     const [isMultiline, setIsMultiline] = useState(false);
     const textareaRef = useRef<HTMLTextAreaElement>(null);
@@ -103,7 +107,14 @@ export default function ChatBot ({ showChat, setShowChat }: ChatBotProps) {
 
     
     return (
-        <div className="w-full md:w-[50vw] lg:w-[40vw] xl:w-[40vw] mx-auto py-12 relative flex flex-col h-full">
+        <div className={`
+            relative w-[70vw] md:w-[60vw] lg:w-[50vw] max-w-[640px] flex flex-col h-full,
+            ${ showChat ? 
+                'block h-[70vh] md:h-[60vh] xl:h-[75vh] max-w-[640px]'
+                :
+                ''
+            }
+            `}>
             { showChat && 
                 <Conversation className="h-full">
                 <ConversationContent>

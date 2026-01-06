@@ -1,5 +1,6 @@
 import { Heading2, Paragraph } from "@/components/typography";
 import about_img from "@/assets/about_img.jpg"
+import self_portrait from "@/assets/self-portrait.png"
 import Image from "next/image";
 
 const About = () => {
@@ -32,10 +33,10 @@ const About = () => {
         <div className="md:w-2/5 order-1 md:order-2 flex justify-center md:justify-end">
           <div className="relative h-32 w-52 md:w-full md:h-auto md:aspect-square">
             <Image 
-              src={about_img} 
+              src={self_portrait} 
               alt="Professional headshot" 
               fill
-              className="object-cover rounded-lg shadow-lg"
+              className="object-top object-cover rounded-lg shadow-lg"
               sizes="(max-width: 768px) 100vw, 40vw"
               priority
             />
