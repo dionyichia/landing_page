@@ -157,9 +157,9 @@ const Experience = () => {
         "Allows user to specify and provide template for generation, specify conditions such as length, tone, audience, and submit relevant documents to be referenced for content.",
         "Provides an interactive interface for users to fine-tune content before slides are created.",
       ],
-      code: "https://github.com/dionyichia/finder",
+      code: "https://github.com/dionyichia/Slidr",
       site: "",
-      video: "https://www.youtube.com/watch?v=YT9dohAY-Kk",
+      video: "",
     },
     {
       title: "Finder",
@@ -222,20 +222,20 @@ const Experience = () => {
       site: "https://www.dionyichia.com/",
       video: "",
     },
-    {
-      title: "The Dating Platform",
-      org: "NUS HacknRoll Hackfest 2024",
-      period: "Feburary 2025",
-      logo: hnr_logo,
-      skills: [],
-      img: [],
-      description: [
-        "Have you ever noticed how it is always so difficult to get quality swipes on dating platforms? Well, as a 5'7 average looking male - I have :( BUT LOOK NO FURTHER, for the change is now!"
-      ],
-      code: "",
-      site: "",
-      video: "",
-    },
+    // {
+    //   title: "The Dating Platform",
+    //   org: "NUS HacknRoll Hackfest 2024",
+    //   period: "Feburary 2025",
+    //   logo: hnr_logo,
+    //   skills: [],
+    //   img: [],
+    //   description: [
+    //     "Have you ever noticed how it is always so difficult to get quality swipes on dating platforms? Well, as a 5'7 average looking male - I have :( BUT LOOK NO FURTHER, for the change is now!"
+    //   ],
+    //   code: "",
+    //   site: "",
+    //   video: "",
+    // },
     {
       title: "Hospital Inventory Management System",
       org: "Software Engineering Module Final Project",
