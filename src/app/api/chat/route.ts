@@ -1,5 +1,6 @@
-import { streamText, UIMessage, convertToModelMessages, embed, cosineSimilarity } from 'ai';
+import { streamText, UIMessage, convertToModelMessages, embed, cosineSimilarity, generateText, Output } from 'ai';
 import embeddings from "@/knowledge/notion_embeddings.json"
+import { z } from 'zod';
 
 // Allow streaming responses up to 30 seconds
 export const maxDuration = 30;
@@ -7,13 +8,20 @@ export const maxDuration = 30;
 // Retrieve top 3 chunks
 export const K = 5;
 
+// Only take chunk above thresholds confidence 
+export const MIN_THRESHOLD = 0.2;
+
 export async function POST(req: Request) {
     const {
         messages,
-        model,
+        chat_model,
+        embedding_model,
+        query_expansion_model,
     }: { 
         messages: UIMessage[]; 
-        model: string; 
+        chat_model: string; 
+        embedding_model: string;
+        query_expansion_model: string;
     } = await req.json();
 
     // 1. Convert UI messages
@@ -32,41 +40,121 @@ export async function POST(req: Request) {
         .filter(p => p.type === 'text')
         .map(p => p.text)
         .join(' ');
+    
+    // 3. Expand user query
+    const schema = z.array(z.string()).min(3).max(5);
 
-    // 3. Embed user query
-    const { embedding: queryEmbedding } = await embed({
-        model: 'text-embedding-3-small',
-        value: userText,
+    const expandedQueryResult = await generateText({
+        model: query_expansion_model,
+        prompt: 
+            `
+            You help retrieve information about a person from a small personal knowledge base.
+
+            Given the user's question, generate 3 to 4 short search queries that capture different plausible intents.
+            Each query should be concise (max ~12 words).
+            Use terminology likely to appear in resumes or project descriptions.
+
+            Return each query as a string in a List. No extra text.
+
+            Example OUPUT: 
+            ["Dion summer internship experience", "Dion DSO GPU work", "Dion professional experience"]
+
+            User question:
+            ${userText}
+
+            Search queries:
+            `,
+        output: Output.object({ schema }),
     });
 
-    // 4. Similarity search (cosine)
-    const topK = embeddings
+    // 3.5 Validate new Queries, else default to user query
+    const newQueries: string[] =
+        Array.isArray(expandedQueryResult.output) && expandedQueryResult.output.length > 0
+            ? expandedQueryResult.output
+            : [userText];
+    
+    newQueries.forEach((query) => {
+        console.log("Query: ", query)
+    })
+
+    // 4. Embed each expanded query
+    const queryEmbeddings = await Promise.all(
+        newQueries.map(async (query) => {
+            const { embedding } = await embed({
+            model: embedding_model,
+            value: query,
+            });
+            return { query, embedding };
+        })
+    );
+
+    // 5. Similarity search (cosine)
+    const perQueryResults = queryEmbeddings.map(({ query, embedding }) => {
+    const results = embeddings
         .map(chunk => ({
         ...chunk,
-        score: cosineSimilarity(queryEmbedding, chunk.embedding),
+        score: cosineSimilarity(embedding, chunk.embedding),
+        sourceQuery: query,
         }))
+        .filter(chunk => chunk.score >= MIN_THRESHOLD)
         .sort((a, b) => b.score - a.score)
         .slice(0, K);
 
-    // 5. Build context
+    return results;
+    });
+    
+    // 5.1 Merge results
+    const mergedResults = perQueryResults.flat();
+
+    // 5.2 Deduplicate by chunk_id (keep highest score)
+    const dedupedMap = new Map<string, any>();
+
+    for (const chunk of mergedResults) {
+    const existing = dedupedMap.get(chunk.chunk_id);
+    if (!existing || chunk.score > existing.score) {
+        dedupedMap.set(chunk.chunk_id, chunk);
+    }
+    }
+
+    const dedupedResults = Array.from(dedupedMap.values());
+
+    // Global re-rank + final TopK
+    const topK = dedupedResults
+    .sort((a, b) => b.score - a.score)
+    .slice(0, K);
+
+    // Build context with logging
+    console.log('=== RETRIEVAL METRICS ===');
+    console.log('Query:', userText);
+    console.log('Number of chunks retrieved:', topK.length);
+    console.log('\nTop K Results:');
+    topK.forEach((chunk, idx) => {
+        console.log(`\n[${idx + 1}] Score: ${chunk.score.toFixed(4)}`);
+        console.log(`    Title: ${chunk.title}`);
+        console.log(`    Chunk ID: ${chunk.chunk_id}`);
+        console.log(`    Preview: ${chunk.text.substring(0, 100)}...`);
+    });
+    console.log('Score range:', topK[0]?.score, 'to', topK[topK.length-1]?.score);
+    console.log('\n=== END METRICS ===\n');
+
+    // Build context
     const context = topK
         .map(c => `• ${c.text}`)
         .join('\n');
 
-
-    console.log("context provided", context)
-
-    // 6. Call LLM with RAG context
+    // Call LLM with RAG context
     const result = streamText({
-        model,
+        model: chat_model,
         system: 
             `
             You are Dion, answering questions about yourself in first person.
+            Assume the user may be evaluating Dion for internships, engineering roles, or product roles.
 
             Use ONLY the relevant information from the provided context.
             Do NOT mention the word "context" or refer to "information provided".
-            If something is not stated, say you don't know.
+            If something is NOT stated, say you do not have that information.
             If the question refers to Dion in third person, answer in first person anyway.
+            If NO context is provided, say you do not have that information.
 
             Style guidelines:
             - Answer naturally, like a thoughtful engineering student in conversation
@@ -74,6 +162,11 @@ export async function POST(req: Request) {
             - Prefer concise paragraphs over bullet points
             - Synthesize information instead of listing it
             - Sound confident, warm, and human — not like a report or summary
+            - Format your replies for readability 
+            - KEEP REPLIES CONCISE
+
+            Question:
+            ${userText}
 
             Context:
             ${context}

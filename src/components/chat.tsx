@@ -36,14 +36,14 @@ import {
 } from '@/components/ai-elements/reasoning';
 import { Loader } from '@/components/ai-elements/loader';
 
-const models = [
+const chat_models = [
     {
         name: 'gemini flash lite',
         value: 'google/gemini-2.5-flash-lite',
     },
     {
-        name: 'GPT 4o',
-        value: 'openai/gpt-4o',
+        name: 'GPT 4o mini',
+        value: 'openai/gpt-4o-mini',
     },
     {
         name: 'Deepseek R1',
@@ -55,6 +55,9 @@ const models = [
     }
 ];
 
+const embedding_model = 'text-embedding-3-small';
+const query_expansion_model = "google/gemini-2.5-flash-lite";
+
 type ChatBotProps = {
   showChat: boolean;
   setShowChat: Dispatch<SetStateAction<boolean>>;
@@ -62,7 +65,9 @@ type ChatBotProps = {
 
 export default function ChatBot ({ showChat, setShowChat }: ChatBotProps) {
     const [input, setInput] = useState('');
-    const [model, setModel] = useState<string>(models[0].value);
+    const [chat_model, setModel] = useState<string>(chat_models[1].value);
+    const [embed_model, setEmbedModel] = useState<string>(embedding_model);
+    const [query_model, setQueryModel] = useState<string>(query_expansion_model);
     const { messages, sendMessage, status, regenerate } = useChat();
     const [isMultiline, setIsMultiline] = useState(false);
     const textareaRef = useRef<HTMLTextAreaElement>(null);
@@ -83,7 +88,9 @@ export default function ChatBot ({ showChat, setShowChat }: ChatBotProps) {
         },
         {
             body: {
-            model: model,
+            chat_model: chat_model,
+            embedding_model: embed_model,
+            query_expansion_model: query_model,
             webSearch: false,
             },
         },
@@ -110,7 +117,7 @@ export default function ChatBot ({ showChat, setShowChat }: ChatBotProps) {
         <div className={`
             relative w-[70vw] md:w-[60vw] lg:w-[50vw] max-w-[640px] flex flex-col h-full,
             ${ showChat ? 
-                'block h-[70vh] md:h-[60vh] xl:h-[75vh] max-w-[640px]'
+                'block h-[65vh] md:h-[60vh] xl:h-[75vh] max-w-[640px]'
                 :
                 ''
             }

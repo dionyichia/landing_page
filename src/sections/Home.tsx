@@ -7,7 +7,7 @@ import Typewriter from "typewriter-effect"
 import ChatBot from '@/components/chat';
 
 const HomeSection = () => {
-  const [showChat, setShowChat] = useState(true);
+  const [showChat, setShowChat] = useState(false);
 
   return (
     <section className="flex flex-col h-screen text-font w-full px-4">
