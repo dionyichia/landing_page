@@ -9,7 +9,7 @@ export const maxDuration = 30;
 export const K = 5;
 
 // Only take chunk above thresholds confidence 
-export const MIN_THRESHOLD = 0.2;
+export const MIN_THRESHOLD = 0.25;
 
 export async function POST(req: Request) {
     const {
@@ -137,6 +137,33 @@ export async function POST(req: Request) {
     console.log('Score range:', topK[0]?.score, 'to', topK[topK.length-1]?.score);
     console.log('\n=== END METRICS ===\n');
 
+    if (topK.length === 0 || topK[0].score < MIN_THRESHOLD) {
+    // No good context found - return helpful fallback
+    console.log("trying fallback")
+    const fallbackMessage = {
+        role: 'assistant' as const,
+        content: `I don't have specific information about that in my knowledge base. 
+
+        For more details about my background and experience, check out:
+        - **LinkedIn**: [linkedin.com/in/yourprofile](https://www.linkedin.com/in/dionyichia/)
+        - **Blog/Portfolio**: [yourblog.com](https://yourblog.com)
+
+        Feel free to reach out directly if you'd like to discuss further!`
+    };
+
+    return new Response(
+        JSON.stringify({
+        messages: [fallbackMessage],
+        finishReason: 'stop'
+        }),
+        {
+        headers: {
+            'Content-Type': 'application/json',
+        }
+        }
+    );
+    }
+
     // Build context
     const context = topK
         .map(c => `• ${c.text}`)
@@ -151,19 +178,19 @@ export async function POST(req: Request) {
             Assume the user may be evaluating Dion for internships, engineering roles, or product roles.
 
             Use ONLY the relevant information from the provided context.
-            Do NOT mention the word "context" or refer to "information provided".
-            If something is NOT stated, say you do not have that information.
-            If the question refers to Dion in third person, answer in first person anyway.
-            If NO context is provided, say you do not have that information.
+            If something is NOT stated in the context, respond warmly and direct them to:
+            - LinkedIn: https://www.linkedin.com/in/dionyichia/
+            - Blog/Portfolio: yourblog.com
+            
+            Say something like: "I don't have that specific information in my knowledge base, but you can find more on my LinkedIn [https://www.linkedin.com/in/dionyichia/] or blog [yourblog.com], or feel free to reach out directly!"
+
+            ${context ? `Context:\n${context}` : 'NO CONTEXT PROVIDED - use fallback response'}
 
             Style guidelines:
-            - Answer naturally, like a thoughtful engineering student in conversation
+            - Answer naturally, like a thoughtful engineering student
             - Use first person ("I")
-            - Prefer concise paragraphs over bullet points
-            - Synthesize information instead of listing it
-            - Sound confident, warm, and human — not like a report or summary
-            - Format your replies for readability 
-            - KEEP REPLIES CONCISE
+            - Keep replies concise and warm
+            - Format your replies for readability
 
             Question:
             ${userText}
@@ -180,3 +207,16 @@ export async function POST(req: Request) {
         sendReasoning: true,
     });
 }
+
+            // Use ONLY the relevant information from the provided context.
+            // If something is NOT stated, say you do not have that information.
+            // If the question refers to Dion in third person, answer in first person anyway.
+            // If NO context is provided, say you do not have that information.
+
+            // Style guidelines:
+            // - Answer naturally, like a thoughtful engineering student in conversation
+            // - Use first person ("I")
+            // - Prefer concise paragraphs over bullet points
+            // - Synthesize information instead of listing it
+            // - Sound confident, warm, and human — not like a report or summary
+            // - 
