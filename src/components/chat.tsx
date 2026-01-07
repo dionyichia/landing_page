@@ -35,6 +35,7 @@ import {
   ReasoningTrigger,
 } from '@/components/ai-elements/reasoning';
 import { Loader } from '@/components/ai-elements/loader';
+import { SmallText } from './typography';
 
 const chat_models = [
     {
@@ -200,7 +201,7 @@ export default function ChatBot ({ showChat, setShowChat }: ChatBotProps) {
                 </Conversation>
             }
 
-            <PromptInput onSubmit={handleSubmit} globalDrop multiple className="mt-auto mb-4 md:mb-8">
+            <PromptInput onSubmit={handleSubmit} globalDrop multiple className="mt-auto mb-2 md:mb-4">
                 <PromptInputBody>
                     <PromptInputTextarea
                         ref={textareaRef}
@@ -220,6 +221,13 @@ export default function ChatBot ({ showChat, setShowChat }: ChatBotProps) {
                     </PromptInputFooter>
                 }
             </PromptInput>
+
+            <div className={ showChat ? 
+                'mb-4 md:mb-8 flex flex-row justify-end pr-2 md:pr-4'
+                : "hidden"
+            }>
+                <SmallText>* Tip: Hit the "ESC" to return! </SmallText>
+            </div>  
         </div>
     );
 };
