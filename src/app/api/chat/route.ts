@@ -139,29 +139,15 @@ export async function POST(req: Request) {
     console.log('\n=== END METRICS ===\n');
 
     if (topK.length === 0 || topK[0].score < MIN_THRESHOLD) {
-    // No good context found - return helpful fallback
-    console.log("No context found, resorting to fallback")
+        // No good context found - return helpful fallback
+        var context = "No good context found"
+    } else {
 
-      const result = streamText({
-        model: query_expansion_model,
-        system: 'You are Dion answering questions about yourself. Repeat the given prompt in your output EXACTLY. Nothing more, Nothing less',
-        prompt: `
-        I don't have specific information about that in my knowledge base.\n
-        
-        For more details about my background and experience, check out:
-        - LinkedIn: https://www.linkedin.com/in/dionyichia/
-        - Blog/Portfolio: https://yourblog.com\n
-
-        Feel free to reach out directly if you'd like to discuss further!`,
-        });
-
-        return result.toUIMessageStreamResponse();
+        // Build context
+        var context = topK
+            .map(c => `• ${c.text}`)
+            .join('\n');
     }
-
-    // Build context
-    const context = topK
-        .map(c => `• ${c.text}`)
-        .join('\n');
 
     // Call LLM with RAG context
     const result = streamText({

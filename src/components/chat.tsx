@@ -123,6 +123,14 @@ export default function ChatBot ({ showChat, setShowChat }: ChatBotProps) {
                 ''
             }
             `}>
+            <div className={`
+                transition-all duration-700 ease-in-out delay-400
+                overflow-hidden
+                ${showChat 
+                    ? 'opacity-100'
+                    : 'opacity-0'
+                }
+            `}>
             { showChat && 
                 <Conversation className="h-full">
                 <ConversationContent>
@@ -200,6 +208,7 @@ export default function ChatBot ({ showChat, setShowChat }: ChatBotProps) {
                 <ConversationScrollButton />
                 </Conversation>
             }
+            </div>
 
             <PromptInput onSubmit={handleSubmit} globalDrop multiple className="mt-auto mb-2 md:mb-4">
                 <PromptInputBody>
@@ -222,10 +231,14 @@ export default function ChatBot ({ showChat, setShowChat }: ChatBotProps) {
                 }
             </PromptInput>
 
-            <div className={ showChat ? 
-                'mb-4 md:mb-8 flex flex-row justify-end pr-2 md:pr-4'
-                : "hidden"
-            }>
+            <div className={`
+                transition-all duration-700 ease-in-out 
+                flex flex-row justify-end pointer-events-none pr-2 md:pr-4 
+                overflow-hidden
+                ${ showChat ? 
+                'opacity-100 max-h-20 mb-4 md:mb-8'
+                : 'opacity-0 max-h-0 mb-0'}
+            `}>
                 <SmallText>* Tip: Hit the "ESC" to return! </SmallText>
             </div>  
         </div>

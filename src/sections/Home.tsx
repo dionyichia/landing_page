@@ -96,12 +96,12 @@ const HomeSection = () => {
         </div>
         
         <div className={`
-            transition-all duration-700 ease-in-out
+            transition-all duration-700 ease-in-out absolute bottom-8 left-1/2
             ${showChat 
               ?  //'flex-grow min-w-0 flex flex-col h-full opacity-100' 
-              'absolute left-1/2 -translate-x-1/2 xl:left-full xl:-translate-x-full bottom-8'
+              '-translate-x-1/2 xl:left-full xl:-translate-x-full '
               :  // 'w-full max-w-4xl mx-auto'
-              'absolute left-1/2 bottom-8 -translate-x-1/2 -translate-y-1/2'
+              '-translate-x-1/2'
             }
           `}>
             <ChatBot showChat={showChat} setShowChat={setShowChat} />
