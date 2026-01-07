@@ -1,6 +1,6 @@
 "use client"
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Heading1, Heading1_2, SubHeader, Heading4 } from "@/components/typography";
 import Typewriter from "typewriter-effect"
 
@@ -8,6 +8,26 @@ import ChatBot from '@/components/chat';
 
 const HomeSection = () => {
   const [showChat, setShowChat] = useState(false);
+
+  useEffect(() => {
+    const handleKeyDown = (event: KeyboardEvent) => {
+      // Check for the "Escape" key
+      if (event.key === 'Escape') {
+        console.log('Escape key pressed!');
+        // Update the state (e.g., close a modal/dialog)
+        setShowChat(showChat => !showChat); 
+      }
+    };
+
+    // Add event listener to the document
+    document.addEventListener('keydown', handleKeyDown);
+
+    // Clean up the event listener on component unmount
+    return () => {
+      document.removeEventListener('keydown', handleKeyDown);
+    };
+  }, []); // Empty dependency array ensures it runs once on mount
+
 
   return (
     <section className="flex flex-col h-screen text-font w-full px-4">

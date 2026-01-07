@@ -1,6 +1,7 @@
 import { streamText, UIMessage, convertToModelMessages, embed, cosineSimilarity, generateText, Output } from 'ai';
 import embeddings from "@/knowledge/notion_embeddings.json"
 import { z } from 'zod';
+import { NextResponse } from 'next/server';
 
 // Allow streaming responses up to 30 seconds
 export const maxDuration = 30;
@@ -9,7 +10,7 @@ export const maxDuration = 30;
 export const K = 5;
 
 // Only take chunk above thresholds confidence 
-export const MIN_THRESHOLD = 0.25;
+export const MIN_THRESHOLD = 0.575;
 
 export async function POST(req: Request) {
     const {
@@ -139,29 +140,22 @@ export async function POST(req: Request) {
 
     if (topK.length === 0 || topK[0].score < MIN_THRESHOLD) {
     // No good context found - return helpful fallback
-    console.log("trying fallback")
-    const fallbackMessage = {
-        role: 'assistant' as const,
-        content: `I don't have specific information about that in my knowledge base. 
+    console.log("No context found, resorting to fallback")
 
+      const result = streamText({
+        model: query_expansion_model,
+        system: 'You are Dion answering questions about yourself. Repeat the given prompt in your output EXACTLY. Nothing more, Nothing less',
+        prompt: `
+        I don't have specific information about that in my knowledge base.\n
+        
         For more details about my background and experience, check out:
-        - **LinkedIn**: [linkedin.com/in/yourprofile](https://www.linkedin.com/in/dionyichia/)
-        - **Blog/Portfolio**: [yourblog.com](https://yourblog.com)
+        - LinkedIn: https://www.linkedin.com/in/dionyichia/
+        - Blog/Portfolio: https://yourblog.com\n
 
-        Feel free to reach out directly if you'd like to discuss further!`
-    };
+        Feel free to reach out directly if you'd like to discuss further!`,
+        });
 
-    return new Response(
-        JSON.stringify({
-        messages: [fallbackMessage],
-        finishReason: 'stop'
-        }),
-        {
-        headers: {
-            'Content-Type': 'application/json',
-        }
-        }
-    );
+        return result.toUIMessageStreamResponse();
     }
 
     // Build context
@@ -207,16 +201,3 @@ export async function POST(req: Request) {
         sendReasoning: true,
     });
 }
-
-            // Use ONLY the relevant information from the provided context.
-            // If something is NOT stated, say you do not have that information.
-            // If the question refers to Dion in third person, answer in first person anyway.
-            // If NO context is provided, say you do not have that information.
-
-            // Style guidelines:
-            // - Answer naturally, like a thoughtful engineering student in conversation
-            // - Use first person ("I")
-            // - Prefer concise paragraphs over bullet points
-            // - Synthesize information instead of listing it
-            // - Sound confident, warm, and human — not like a report or summary
-            // - 
