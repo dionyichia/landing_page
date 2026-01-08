@@ -48,11 +48,11 @@ export default function Home() {
       {/* Fixed navbar at the top */}
       <div className={`
         navbar 
-        transition-transform duration-300 ease-in-out
-        ${hasMounted && showNav ? "translate-y-0" : "-translate-y-full"}
+        transition-transform ease-in-out
+        ${ hasMounted && showNav ? "translate-y-0" : "-translate-y-full"}
       `}>
         {/* Need to reapply width styles because navbar class is fixed (not part of DOM, relative to viewport) */}
-        <NavBar className="max-w-11/12 mx-auto animate-grow-down"/> 
+        <NavBar className="max-w-11/12 mx-auto animate-grow-down" showNav={showNav}/> 
       </div>
 
       <div className="hidden md:block">

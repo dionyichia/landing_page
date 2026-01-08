@@ -7,10 +7,11 @@ import { useTheme } from 'next-themes'
 import { PiMountainsFill } from "react-icons/pi";
 
 interface NavBarProps {
+  showNav: boolean;
   className?: string;
 }
 
-const NavBar: React.FC<NavBarProps> = ({ className = "" }) => {
+const NavBar: React.FC<NavBarProps> = ({ showNav, className = "" }: NavBarProps) => {
   const [mounted, setMounted] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
 
@@ -116,7 +117,7 @@ const NavBar: React.FC<NavBarProps> = ({ className = "" }) => {
       <div
         className={`absolute top-full right-0 w-full flex flex-col items-center rounded-2xl bg-primary border-t border-stone-200 md:hidden z-50
           transition-all duration-300 ease-in-out
-          ${menuOpen ? "opacity-100 translate-y-0" : "opacity-0 -translate-y-2 pointer-events-none"}
+          ${showNav && menuOpen ? "opacity-100 translate-y-0" : "opacity-0 -translate-y-2 pointer-events-none"}
         `}
       >
           {["about", "experience", "contact"].map((section) => (
