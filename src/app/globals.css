@@ -9,6 +9,7 @@
   --color-font: var(--font-colour);
   --color-font-secondary: var(--font-colour-secondary);
   --color-accent: var(--accent);
+  --color-muted-accent: var(--muted-accent);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
   --font-arapey: var(--font-arapey); 
@@ -69,6 +70,7 @@
   --primary-hover: #b9bcba;
   --primary-foreground: #888789;
   --accent: #d17a22;
+  --muted-accent: #f4b990;
   --accent-hover: oklch(0.22 0.007 34.298);
   --secondary: oklch(0.97 0.001 106.424);
   --secondary-hover: oklch(0.22 0.007 34.298);
@@ -107,7 +109,8 @@
   --primary: #c3c5c4;
   --primary-hover: oklch(0.85 0.003 48.717);
   --primary-foreground: #888789;
-  --accent: #d17a22;
+  --accent: #D88E4A;
+  --muted-accent: #f4b990;
   --card: oklch(0.216 0.006 56.043);
   --card-foreground: oklch(0.985 0.001 106.423);
   --popover: oklch(0.216 0.006 56.043);
@@ -150,7 +153,7 @@
   }
 
   .btn {
-    @apply transition-all duration-300 ease-in-out rounded-none bg-foreground text-background hover:scale-105;
+    @apply transition-all duration-300 ease-in-out rounded-none bg-foreground text-background dark:text-font hover:scale-105;
   }
   
   .btn:hover {
@@ -169,6 +172,20 @@
 }
 
 /* NavBar Stuff */
+@keyframes grow-down {
+  from {
+    transform: translateY(0);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(1);
+    opacity: 1;
+  }
+}
+
+.animate-grow-down {
+  animation: grow-down 0.75s ease-out forwards;
+}
 
 .navbar {
   position: fixed;
@@ -177,13 +194,8 @@
   right: 0;
   z-index: 50; /* To ensure it's above content */
   opacity: 1;
-  transition: opacity 0.5s ease;
-}
-
-body.scrolled .navbar {
-  opacity: 1;
   background-color: var(--background);
-}
+} 
 
 /* Side Bar Stuff */
 
@@ -213,7 +225,7 @@ body.scrolled .navbar {
 }
 
 .animate-grow-up {
-  animation: grow-up 0.75s ease-out forwards;
+  animation: grow-up 0.75s 0.25s ease-out forwards;
 }
 
 .side-line {
@@ -224,7 +236,7 @@ body.scrolled .navbar {
   color: var(--foreground);
   transform: scaleY(0);
   transform-origin: bottom;
-  animation: grow-line 0.75s ease-in-out forwards;
+  animation: grow-line 0.75s 0.5s ease-in-out forwards;
 }
 
 @keyframes grow-line {

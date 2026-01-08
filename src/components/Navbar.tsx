@@ -22,18 +22,6 @@ const NavBar: React.FC<NavBarProps> = ({ className = "" }) => {
     setMounted(true);
   }, []);
 
-  useEffect(() => {
-    function onScroll() {
-      if (window.scrollY > 50) {
-        document.body.classList.add("scrolled");
-      } else {
-        document.body.classList.remove("scrolled");
-      }
-    }
-    window.addEventListener("scroll", onScroll);
-    return () => window.removeEventListener("scroll", onScroll);
-  }, []);
-
   // Show a skeleton or neutral state until mounted
   if (!mounted) {
     return (
@@ -52,7 +40,7 @@ const NavBar: React.FC<NavBarProps> = ({ className = "" }) => {
   return (
     <div className={`${className} relative flex flex-row flex-nowrap justify-between items-center py-4 md:py-6 border-b`}>
       {/* Logo */}
-      <div className="text-2xl md:text-3xl lg:text-4xl font-bold p-2 text-foreground hover:text-accent transition-colors">
+      <div className="text-2xl md:text-3xl lg:text-4xl font-bold p-2 text-foreground dark:text-font hover:text-accent hover:scale-105 transition-colors">
           <button
               onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
               className="font-arapey"
@@ -62,7 +50,7 @@ const NavBar: React.FC<NavBarProps> = ({ className = "" }) => {
       </div>
 
       {/* Navigation Links (Desktop) */}
-      <nav className="absolute text-font text-2xl left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 hidden md:flex items-center space-x-4 lg:space-x-8 font-normal">
+      <nav className="absolute text-font text-2xl left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 hidden md:flex items-center space-x-4 lg:space-x-8">
         {["about", "experience", "contact"].map((section) => (
           <button
             key={section}

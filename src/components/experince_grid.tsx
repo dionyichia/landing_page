@@ -5,10 +5,9 @@ import { ExperienceData } from "@/sections/Experience";
 import { Heading3, Heading4, AccentText, SmallText } from "./typography";
 import Image from "next/image";
 
-import code from "@/assets/code.svg"
-import yt from "@/assets/youtube.svg"
-import web from "@/assets/web.svg"
 import Link from 'next/link';
+
+import { CodeXml, Video, Globe } from 'lucide-react'
 
 interface ExperienceGridProps {
   experience: ExperienceData;
@@ -31,7 +30,7 @@ const ExperienceGrid = ({ experience }: ExperienceGridProps) => {
     }, [experience.img]);
 
     return (
-        <div className="flex flex-col md:grid md:grid-cols-2 md:grid-rows-[auto_250px] p-2 md:p-6 gap-4 md:gap-8 rounded-lg transition-shadow duration-300">
+        <div className="flex flex-col md:grid md:grid-cols-2 md:grid-rows-[auto_250px] p-2 md:p-6 gap-4 md:gap-8 rounded-lg transition-shadow duration-300 text-font">
             {/* Header Section */}
             <div className='order-1 md:col-start-1 md:col-end-2 md:row-start-1 md:row-end-2 flex flex-col items-start flex-nowrap'>
                 <div className="w-full flex items-start justify-between">
@@ -59,64 +58,58 @@ const ExperienceGrid = ({ experience }: ExperienceGridProps) => {
                 </div>
 
                 {/* Link Section - Conditional Icons */}
-                <div className='flex items-center gap-3 pt-6 md:pt-10'>
+                <div className='flex items-center gap-2 md:gap-3 pt-6 md:pt-10'>
                     {experience.code && (
                         <Link 
                             href={experience.code}
-                            className="group relative p-2 rounded-lg btn"
+                            className="group relative p-2 rounded-lg transition-transform group-hover:scale-110 btn"
                             target="_blank"
                             rel="noopener noreferrer"
                         >
-                            <Image 
-                                src={code} 
-                                alt="View code repository"
-                                width={24}
-                                height={24}
-                                className="w-4 h-4 md:w-6 md:h-6 transition-transform group-hover:scale-110"
+                            <CodeXml 
+                                width={20}
+                                height={20}
+                                className="w-4 h-4 md:w-6 md:h-6"
                             />
-                            <span className="absolute -top-8 left-1/2 transform -translate-x-1/2 bg-black text-white text-xs px-2 py-1 rounded opacity-0 group-hover:opacity-100 transition-opacity duration-200 whitespace-nowrap">
+                            {/* <span className="absolute -top-8 left-1/2 transform -translate-x-1/2 px-2 py-1 rounded opacity-0 group-hover:opacity-100 transition-opacity duration-200 whitespace-nowrap">
                                 View Code
-                            </span>
+                            </span> */}
                         </Link>
                     )}
                     
                     {experience.site && (
                         <Link 
                             href={experience.site}
-                            className="group relative p-2 rounded-lg btn"
+                            className="group relative p-2 rounded-lg transition-colors group-hover:scale-110 btn "
                             target="_blank"
                             rel="noopener noreferrer"
                         >
-                            <Image 
-                                src={web} 
-                                alt="Visit live demo"
-                                width={24}
-                                height={24}
-                                className="w-4 h-4 md:w-6 md:h-6 transition-transform group-hover:scale-110"
+                            <Globe 
+                                width={20}
+                                height={20}
+                                className="w-4 h-4 md:w-6 md:h-6"
                             />
-                            <span className="absolute -top-8 left-1/2 transform -translate-x-1/2 bg-black text-white text-xs px-2 py-1 rounded opacity-0 group-hover:opacity-100 transition-opacity duration-200 whitespace-nowrap">
+                            {/* <span className="absolute -top-8 left-1/2 transform -translate-x-1/2  text-xs px-2 py-1 rounded opacity-0 group-hover:opacity-100 transition-opacity duration-200 whitespace-nowrap">
                                 Live Demo
-                            </span>
+                            </span> */}
                         </Link>
                     )}
                     
                     {experience.video && (
                         <Link 
                             href={experience.video}
-                            className="group relative p-2 rounded-lg btn"
+                            className="group relative p-2 rounded-lg transition-transform group-hover:scale-110 btn"
                             target="_blank"
                             rel="noopener noreferrer"
                         >
-                            <Image 
-                                src={yt} 
-                                alt="Watch video demo"
-                                width={24}
-                                height={24}
-                                className="w-4 h-4 md:w-6 md:h-6 transition-transform group-hover:scale-110"
+                            <Video
+                                width={20}
+                                height={20}
+                                className="w-4 h-4 md:w-6 md:h-6"
                             />
-                            <span className="absolute -top-8 left-1/2 transform -translate-x-1/2 bg-black text-white text-xs px-2 py-1 rounded opacity-0 group-hover:opacity-100 transition-opacity duration-200 whitespace-nowrap">
+                            {/* <span className="absolute -top-8 left-1/2 transform -translate-x-1/ text-xs px-2 py-1 rounded opacity-0 group-hover:opacity-100 transition-opacity duration-200 whitespace-nowrap">
                                 Watch Video
-                            </span>
+                            </span> */}
                         </Link>
                     )}
                 </div>

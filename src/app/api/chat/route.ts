@@ -10,7 +10,7 @@ export const maxDuration = 30;
 export const K = 5;
 
 // Only take chunk above thresholds confidence 
-export const MIN_THRESHOLD = 0.575;
+export const MIN_THRESHOLD = 0.275;
 
 export async function POST(req: Request) {
     const {

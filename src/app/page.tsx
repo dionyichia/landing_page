@@ -10,20 +10,50 @@ import Contact from "@/sections/Contact";
 import { SmallText } from "@/components/typography";
 import SideSocials from "@/components/side_socials";
 import SideEmail from "@/components/side_email";
+import { useRef, useState, useEffect } from "react";
 
 export default function Home() {
+  const [hasMounted, setHasMounted] = useState(false);
+  const [showNav, setShowNav] = useState(true);
+  const lastScrollY = useRef(0);
+
+  // Mount animation
+  useEffect(() => {
+    setHasMounted(true);
+  }, []);
+  
+  useEffect(() => {
+    function onScroll() {
+      const currentScrollY = window.scrollY;
+
+      // Ignore tiny scroll jitters
+      if (Math.abs(currentScrollY - lastScrollY.current) < 5) return;
+
+      if (currentScrollY > lastScrollY.current) {
+        // scrolling DOWN
+        setShowNav(false);
+      } else {
+        // scrolling UP
+        setShowNav(true);
+      }
+
+      lastScrollY.current = currentScrollY;
+    }
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
+
   return (
     <div className="relative mx-auto bg-background w-11/12">
       {/* Fixed navbar at the top */}
-      <div className="navbar">
+      <div className={`
+        navbar 
+        transition-transform duration-300 ease-in-out
+        ${hasMounted && showNav ? "translate-y-0" : "-translate-y-full"}
+      `}>
         {/* Need to reapply width styles because navbar class is fixed (not part of DOM, relative to viewport) */}
-        <NavBar className="max-w-11/12 mx-auto"/> 
+        <NavBar className="max-w-11/12 mx-auto animate-grow-down"/> 
       </div>
-
-      {/* Side Bars */}
-      {/* <div className="hidden md:block sidebar text-font">
-        <SideSocials className=""/> 
-      </div> */}
 
       <div className="hidden md:block">
         <div className="sidebar dark:text-font">
