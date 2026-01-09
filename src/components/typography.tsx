@@ -49,13 +49,13 @@ export const Paragraph = ({ children, className = '' }: TextProps) => (
 );
 
 export const Text = ({ children, className = '' }: TextProps) => (
-    <div className={`font-nunito text-xs md:text-sm lg:text-lg text-font ${className}`}>
+    <div className={`font-nunito text-sm md:text-base lg:text-lg text-font ${className}`}>
         {children}
     </div>
 );
 
 export const SmallText = ({ children, className = '' }: TextProps) => (
-    <div className={`font-nunito text-xs lg:text-sm text-font ${className}`}>
+    <div className={`font-nunito text-sm lg:text-base text-font ${className}`}>
         {children}
     </div>
 );

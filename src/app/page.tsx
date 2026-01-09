@@ -44,7 +44,7 @@ export default function Home() {
   }, []);
 
   return (
-    <div className="relative mx-auto bg-background w-11/12">
+    <div className="relative mx-auto bg-background w-full md:w-11/12">
       {/* Fixed navbar at the top */}
       <div className={`
         navbar 
@@ -68,7 +68,7 @@ export default function Home() {
       </div>
 
       {/* Container for each sections */}
-      <div className="flex flex-col items-center sm:items-start mx-auto w-10/12 px-2 md:px-6 lg:px-8">
+      <div className="flex flex-col items-center sm:items-start mx-auto w-10/12 md:px-6 lg:px-8">
         <HomeSection/>
         <About />
         <Skills />

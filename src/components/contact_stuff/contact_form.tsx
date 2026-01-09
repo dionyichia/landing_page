@@ -9,6 +9,10 @@ import { toFormikValidationSchema } from "zod-formik-adapter";
 import { ToastContainer, toast } from "react-toastify";
 import Confetti from "react-confetti";
 
+import { FaGithub, FaLinkedin, FaEnvelope } from "react-icons/fa";
+
+import Link from "next/link";
+
 type FormValues = {
     name: string,
     email: string,
@@ -185,6 +189,26 @@ const ContactForm = () => {
                     >
                     {isLoading ? "Sending..." : "Send Message"}
                     </button>
+                        <div className="flex items-center gap-2 pr-2 md:hidden">
+                            <Link 
+                                href="https://github.com/dionyichia" 
+                                target="_blank" 
+                                rel="noopener noreferrer" >
+                                <FaGithub className="w-6 h-6 md:w-8 md:h-8 text-foreground dark:text-font hover:scale-105 hover:text-accent dark:hover:text-accent filter transition-all" />
+                            </Link>
+                            <Link 
+                                href="https://www.linkedin.com/in/dionyichia/" 
+                                target="_blank" 
+                                rel="noopener noreferrer" >
+                                <FaLinkedin className="w-6 h-6 md:w-8 md:h-8 filter text-foreground dark:text-font hover:scale-105 hover:text-accent dark:hover:text-accent transition-all duration-200" />
+                            </Link>
+                            <Link 
+                                href="mailto:dionyichia@gmail.com?subject=Hello from your website&body=Hey Dion,%0D%0A%0D%0AI found your website and wanted to reach out..."
+                                target="_blank" 
+                                rel="noopener noreferrer" >
+                                <FaEnvelope className="w-6 h-6 md:w-8 md:h-8 filter text-foreground dark:text-font hover:scale-105 hover:text-accent dark:hover:text-accent transition-all duration-200" />
+                            </Link>
+                        </div>
                 </div>
                 </div>
             </div>

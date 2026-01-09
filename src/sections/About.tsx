@@ -12,7 +12,7 @@ const About = () => {
       </div>
       
       {/* Content container */}
-      <div className="flex flex-col md:flex-row gap-16 items-center md:items-start md:px-4">
+      <div className="flex flex-col md:flex-row gap-16 items-center md:items-start md:px-4 pt-4">
         {/* Text content - takes 3/5 on desktop */}
         <div className="order-2 w-full md:w-3/5 md:order-1 flex-col gap-4">
           <Paragraph>
@@ -30,7 +30,7 @@ const About = () => {
         
         {/* Image - takes 2/5 on desktop */}
         <div className="md:w-2/5 order-1 md:order-2 flex justify-center md:justify-end">
-          <div className="relative h-32 w-52 md:w-full md:h-auto md:aspect-square">
+          <div className="relative w-52 md:w-full h-auto aspect-square">
             <Image 
               src={self_portrait} 
               alt="Professional headshot" 

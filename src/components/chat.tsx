@@ -119,7 +119,7 @@ export default function ChatBot ({ showChat, setShowChat }: ChatBotProps) {
         <div className={`
             relative w-[70vw] md:w-[60vw] lg:w-[50vw] max-w-[640px] flex flex-col h-full,
             ${ showChat ? 
-                'block h-[65vh] md:h-[60vh] xl:h-[75vh] max-w-[640px]'
+                'block h-[57vh] md:h-[60vh] xl:h-[75vh] max-w-[640px]'
                 :
                 ''
             }
@@ -239,7 +239,7 @@ export default function ChatBot ({ showChat, setShowChat }: ChatBotProps) {
                 flex flex-row justify-end pointer-events-none pr-2 md:pr-4 
                 overflow-hidden
                 ${ showChat ? 
-                'opacity-100 max-h-20 mb-4 md:mb-8'
+                'md:opacity-100 md:max-h-20 md:mb-8 opacity-0 max-h-0 mb-0'
                 : 'opacity-0 max-h-0 mb-0'}
             `}>
                 <SmallText>* Tip: Hit the &quot;ESC&quot; to return! </SmallText>
