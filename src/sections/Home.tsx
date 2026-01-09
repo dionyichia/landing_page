@@ -96,7 +96,7 @@ const HomeSection = () => {
         </div>
         
         <div className={`
-            transition-all duration-700 ease-in-out absolute bottom-[12vh] md:bottom-[8vh] left-1/2
+            transition-all duration-700 ease-in-out absolute bottom-[12vh] md:bottom-[6vh] left-1/2
             ${showChat 
               ?  //'flex-grow min-w-0 flex flex-col h-full opacity-100' 
               '-translate-x-1/2 xl:left-full xl:-translate-x-full '

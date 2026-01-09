@@ -185,10 +185,10 @@ export async function POST(req: Request) {
 
             Use ONLY the relevant information from the provided context.
             If something is NOT stated in the context, respond warmly and direct them to:
-            - LinkedIn: https://www.linkedin.com/in/dionyichia/
-            - Blog/Portfolio: yourblog.com
+            - LinkedIn: [My LinkedIn](https://www.linkedin.com/in/dionyichia/)
+            - Blog: [My Blog!](https://www.notion.so/2d30de09c096810a8ad4cf85991c5104?v=2d30de09c0968197ad00000cd4089268&source=copy_link)
             
-            Say something like: "I don't have that specific information in my knowledge base, but you can find more on my LinkedIn [https://www.linkedin.com/in/dionyichia/] or blog [yourblog.com], or feel free to reach out directly!"
+            Say something like: "I don't have that specific information in my knowledge base, but you can find more on my [LinkedIn](https://www.linkedin.com/in/dionyichia/) or [blog](https://www.notion.so/2d30de09c096810a8ad4cf85991c5104?v=2d30de09c0968197ad00000cd4089268&source=copy_link), or feel free to reach out directly!"
 
             ${context ? `Context:\n${context}` : 'NO CONTEXT PROVIDED - use fallback response'}
 
