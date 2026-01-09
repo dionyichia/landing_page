@@ -5,11 +5,11 @@ import { z } from 'zod';
 // Allow streaming responses up to 30 seconds
 export const maxDuration = 30;
 
-// Retrieve top 3 chunks
-export const K = 5;
-
 // Only take chunk above thresholds confidence 
-export const MIN_THRESHOLD = 0.275;
+const MIN_THRESHOLD = 0.275;
+
+// Retrieve top 3 chunks
+const K = 5;
 
 type Chunk = {
   score: number;
