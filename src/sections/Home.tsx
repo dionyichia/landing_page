@@ -1,7 +1,7 @@
 "use client"
 
 import React, { useState, useEffect } from 'react';
-import { Heading1, Heading1_2, SubHeader, Heading4 } from "@/components/typography";
+import { SubHeader, Heading4 } from "@/components/typography";
 import Typewriter from "typewriter-effect"
 
 import ChatBot from '@/components/chat';
@@ -53,7 +53,7 @@ const HomeSection = () => {
               }`}> 
               
 
-              <SubHeader className='pb-2 md:pb-4 tracking-[0.02em] text-nowrap'>Hello there! I'm...</SubHeader>              
+              <SubHeader className='pb-2 md:pb-4 tracking-[0.02em] text-nowrap'>Hello there! I&apos;m...</SubHeader>              
               <h1 className={`
                   font-bodoni tracking-wider relative z-10 pb-2
                   transition-all duration-700 ease-in-out

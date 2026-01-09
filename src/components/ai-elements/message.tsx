@@ -216,8 +216,6 @@ export type MessageBranchSelectorProps = HTMLAttributes<HTMLDivElement> & {
 };
 
 export const MessageBranchSelector = ({
-  className,
-  from,
   ...props
 }: MessageBranchSelectorProps) => {
   const { totalBranches } = useMessageBranch();
@@ -276,6 +274,7 @@ export const MessageBranchNext = ({
       size="icon-sm"
       type="button"
       variant="ghost"
+      className={className}
       {...props}
     >
       {children ?? <ChevronRightIcon size={14} />}

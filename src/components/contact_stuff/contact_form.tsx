@@ -9,10 +9,6 @@ import { toFormikValidationSchema } from "zod-formik-adapter";
 import { ToastContainer, toast } from "react-toastify";
 import Confetti from "react-confetti";
 
-import { FaGithub, FaLinkedin, FaEnvelope } from "react-icons/fa";
-
-import Link from "next/link";
-
 type FormValues = {
     name: string,
     email: string,
@@ -180,34 +176,15 @@ const ContactForm = () => {
                 <div className="p-2 w-full flex flex-row flex-nowrap justify-between">
                     <button
                     disabled={isLoading || !isValid || Object.keys(errors).length > 0}
-                    className="btn-primary flex font-cormorant text-sm md:text-base lg:text-lg items-start border-0 py-2 px-2 md:px-8 focus:outline-none rounded disabled:opacity-50 disabled:cursor-not-allowed"
+                    className="
+                        btn-primary flex font-cormorant text-sm md:text-base lg:text-lg items-start border-0 py-2 px-2 md:px-8 focus:outline-none rounded 
+                        disabled:opacity-50 disabled:cursor-not-allowed
+                        hover:bg-accent
+                        "
                     type="submit"
                     >
                     {isLoading ? "Sending..." : "Send Message"}
                     </button>
-                    <div className="flex items-center gap-2 pr-2">
-                        <Link 
-                            href="https://github.com/dionyichia" 
-                            target="_blank" 
-                            rel="noopener noreferrer"
-                            className="transition-opacity hover:opacity-70" >
-                            <FaGithub className="w-6 h-6 md:w-8 md:h-8 text-font hover:scale-105 filter grayscale hover:grayscale-0 transition-all" />
-                        </Link>
-                        <Link 
-                            href="https://www.linkedin.com/in/dionyichia/" 
-                            target="_blank" 
-                            rel="noopener noreferrer"
-                            className="transition-opacity hover:opacity-70" >
-                            <FaLinkedin className="w-6 h-6 md:w-8 md:h-8 filter grayscale text-font hover:scale-105 hover:grayscale-0 transition-all duration-200" />
-                        </Link>
-                        <Link 
-                            href="mailto:dionyichia@gmail.com?subject=Hello from your website&body=Hey Dion,%0D%0A%0D%0AI found your website and wanted to reach out..."
-                            target="_blank" 
-                            rel="noopener noreferrer"
-                            className="transition-opacity hover:opacity-70" >
-                            <FaEnvelope className="w-6 h-6 md:w-8 md:h-8 filter text-font hover:scale-105 grayscale hover:grayscale-0 transition-all duration-200" />
-                        </Link>
-                    </div>
                 </div>
                 </div>
             </div>

@@ -1,5 +1,4 @@
 import { Heading2, Paragraph } from "@/components/typography";
-import about_img from "@/assets/about_img.jpg"
 import self_portrait from "@/assets/self-portrait.png"
 import Image from "next/image";
 

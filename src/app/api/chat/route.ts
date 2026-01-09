@@ -1,7 +1,6 @@
 import { streamText, UIMessage, convertToModelMessages, embed, cosineSimilarity, generateText, Output } from 'ai';
 import embeddings from "@/knowledge/notion_embeddings.json"
 import { z } from 'zod';
-import { NextResponse } from 'next/server';
 
 // Allow streaming responses up to 30 seconds
 export const maxDuration = 30;
@@ -11,6 +10,16 @@ export const K = 5;
 
 // Only take chunk above thresholds confidence 
 export const MIN_THRESHOLD = 0.275;
+
+type Chunk = {
+  score: number;
+  sourceQuery: string;
+  chunk_id: string;
+  title: string;
+  text: string;
+  embedding: number[];
+  text_hash: string;
+};
 
 export async function POST(req: Request) {
     const {
@@ -108,7 +117,7 @@ export async function POST(req: Request) {
     const mergedResults = perQueryResults.flat();
 
     // 5.2 Deduplicate by chunk_id (keep highest score)
-    const dedupedMap = new Map<string, any>();
+    const dedupedMap = new Map<string, Chunk>();
 
     for (const chunk of mergedResults) {
     const existing = dedupedMap.get(chunk.chunk_id);
@@ -138,13 +147,15 @@ export async function POST(req: Request) {
     console.log('Score range:', topK[0]?.score, 'to', topK[topK.length-1]?.score);
     console.log('\n=== END METRICS ===\n');
 
+    let context = ""
+
     if (topK.length === 0 || topK[0].score < MIN_THRESHOLD) {
         // No good context found - return helpful fallback
-        var context = "No good context found"
+        context = "No good context found"
     } else {
 
         // Build context
-        var context = topK
+        context = topK
             .map(c => `• ${c.text}`)
             .join('\n');
     }

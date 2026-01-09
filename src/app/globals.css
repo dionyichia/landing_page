@@ -162,7 +162,7 @@
   }
   
   .btn-primary {
-    @apply transition-all duration-500 ease-in-out text-font-secondary bg-foreground disabled:bg-primary-foreground;
+    @apply transition-all duration-300 ease-in-out text-font-secondary bg-foreground disabled:bg-primary-foreground;
   }
   
   .btn-primary:hover {

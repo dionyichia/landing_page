@@ -41,7 +41,7 @@ const NavBar: React.FC<NavBarProps> = ({ showNav, className = "" }: NavBarProps)
   return (
     <div className={`${className} relative flex flex-row flex-nowrap justify-between items-center py-4 md:py-6 border-b`}>
       {/* Logo */}
-      <div className="text-2xl md:text-3xl lg:text-4xl font-bold p-2 text-foreground dark:text-font hover:text-accent hover:scale-105 transition-colors">
+      <div className="text-2xl md:text-3xl lg:text-4xl font-bold p-2 text-foreground dark:text-font hover:text-accent hover:dark:text-accent hover:scale-105 transition-all">
           <button
               onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
               className="font-arapey"
@@ -55,7 +55,7 @@ const NavBar: React.FC<NavBarProps> = ({ showNav, className = "" }: NavBarProps)
         {["about", "experience", "contact"].map((section) => (
           <button
             key={section}
-            className="px-2 py-1 transition-colors opacity-70 hover:opacity-90"
+            className="px-2 py-1 transition-all opacity-70 hover:opacity-90 hover:text-accent"
           >
             <Link
               activeClass="active"
@@ -64,7 +64,7 @@ const NavBar: React.FC<NavBarProps> = ({ showNav, className = "" }: NavBarProps)
               smooth={true}
               duration={500}
               offset={-48}
-              className="font-arapey hover:text-accent"
+              className="font-arapey"
             >
               {section.charAt(0).toUpperCase() + section.slice(1)}
             </Link>

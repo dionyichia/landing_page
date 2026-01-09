@@ -40,7 +40,10 @@ const Skills = () => {
         {skillCategories.map((category, index) => (
           <div 
             key={index} 
-            className="bg-foreground rounded-lg md:rounded-xl p-4 md:p-5 shadow-sm hover:shadow-md transition-shadow duration-300"
+            className="
+              bg-foreground rounded-lg md:rounded-xl p-4 md:p-5 shadow-sm 
+              hover:scale-101 transition-scale duration-300
+              "
           >
             <Heading4 className="mb-2 md:mb-4 text-stone-200">{category.title}</Heading4>
             <div className="flex flex-wrap gap-3">

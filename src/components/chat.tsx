@@ -22,7 +22,7 @@ import {
 } from '@/components/ai-elements/prompt-input';
 import { Dispatch, SetStateAction, useRef, useState } from 'react';
 import { useChat } from '@ai-sdk/react';
-import { CopyIcon, GlobeIcon, RefreshCcwIcon } from 'lucide-react';
+import { CopyIcon, RefreshCcwIcon } from 'lucide-react';
 import {
   Source,
   Sources,
@@ -65,10 +65,11 @@ type ChatBotProps = {
 };
 
 export default function ChatBot ({ showChat, setShowChat }: ChatBotProps) {
+    const chat_model = chat_models[1].value;
+    const embed_model = embedding_model;
+    const query_model = query_expansion_model;
+
     const [input, setInput] = useState('');
-    const [chat_model, setModel] = useState<string>(chat_models[1].value);
-    const [embed_model, setEmbedModel] = useState<string>(embedding_model);
-    const [query_model, setQueryModel] = useState<string>(query_expansion_model);
     const { messages, sendMessage, status, regenerate } = useChat();
     const [isMultiline, setIsMultiline] = useState(false);
     const textareaRef = useRef<HTMLTextAreaElement>(null);
@@ -171,6 +172,7 @@ export default function ChatBot ({ showChat, setShowChat }: ChatBotProps) {
                                     <MessageAction
                                         onClick={() => regenerate()}
                                         label="Retry"
+                                        className='hover:bg-muted-accent'
                                     >
                                         <RefreshCcwIcon className="size-3" />
                                     </MessageAction>
@@ -179,6 +181,7 @@ export default function ChatBot ({ showChat, setShowChat }: ChatBotProps) {
                                         navigator.clipboard.writeText(part.text)
                                         }
                                         label="Copy"
+                                        className='hover:bg-muted-accent'
                                     >
                                         <CopyIcon className="size-3" />
                                     </MessageAction>
@@ -239,7 +242,7 @@ export default function ChatBot ({ showChat, setShowChat }: ChatBotProps) {
                 'opacity-100 max-h-20 mb-4 md:mb-8'
                 : 'opacity-0 max-h-0 mb-0'}
             `}>
-                <SmallText>* Tip: Hit the "ESC" to return! </SmallText>
+                <SmallText>* Tip: Hit the &quot;ESC&quot; to return! </SmallText>
             </div>  
         </div>
     );

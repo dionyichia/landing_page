@@ -37,8 +37,6 @@ import mindscope from "@/assets/MindScope.png"
 import rag_archi from "@/assets/rag_archi.png"
 import finder_img from "@/assets/finder.png"
 
-import hnr_logo from "@/assets/hnr_logo.svg"
-
 import ttsh from "@/assets/tan-tock-seng-hospital.svg"
 
 import rep_logo from "@/assets/rep_logo_no_bg.svg"
