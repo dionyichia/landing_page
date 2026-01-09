@@ -4,6 +4,8 @@ import { z } from 'zod';
 
 // Allow streaming responses up to 30 seconds
 export const maxDuration = 30;
+const MAX_PROMPT_CHARS = 2000;
+const MAX_MESSAGES = 16;
 
 // Only take chunk above thresholds confidence 
 const MIN_THRESHOLD = 0.275;
@@ -34,6 +36,15 @@ export async function POST(req: Request) {
         query_expansion_model: string;
     } = await req.json();
 
+    // Security Limits
+    if (!Array.isArray(messages) || messages.length === 0) {
+        throw new Error('Invalid messages');
+    }
+
+    if (messages.length > MAX_MESSAGES) {
+        throw new Error('Too many messages');
+    }
+
     // 1. Convert UI messages
     const modelMessages = await convertToModelMessages(messages);
 
@@ -50,6 +61,10 @@ export async function POST(req: Request) {
         .filter(p => p.type === 'text')
         .map(p => p.text)
         .join(' ');
+
+    if (userText.length > MAX_PROMPT_CHARS) {
+        throw new Error('Prompt too long');
+    }
     
     // 3. Expand user query
     const schema = z.array(z.string()).min(3).max(5);
