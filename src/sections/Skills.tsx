@@ -27,13 +27,15 @@ const Skills = () => {
       title: "LANGUAGES & OTHERS",
       skills: ["English", "Chinese", "Spanish", "Electric Bass", "Taekwondo", "Basketball"]
     }
-  ];
+  ];       
 
   return (
     <section className="pb-8">
       <div className="md:mb-10 mb-6">
-        <Heading2 className="mb-4">Technical Skills</Heading2>
-        <div className="h-1 w-full rounded bg-primary"></div>
+        <div className="mb-4 md:mb-16 flex flex-row flex-nowrap items-center gap-6 md:gap-8">
+          <Heading2 className="w-fit flex flex-row text-nowrap">Technical Skills</Heading2>
+          <div className="h-0.75 w-full bg-primary rounded"></div>
+        </div>
       </div>
       
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4">

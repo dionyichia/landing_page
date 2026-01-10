@@ -254,23 +254,29 @@ const Experience = () => {
   ];
 
   return (
-    <div id="experience" className="py-8 md:py-16 mx-auto w-full flex flex-col no-wrap justify-stretch">
+    <div id="experience" className="mx-auto w-full flex flex-col no-wrap justify-stretch">
       {/* Heading with extended line */}
-      <div className="mb-12">
+      {/* <div className="mb-12">
         <Heading2 className="mb-4">Experience</Heading2>
         <div className="h-1 w-full bg-primary rounded"></div>
-      </div>
+      </div> */}
 
       <div className="flex flex-col gap-y-16">
         {/* Work Experience Section */}
-        <div className="flex flex-col flex-nowrap items-stretch px-0 md:px-2 lg:px-4">
-          <Heading2 className="mb-2 flex justify-center">Work Experience</Heading2>
+        <div className="flex flex-col flex-nowrap items-stretch">
+          <div className="mb-4 md:mb-16 flex flex-row flex-nowrap items-center gap-8">
+             <Heading2 className="w-fit flex flex-row text-nowrap">Work Experience</Heading2>
+             <div className="h-0.75 w-full bg-primary rounded"></div>
+          </div>
           <GridSlider experiences={workExperience} />
         </div>
 
         {/* Projects & Competitions Section */}
-        <div className="flex flex-col flex-nowrap items-stretch px-0 md:px-2 lg:px-4"> 
-          <Heading2 className="mb-2 text-2xl text-center">Projects & Competitions</Heading2>
+        <div className="flex flex-col flex-nowrap items-stretch"> 
+          <div className="mb-4 md:mb-16 flex flex-row flex-nowrap items-center gap-8">
+             <Heading2 className="w-fit flex flex-row text-nowrap">Projects & Competitions</Heading2>
+             <div className="h-0.75 w-full bg-primary rounded"></div>
+          </div>
           <GridSlider experiences={projectsAndCompetitions} />
         </div>
       </div>

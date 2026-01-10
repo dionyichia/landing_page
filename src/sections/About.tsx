@@ -4,15 +4,19 @@ import Image from "next/image";
 
 const About = () => {
   return (
-    <section id="about" className="min-h-screen py-8 md:py-16">
+    <section id="about" className="">
       {/* Heading with extended line */}
       <div className="md:mb-10 mb-6">
-        <Heading2 className="mb-4">About Me</Heading2>
-        <div className="h-1 w-full rounded bg-primary"></div>
+        {/* <Heading2 className="mb-4">About Me</Heading2> */}
+        {/* <div className="h-1 w-full rounded bg-primary"></div> */}
+        <div className="mb-4 md:mb-8 flex flex-row flex-nowrap items-center gap-6 md:gap-8">
+            <Heading2 className="w-fit flex flex-row text-nowrap">About Me</Heading2>
+            <div className="h-0.75 w-full bg-primary rounded"></div>
+        </div>
       </div>
       
       {/* Content container */}
-      <div className="flex flex-col md:flex-row gap-16 items-center md:items-start md:px-4 pt-4">
+      <div className="flex flex-col md:flex-row gap-16 items-center md:items-start pt-4">
         {/* Text content - takes 3/5 on desktop */}
         <div className="order-2 w-full md:w-3/5 md:order-1 flex-col gap-4">
           <Paragraph>

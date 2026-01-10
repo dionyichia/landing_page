@@ -10,14 +10,14 @@ const Contact = () => {
       <div className="max-w-7xl mx-auto">
         {/* Header */}
         <div className="mb-12 w-full">
-          <Heading2 className="mb-4 text-left">
-            Contact
-          </Heading2>
-          <div className="h-1 w-full bg-primary rounded"></div>
+          <div className="mb-4 md:mb-16 flex flex-row flex-nowrap items-center gap-6 md:gap-8">
+              <Heading2 className="w-fit flex flex-row text-nowrap">Contact</Heading2>
+              <div className="h-0.75 w-full bg-primary rounded"></div>
+          </div>
         </div>
 
         {/* Main Content */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-start px-4 sm:px-6 lg:px-8">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-start">
           
           {/* Left Column - Contact Form */}
           <div className="order-2 lg:order-1">
@@ -33,14 +33,14 @@ const Contact = () => {
           <div className="order-1 lg:order-2">
             <div className="relative">
               {/* Image Container */}
-              <div className="relative w-full max-w-md mx-auto lg:max-w-none">
+              <div className="relative w-full max-w-3xs sm:max-w-sm lg:max-w-md mx-auto">
                 <div className="aspect-square relative overflow-hidden rounded-2xl shadow-2xl">
                   <Image 
                     src={form_img} 
                     alt="Professional headshot" 
                     fill
                     className="object-cover transition-transform duration-300 hover:scale-105"
-                    sizes="(max-width: 768px) 80vw, (max-width: 1024px) 50vw, 40vw"
+                    sizes="(max-width: 768px) 70vw, (max-width: 1024px) 40vw, 30vw"
                     priority
                   />
                 </div>
