@@ -72,8 +72,8 @@ export default function Home() {
         <HomeSection/>
         <About />
         <Skills />
-        <Lifeline />
         <Experience />
+        <Lifeline />
         <Contact />
       </div>
 

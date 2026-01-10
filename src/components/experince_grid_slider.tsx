@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useRef, useEffect } from "react";
 import ExperienceGrid from "./experince_grid";
 import { ArrowLeft, ArrowRight } from "lucide-react";
 import { ExperienceData } from "@/sections/Experience";
@@ -9,6 +9,10 @@ interface GridSliderProps {
 
 const GridSlider = ({ experiences }: GridSliderProps) => {
   const [currentIndex, setCurrentIndex] = useState(0);
+  const touchStartX = useRef<number | null>(null);
+  const touchEndX = useRef<number | null>(null);
+
+  const SWIPE_THRESHOLD = 50; // px
 
   const showPrevGrid = () => {
     setCurrentIndex((prevIndex) =>
@@ -26,6 +30,50 @@ const GridSlider = ({ experiences }: GridSliderProps) => {
     setCurrentIndex(index);
   };
 
+  const handleTouchStart = (e: React.TouchEvent) => {
+    touchStartX.current = e.touches[0].clientX;
+  };
+
+  const handleTouchMove = (e: React.TouchEvent) => {
+    touchEndX.current = e.touches[0].clientX;
+  };
+
+  const handleTouchEnd = () => {
+    if (
+      touchStartX.current === null ||
+      touchEndX.current === null
+    ) {
+      return;
+    }
+
+    const deltaX = touchStartX.current - touchEndX.current;
+
+    if (Math.abs(deltaX) > SWIPE_THRESHOLD) {
+      if (deltaX > 0) {
+        showNextGrid(); // swipe left
+      } else {
+        showPrevGrid(); // swipe right
+      }
+    }
+
+    touchStartX.current = null;
+    touchEndX.current = null;
+  };
+
+  useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === "ArrowLeft") {
+        showPrevGrid();
+      }
+      if (e.key === "ArrowRight") {
+        showNextGrid();
+      }
+    };
+
+    window.addEventListener("keydown", handleKeyDown);
+    return () => window.removeEventListener("keydown", handleKeyDown);
+  }, [experiences.length]);
+
   if (experiences.length === 0) {
     return (
       <div className="text-center py-8 text-gray-500">
@@ -40,6 +88,9 @@ const GridSlider = ({ experiences }: GridSliderProps) => {
       <div
         className="flex transition-transform duration-500 ease-in-out"
         style={{ transform: `translateX(-${currentIndex * 100}%)` }}
+        onTouchStart={handleTouchStart}
+        onTouchMove={handleTouchMove}
+        onTouchEnd={handleTouchEnd}
       >
         {experiences.map((experience, index) => (
           <div key={index} className="flex-shrink-0 w-full mb-2">

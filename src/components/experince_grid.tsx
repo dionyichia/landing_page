@@ -117,7 +117,7 @@ const ExperienceGrid = ({ experience }: ExperienceGridProps) => {
 
 
             {/* Image Slider Section */}
-            <div className="order-2 md:col-start-1 md:col-end-2 md:row-start-2 md:row-end-3">
+            <div className="order-2 hidden md:block md:col-start-1 md:col-end-2 md:row-start-2 md:row-end-3">
             {experience.img && experience.img.length > 0 && (
 
                 <>
