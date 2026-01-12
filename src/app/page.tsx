@@ -80,7 +80,7 @@ export default function Home() {
       <footer className="py-8 flex gap-[24px] flex-wrap items-center justify-center">
         {/* Footer content */}
         <SmallText>
-          © 2025, Chia Dion Yi. All rights reserved.
+          © 2026, Chia Dion Yi. All rights reserved.
         </SmallText>
       </footer>
     </div>

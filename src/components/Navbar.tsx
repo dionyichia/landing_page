@@ -77,9 +77,9 @@ const NavBar: React.FC<NavBarProps> = ({ showNav, className = "" }: NavBarProps)
         <button onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')} className="w-10 h-10 rounded-md flex items-center justify-center btn transition-colors">
           {theme === "dark" ? <Moon size={20}/> : <Sun size={20} />}
         </button>
-        <button disabled className="w-10 h-10 rounded-md flex items-center justify-center btn transition-colors">
+        {/* <button disabled className="w-10 h-10 rounded-md flex items-center justify-center btn transition-colors">
           <span className="text-lg">中</span>
-        </button>
+        </button> */}
         <a
           href="/Chia_Dion_Yi_Resume.pdf"
           target="_blank"
