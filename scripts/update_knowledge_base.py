@@ -34,6 +34,8 @@ TEXT_BLOCK_TYPES = {
 HEADINGS = {"heading_1", "heading_2", "heading_3"}
 LISTS = {"bulleted_list_item","numbered_list_item"}
 
+MAX_TOKENS = 350 # Max chunk size
+
 def extract_text_from_block(block: dict) -> tuple[str, str, str]:
     block_type = block["type"]
 
@@ -45,7 +47,7 @@ def extract_text_from_block(block: dict) -> tuple[str, str, str]:
     text = "".join(rt["plain_text"] for rt in rich_text)
 
     if block_type in HEADINGS:
-        return text, "", ""
+        return text, block_type, ""
 
     if block_type == "paragraph":
         return "", "", text
@@ -53,67 +55,78 @@ def extract_text_from_block(block: dict) -> tuple[str, str, str]:
     # If it not a paragraph on its own, add to previous, i.e. combine all list items, quotes and every thing else into 1 paragraph
     return "", block_type, text
 
-# Helper to flush paragraph into all_text_chunks_in_page array
-def flush_paragraph(cur_para, cur_para_block_ids, header):
-       if not cur_para:
-           return None
-       return {
-           "chunk_id": ":".join(cur_para_block_ids),
-           "text": f"{header}\n" + " ".join(cur_para)
-       }
+# Helper to flush paragraph into chunks array
+def flush_paragraph(buffer, buffer_block_ids, header_stack):
+    if not buffer:
+        return None
 
-def get_all_text_from_page(page_id: str, most_recent_header="Root") -> list[str]:
-    all_text_chunks_in_page = []
-    cur_para = []
-    cur_para_block_ids = []
+    header_path = " > ".join(h for _, h in header_stack)
+
+    return {
+        "chunk_id": ":".join(buffer_block_ids),
+        "text": f"{header_path}\n" + " ".join(buffer),
+        "headers": header_path
+    }
+
+def update_header_stack(header_stack, level, text):
+    while header_stack and header_stack[-1][0] >= level:
+        header_stack.pop()
+    header_stack.append((level, text))
+
+def estimate_tokens(text: str) -> int:
+    return max(1, len(text) // 4)
+
+def get_all_text_from_page(page_id: str, page_title: str = "Untitled Page", header_stack: list = None) -> list[dict]:
+    chunks = []
+    buffer = []
+    buffer_block_ids = []
+    buffer_tokens = 0
+
+    if header_stack is None:
+        header_stack = [(0, page_title)]
+
     blocks = list_all_block_children(page_id)
 
     for block in blocks:
         header, block_type, text = extract_text_from_block(block)
 
-        # If it is a header, update the last header 
+        # Chunk by header: If it is a header, flush buffer, update the last header 
         if header:
-            # flush previous paragraph
-            if cur_para:
-                all_text_chunks_in_page.append(flush_paragraph(cur_para=cur_para, cur_para_block_ids=cur_para_block_ids, header=most_recent_header))
+            # Update header stack
+            if buffer:
+                chunk = flush_paragraph(buffer, buffer_block_ids, header_stack)
+                if chunk:
+                    chunks.append(chunk)
+                buffer, buffer_block_ids, buffer_tokens = [], [], 0
+
+            header_level = int(block_type.split('_')[1])  # e.g. 1, 2, 3
+            update_header_stack(header_stack, header_level, header)
+            continue
+
+        # If text not empty
+        if text.strip():
+            buffer.append(text)
+            buffer_block_ids.append(block["id"])
+            buffer_tokens += estimate_tokens(text)
         
-                cur_para = []
-                cur_para_block_ids = []
-
-            most_recent_header = header
-        else:
-            # If text not empty
-            if text.strip():
-                # If it is not a paragraph block, cache text
-                if block_type:
-                    cur_para.append(text)
-                    cur_para_block_ids.append(block["id"])
-                    continue
-                
-                # If it is a para block and prev cache not empty, flush cache
-                elif cur_para: 
-                    all_text_chunks_in_page.append(flush_paragraph(cur_para=cur_para, cur_para_block_ids=cur_para_block_ids, header=most_recent_header))
-                    
-                    cur_para = []
-                    cur_para_block_ids = []
-
-
-                all_text_chunks_in_page.append({
-                    "chunk_id": block["id"],
-                    "text": f"{most_recent_header}\n{text}"
-                    })
+        # SIZE-based flush
+        if buffer_tokens >= MAX_TOKENS:
+            chunk = flush_paragraph(buffer, buffer_block_ids, header_stack)
+            if chunk:
+                chunks.append(chunk)
+            buffer, buffer_block_ids, buffer_tokens = [], [], 0
 
         # recurse if this block has children
-        if block.get("has_children"):
-            all_text_chunks_in_page.extend(get_all_text_from_page(block["id"], most_recent_header=most_recent_header))
+        if block.get("has_children"):            
+            child_chunks = get_all_text_from_page(block["id"], header_stack=header_stack)
+            chunks.extend(child_chunks)
 
-    if cur_para:
-        all_text_chunks_in_page.append(flush_paragraph(cur_para=cur_para, cur_para_block_ids=cur_para_block_ids, header=most_recent_header))
-        
-        cur_para = []
-        cur_para_block_ids = []
+    if buffer:
+        chunk = flush_paragraph(buffer, buffer_block_ids, header_stack)
+        if chunk:
+            chunks.append(chunk)
 
-    return all_text_chunks_in_page
+    return chunks
 
 def list_all_block_children(block_id: str):
     blocks = []
@@ -180,7 +193,7 @@ def build_raw_corpus(database_id: str):
         print(f"Reading page: {title}")
 
         # List of dictionary of text blocks
-        page_text = get_all_text_from_page(page_id=page_id, most_recent_header=title)
+        page_text = get_all_text_from_page(page_id=page_id, page_title=title)
 
         corpus.append({
             "page_id": page_id,
