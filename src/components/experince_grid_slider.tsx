@@ -11,6 +11,9 @@ const GridSlider = ({ experiences }: GridSliderProps) => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const touchStartX = useRef<number | null>(null);
   const touchEndX = useRef<number | null>(null);
+  const containerRef = useRef<HTMLDivElement>(null);
+  const slideRef = useRef<HTMLDivElement>(null);
+  const [slideWidth, setSlideWidth] = useState(0);
 
   const SWIPE_THRESHOLD = 50; // px
 
@@ -82,21 +85,56 @@ const GridSlider = ({ experiences }: GridSliderProps) => {
     );
   }
 
+  useEffect(() => {
+    const handleResize = () => {
+      if (slideRef.current) {
+        setSlideWidth(slideRef.current.offsetWidth);
+      }
+    };
+
+      // Calculate initial width
+      handleResize();
+
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
+
   return (
-    <div className="relative overflow-hidden">
+    <div className="relative overflow-hidden" ref={containerRef}>
       {/* Sliding Container */}
+      <div 
+      style={{
+        WebkitMaskImage:
+          "linear-gradient(to right, transparent 0%, black 5%, black 95%, transparent 100%)",
+        maskImage:
+          "linear-gradient(to right, transparent 0%, black 5%, black 95%, transparent 100%)",
+      }}>
+        
       <div
-        className="flex transition-transform duration-500 ease-in-out"
-        style={{ transform: `translateX(-${currentIndex * 100}%)` }}
+        className="flex transition-transform duration-500 ease-in-out pl-[3%] md:pl-[5%]" // pl-[1%] md:pl-[5%]
+        style={{ 
+          transform: `translateX(-${currentIndex * slideWidth}px)`,
+        }}
         onTouchStart={handleTouchStart}
         onTouchMove={handleTouchMove}
         onTouchEnd={handleTouchEnd}
       >
         {experiences.map((experience, index) => (
-          <div key={index} className="flex-shrink-0 w-full mb-2">
+          <div
+            key={index}
+            ref={index === 0 ? slideRef : null} // w-[99%] md:w-[95%] mb-2 px-[0.5%] md:px-8
+            className="flex-shrink-0 w-[97%] px-[1%] md:w-[95%] md:px-[2%]
+              transition-opacity duration-300"
+            style={{ 
+              opacity: index === currentIndex ? 1 : 0.2,
+            }}
+          >
             <ExperienceGrid experience={experience} />
           </div>
         ))}
+      </div>
+
       </div>
 
       {/* Navigation Controls */}
