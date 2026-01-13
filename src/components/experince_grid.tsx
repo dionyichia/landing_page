@@ -30,7 +30,9 @@ const ExperienceGrid = ({ experience }: ExperienceGridProps) => {
     }, [experience.img]);
 
     return (
-        <div className="flex flex-col md:grid md:grid-cols-2 md:grid-rows-[auto_250px] gap-4 md:gap-8 rounded-lg transition-shadow duration-300 text-font">
+        <div className="flex flex-col md:grid md:grid-cols-2 md:grid-rows-[auto_250px] gap-4 md:gap-8 
+                rounded-lg
+                transition-shadow duration-300 text-font">
             {/* Header Section */}
             <div className='order-1 md:col-start-1 md:col-end-2 md:row-start-1 md:row-end-2 flex flex-col items-start flex-nowrap'>
                 <div className="w-full flex items-start justify-between">

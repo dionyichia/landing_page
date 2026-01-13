@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Arapey, Cormorant, Raleway, Questrial, Bodoni_Moda, Work_Sans, Nunito_Sans } from "next/font/google";
 import { ThemeProvider } from 'next-themes'
 import "./globals.css";
+import { SpeedInsights } from "@vercel/speed-insights/next"
 
 const arapey = Arapey({
   weight: "400",
@@ -72,6 +73,7 @@ export default function RootLayout({
         <ThemeProvider attribute="class" defaultTheme="light" enableSystem>
           {children}
         </ThemeProvider>  
+        <SpeedInsights/>
       </body>
     </html>
   );
