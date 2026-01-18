@@ -68,7 +68,7 @@ export default function Home() {
       </div>
 
       {/* Container for each sections */}
-      <div className="flex flex-col items-center sm:items-start mx-auto w-10/12 md:px-6 lg:px-8 gap-8 md:gap-24">
+      <div className="flex flex-col items-center sm:items-start mx-auto w-10/12 md:px-6 lg:px-8 gap-10 md:gap-24">
         <HomeSection/>
         <About />
         <Skills />

@@ -261,7 +261,7 @@ const Experience = () => {
         <div className="h-1 w-full bg-primary rounded"></div>
       </div> */}
 
-      <div className="flex flex-col gap-y-16">
+      <div className="flex flex-col gap-10 md:gap-16">
         {/* Work Experience Section */}
         <div className="flex flex-col flex-nowrap items-stretch">
           <div className="mb-4 md:mb-16 flex flex-row flex-nowrap items-center gap-8">
