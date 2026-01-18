@@ -10,11 +10,12 @@ const Lifeline = () => {
   const timelineEvents = [
     {
       title: "University of California, Berkeley",
-      subtitle: "GLOBE Exchange Student",
+      subtitle: "GLOBE Student",
       period: "Aug 25' - May 26'",
-      role: "Computer Engineering Scholar",
+      role: "GLOBE Student",
       description: [
-        "Pursuing a Bachelor's in Computer Science & a Master's in Technology Management"
+        "Pursuing my Bachelor's under the Electrical Engineering and Computer Science Department",
+        "Relevant classes taken: Efficient Algorithms and Intractable Problems, Computer Networks, Databases, Feedback Control Systems, Product Management, Technology Entrepreneurship"
       ],
       icon: GraduationCap,
     },
@@ -249,7 +250,7 @@ const Lifeline = () => {
                     
                       {/* Role Badge */}
                       {event.role && (
-                        <Heading4 className="inline-block text-sm font-medium rounded-full md:mb-2">
+                        <Heading4 className="inline-block text-sm font-medium rounded-full md:mb-2 text-accent">
                           {event.role}
                         </Heading4>
                       )}

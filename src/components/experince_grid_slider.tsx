@@ -144,7 +144,10 @@ const GridSlider = ({ experiences }: GridSliderProps) => {
           <div className="flex items-center justify-between mt-4">
             <button
               onClick={showPrevGrid}
-              className="flex items-center justify-center w-10 h-10 rounded-full border-2 border-gray-300 bg-white hover:bg-gray-50 hover:border-gray-400 transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed"
+              className="flex items-center justify-center w-10 h-10 rounded-full 
+                          border-2 border-gray-300 bg-white hover:bg-muted-accent hover:border-accent 
+                          transition-all duration-200 
+                          disabled:opacity-50 disabled:cursor-not-allowed"
               disabled={experiences.length <= 1}
               aria-label="Previous experience"
             >
@@ -159,8 +162,8 @@ const GridSlider = ({ experiences }: GridSliderProps) => {
                   onClick={() => goToSlide(index)}
                   className={`w-3 h-3 rounded-full transition-all duration-200 ${
                     index === currentIndex
-                      ? "bg-stone-600 scale-110"
-                      : "bg-gray-300 hover:bg-gray-400"
+                      ? "bg-foreground scale-110"
+                      : "bg-primary hover:bg-accent"
                   }`}
                   aria-label={`Go to experience ${index + 1}`}
                 />
@@ -169,17 +172,15 @@ const GridSlider = ({ experiences }: GridSliderProps) => {
 
             <button
               onClick={showNextGrid}
-              className="flex items-center justify-center w-10 h-10 rounded-full border-2 border-gray-300 bg-white hover:bg-gray-50 hover:border-gray-400 transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed"
+              className="flex items-center justify-center w-10 h-10 rounded-full 
+                        border-2 border-gray-300 bg-white hover:bg-muted-accent hover:border-accent 
+                        transition-all duration-200 
+                        disabled:opacity-50 disabled:cursor-not-allowed"
               disabled={experiences.length <= 1}
               aria-label="Next experience"
             >
               <ArrowRight className="w-5 h-5 text-gray-600" />
             </button>
-          </div>
-
-          {/* Experience Counter */}
-          <div className="text-center mt-4 text-sm text-gray-500">
-            {currentIndex + 1} of {experiences.length}
           </div>
         </div> 
       }

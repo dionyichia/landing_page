@@ -37,7 +37,7 @@ const ExperienceGrid = ({ experience }: ExperienceGridProps) => {
             <div className='order-1 md:col-start-1 md:col-end-2 md:row-start-1 md:row-end-2 flex flex-col items-start flex-nowrap'>
                 <div className="w-full flex items-start justify-between">
                     <div className="flex-1">
-                        <Heading3 className="font-bold mb-1">
+                        <Heading3 className="font-bold mb-1 text-accent">
                             {experience.title}
                         </Heading3>
                         <Heading4 className="font-medium">
