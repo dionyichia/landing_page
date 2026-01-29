@@ -59,6 +59,10 @@ const chat_models = [
 const embedding_model = 'text-embedding-3-small';
 const query_expansion_model = "google/gemini-2.5-flash-lite";
 
+const LINE_HEIGHT = 50;     
+const MAX_LINES = 3;
+const MAX_HEIGHT = LINE_HEIGHT * MAX_LINES;
+
 type ChatBotProps = {
   showChat: boolean;
   setShowChat: Dispatch<SetStateAction<boolean>>;
@@ -97,7 +101,17 @@ export default function ChatBot ({ showChat, setShowChat }: ChatBotProps) {
             },
         },
         );
+
         setInput('');
+
+        // Reset textarea height
+        const el = textareaRef.current;
+        if (el) {
+            el.style.height = `${LINE_HEIGHT}px`;
+            el.style.overflowY = 'hidden';
+        }
+
+        setIsMultiline(false);
     };
 
     const handleChange = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
@@ -110,8 +124,10 @@ export default function ChatBot ({ showChat, setShowChat }: ChatBotProps) {
         el.style.height = 'auto';
         el.style.height = `${el.scrollHeight}px`;
 
-        const singleLineHeight = 50; // adjust to your font/line-height
-        setIsMultiline(el.scrollHeight > singleLineHeight * 1.5);
+        // Enable scrolling only when capped
+        el.style.overflowY = el.scrollHeight > MAX_HEIGHT ? 'auto' : 'hidden';
+
+        setIsMultiline(el.scrollHeight > LINE_HEIGHT * 1.5);
     };
 
     
@@ -125,7 +141,7 @@ export default function ChatBot ({ showChat, setShowChat }: ChatBotProps) {
             }
             `}>
             <div className={`
-                transition-all duration-700 ease-in-out delay-400
+                transition-all duration-700 ease-in-out delay-500
                 overflow-hidden
                 ${showChat 
                     ? 'opacity-100'
@@ -213,7 +229,7 @@ export default function ChatBot ({ showChat, setShowChat }: ChatBotProps) {
             }
             </div>
 
-            <PromptInput onSubmit={handleSubmit} globalDrop multiple className="mt-auto mb-2 md:mb-4">
+            <PromptInput onSubmit={handleSubmit} globalDrop multiple className="mt-auto mb-2 md:mb-4 bg-background/80 dark:bg-background/80">
                 <PromptInputBody>
                     <PromptInputTextarea
                         ref={textareaRef}
@@ -237,7 +253,6 @@ export default function ChatBot ({ showChat, setShowChat }: ChatBotProps) {
             <div className={`
                 transition-all duration-700 ease-in-out 
                 flex flex-row justify-end pointer-events-none pr-2 md:pr-4 
-                overflow-hidden
                 ${ showChat ? 
                 'md:opacity-100 md:max-h-20 md:mb-8 opacity-0 max-h-0 mb-0'
                 : 'opacity-0 max-h-0 mb-0'}

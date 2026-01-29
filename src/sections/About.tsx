@@ -24,7 +24,7 @@ const About = () => {
             I&apos;m passionate about building solutions that impact, and thrive at the intersection of tech, people, and product.
           </Paragraph>
           <Paragraph>
-            Currently, I am a Year 3 exchange student at University of California, Berkeley. Back home, a Year 3 Computer Engineering student under Nanyang Technological University&apos;s Renaissance Engineering Programme, a scholarship program with an accelerated Master&apos;s degree in Tech Management.
+            Currently, I&apos;m Year 3 exchange student at UC Berkeley, specialising in Computer Engineering under NTU&apos;s Renaissance Engineering Programme, an accelerated MSc track in Technology Management.
           </Paragraph>
           <Paragraph>
             Outside of tech, I&apos;m always chasing the next challenge. 
